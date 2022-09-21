@@ -14,8 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing.home');
 });
+
+Route::view('/', 'landing.home');
+Route::view('/contact', 'landing.contact');
+Route::view('/pricing', 'landing.pricing');
+Route::view('/services', 'landing.services');
+Route::view('/about', 'landing.about');
+
 
 Route::middleware([
     'auth:sanctum',
