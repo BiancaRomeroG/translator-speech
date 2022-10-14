@@ -119,7 +119,7 @@
                             var CurrentYear = new Date().getFullYear()
                             document.write(CurrentYear)
                         </script>. Designed &amp; Developed by <a class="current-year"
-                            href="https://themefisher.com/">Themefisher</a>
+                            href="https://themefisher.com/">Pedro xD</a>
                     </p>
                 </div>
             </div>
