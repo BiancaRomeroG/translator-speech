@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('credit_cards', function (Blueprint $table) {
             $table->id();
-            $table->string('cc_number');
-            $table->string('cc_cvv');
-            $table->string('cc_expiry');
-            $table->string('status');
+            $table->string('cc_number')->nullable();
+            $table->string('cc_cvv')->nullable();
+            $table->string('cc_expiry')->nullable();
+            $table->string('status')->nullable();
             $table->unsignedBigInteger('id_user')->nullable();
             $table->foreign('id_user')->references('id')->on('users');
             $table->timestamps();
