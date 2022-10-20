@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Plan extends Model
 {
     use HasFactory;
+    protected $table = 'plans';
+    protected $fillable = [
+        'name',
+        'months_per_interval',
+        'price',
+    ];
 }

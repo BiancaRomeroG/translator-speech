@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
+            $table->date('date')->nullable();
             $table->unsignedBigInteger('id_subscription')->nullable();
             $table->foreign('id_subscription')->references('id')->on('subscriptions');
             $table->unsignedBigInteger('id_payment')->nullable();
