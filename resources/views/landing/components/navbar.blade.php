@@ -26,12 +26,12 @@
                     </li>
                     <li class="nav-item ">
                         <a href="/services" class="nav-link js-scroll-trigger">
-                            Services
+                            Servicios
                         </a>
                     </li>
                     <li class="nav-item ">
                         <a href="/pricing" class="nav-link js-scroll-trigger">
-                            Pricing
+                            Precio
                         </a>
                     </li>
 
