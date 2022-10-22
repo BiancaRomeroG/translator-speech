@@ -1,4 +1,17 @@
-<x-app-layout>
+<x-guest-layout>
+    @section('title', 'Dashboard')
+    {{-- NavBar --}}
+    <x-navbar_dashboard.navbar>
+  
+    </x-navbar_dashboard.navbar>
+    <main>
+       
+    </main>
+
+
+</x-guest-layout>
+
+{{-- <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
@@ -12,4 +25,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-app-layout> --}}

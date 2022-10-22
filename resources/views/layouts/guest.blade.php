@@ -45,12 +45,17 @@
     <script src="{{ asset('vendors/flickity/dist/flickity.pkgd.min.js') }}"></script><!-- slider -->
     <!--end::Global javascript (used in all pages)-->
 
+
+
     <!-- Minify Global javascript (for production purpose) -->
     <script src="{{ asset('dist/js/scripts.js') }}"></script>
+ 
 
     <!--start::Demo javascript ( initialize global javascript )-->
     <script src="{{  asset('src/js/demo.js') }}"></script>
 
+    <!--start::Call vendor ( initialize vendor javascript )-->
+  <script src="{{asset('src/js/vendor.js')}}"></script>
     <!--start::Customizer js ( Only for demo purpose )-->
     <script src="{{  asset('src/js/customizer.js') }}"></script>
 </body>
