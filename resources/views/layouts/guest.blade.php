@@ -12,19 +12,21 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     {{-- Estilos personalizados --}}
-    <link rel="stylesheet" href="{{ asset('css/colors.css') }}" type="text/css">
-
+    
     <!-- Development css (used in all pages) -->
-    <link rel="stylesheet" id="stylesheet" href="{{ asset('src/css/style.css') }}">
+    {{--     <link rel="stylesheet" id="stylesheet" href="{{ asset('src/css/style.css') }}"> --}}
+    
+    <link rel="stylesheet" href="{{ asset('css/colors.css') }}" type="text/css">
+    <!-- Scripts -->
+    @vite(['resources/js/app.js'])
+    
     <!-- Production css (used in all pages) -->
-    <link rel="stylesheet" href="{{ asset('dist/css/style.css') }}">
+    <link rel="stylesheet" id="stylesheet" href="{{ asset('src/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('src/css/customizer.css') }}">
-
+    
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
-
-    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    
 </head>
 
 <body class="font-sans text-base font-normal text-gray-600">
@@ -48,8 +50,8 @@
 
 
     <!-- Minify Global javascript (for production purpose) -->
-    <script src="{{ asset('dist/js/scripts.js') }}"></script>
- 
+    {{-- <script src="{{ asset('dist/js/scripts.js') }}"></script> --}}
+
 
     <!--start::Demo javascript ( initialize global javascript )-->
     <script src="{{  asset('src/js/demo.js') }}"></script>
