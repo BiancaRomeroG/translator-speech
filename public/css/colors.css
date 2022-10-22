@@ -38,3 +38,13 @@ div .bg-color5{
 div .text-color5{
     color: #fffaf4;
 }
+
+.color_nav_dashboard{
+    background-image: linear-gradient(180deg, #131430 0, #00002b 50%, #000027 100%);
+}
+.color_nav_fuente{
+    color: #a2abfa;
+}
+.color_nav_fuente1{
+    color: #737480;
+}
