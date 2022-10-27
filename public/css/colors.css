@@ -40,10 +40,10 @@ div .text-color5{
 }
 
 .color_nav_dashboard{
-    background-image: linear-gradient(180deg, #131430 0, #00002b 50%, #000027 100%);
+    background-image: linear-gradient(180deg, #ffffff 0, #ffffff 50%, #ffffff 100%);
 }
 .color_nav_fuente{
-    color: #a2abfa;
+    color: #000000;
 }
 .color_nav_fuente1{
     color: #737480;

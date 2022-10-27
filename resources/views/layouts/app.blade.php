@@ -30,8 +30,8 @@
 
 </head>
 
-<body class="font-sans text-base font-normal text-gray-600">
-    <div x-data="{ open: false }" class="wrapper overflow-x-hidden bg-gray-100 dark:bg-gray-900 dark:bg-opacity-40">
+<body >
+    <div x-data="{ open: false }" class="overflow-x-hidden bg-gray-100 wrapper ">
         <div class="flex flex-col min-h-screen transition-all duration-500 ease-in-out">
             <x-navbar_dashboard.navbar>
             </x-navbar_dashboard.navbar>
@@ -100,7 +100,7 @@
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
                 </header>
