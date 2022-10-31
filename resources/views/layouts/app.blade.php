@@ -27,7 +27,17 @@
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
     <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
-    @livewireStyles()
+
+
+    {{-- Sweet Alert2 --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    {{-- Script y Css Personalizados --}}
+    @section('script-css')
+    @show
+
+    @livewireStyles
 </head>
 
 <body>
@@ -35,12 +45,13 @@
 
     <div x-data="{ open: false }" class="overflow-x-hidden bg-gray-100 wrapper ">
         <div class="flex flex-col min-h-screen transition-all duration-500 ease-in-out">
-            <x-navbar_dashboard.navbar>
-            </x-navbar_dashboard.navbar>
+            <x-navbar_dashboard.navbar></x-navbar_dashboard.navbar>
             {{ $slot }}
 
         </div>
     </div>
+    <x-guest.footer></x-guest.footer>
+
     <!--start::Global javascript (used in all pages)-->
     <script src="{{ asset('vendors/alpinejs/dist/cdn.min.js') }}"></script><!-- core js -->
     <script src="{{ asset('vendors/chart.js/dist/chart.min.js') }}"></script><!-- charts -->
@@ -65,8 +76,10 @@
 
     <!--start::Call vendor ( initialize vendor javascript )-->
     <script src="{{ asset('src/js/vendor.js') }}"></script>
+
     <!--start::Customizer js ( Only for demo purpose )-->
     <script src="{{ asset('src/js/customizer.js') }}"></script>
+    
 </body>
 
 </html>
