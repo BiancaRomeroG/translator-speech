@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DocumentTranslatorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,9 +28,14 @@ Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
-    ])->group(function () {
-        Route::get('/dashboard', function () {
-            return view('dashboard');
-        })->name('dashboard');
-        Route::view('/traductor', 'traducir.texto')->name('traducir.texto');
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::view('/traductor', 'traducir.texto')->name('traducir.texto');
+
+    # Start Route Document Translator
+    Route::get('/document-translator', [DocumentTranslatorController::class, 'index'])->name('document-translator');
+    # End Route Document Trasnlator
 });

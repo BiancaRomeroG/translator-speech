@@ -1,5 +1,5 @@
+@section('title', 'Dashboard')
 <x-app-layout>
-    @section('title', 'Dashboard')
     {{-- NavBar --}}
 
     <main>
