@@ -28,6 +28,7 @@
     <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
 
+
     {{-- Sweet Alert2 --}}
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -40,7 +41,8 @@
 </head>
 
 <body>
-    @livewireScripts
+    @livewireScripts()
+
     <div x-data="{ open: false }" class="overflow-x-hidden bg-gray-100 wrapper ">
         <div class="flex flex-col min-h-screen transition-all duration-500 ease-in-out">
             <x-navbar_dashboard.navbar></x-navbar_dashboard.navbar>

@@ -48,3 +48,79 @@ div .text-color5{
 .color_nav_fuente1{
     color: #737480;
 }
+
+.action{
+    color: #737480;
+}
+
+.btnMicroStart .msjMicroStart {
+    visibility: hidden;
+   
+    background-color: #737480;;
+    color: #fff;
+    position: absolute;
+    border-radius: 6px;
+    padding: 5px ;
+    font-size: 12px;
+    margin-top: 30px;
+   margin-left: -50px;
+   font-family:'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .btnMicroStart:hover .msjMicroStart {
+    visibility: visible;
+  }
+
+  .btnMicroStop .msjMicroStop {
+    visibility: hidden;
+   
+    background-color: #737480;;
+    color: #fff;
+    position: absolute;
+    border-radius: 6px;
+    padding: 5px ;
+    font-size: 12px;
+    margin-top: 30px;
+   margin-left: -32px;
+   font-family:'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .btnMicroStop:hover .msjMicroStop {
+    visibility: visible;
+  }
+
+  .btnMicroVoz .msjMicroVoz {
+    visibility: hidden;
+   
+    background-color: #737480;;
+    color: #fff;
+    position: absolute;
+    border-radius: 6px;
+    padding: 5px ;
+    font-size: 12px;
+    margin-top: 30px;
+   margin-left: -40px;
+   font-family:'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .btnMicroVoz:hover .msjMicroVoz {
+    visibility: visible;
+  }
+
+  .btnMicroVoz2 .msjMicroVoz2 {
+    visibility: hidden;
+   
+    background-color: #737480;;
+    color: #fff;
+    position: absolute;
+    border-radius: 6px;
+    padding: 5px ;
+    font-size: 12px;
+    margin-top: 30px;
+   margin-left: -40px;
+   font-family:'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .btnMicroVoz2:hover .msjMicroVoz2 {
+    visibility: visible;
+  }
