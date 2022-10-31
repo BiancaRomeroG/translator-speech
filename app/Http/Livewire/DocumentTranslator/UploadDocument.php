@@ -84,4 +84,9 @@ class UploadDocument extends Component
         $record->delete();
     }
 
+    public function cleanInput() {
+        $this->file = '';
+        $this->emit('clearInput');
+    }
+
 }
