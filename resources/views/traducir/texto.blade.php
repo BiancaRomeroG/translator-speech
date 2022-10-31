@@ -43,9 +43,14 @@
                     </div>
 
                     <div class="grid grid-cols-2 auto-cols-auto">
+                       
                         <div class="col-auto p-4 border-t-2">
-                            <textarea id="textArea1"
-                                class="relative w-full px-4 py-2 overflow-x-auto text-2xl leading-5 bg-white border border-white rounded focus:outline-none focus:border-white focus:ring-0"></textarea>
+                            
+                          
+                                <textarea id="textArea1"
+                                    class="relative w-full px-4 py-2 overflow-x-auto text-2xl leading-5 bg-white border border-white rounded focus:outline-none focus:border-white focus:ring-0"></textarea>
+                                  
+                           
                         </div>
                         <div class="col-auto p-4 border-t-2 border-l-2">
                             {{-- <label class="text-2xl text-gray-400">Traducción</label> --}}
@@ -55,30 +60,42 @@
                     </div>
 
 
-                    <div class="grid grid-cols-2 auto-cols-auto">
-                        <div class="col-auto p-4">
-                            <button {{-- @click="open=!open" --}}
-                                class="w-10 h-10 mt-auto mb-auto text-center bg-white border border-none rounded-full hover:text-gray-900 hover:bg-gray-300 hover:ring-0 hover:border-gray-300 focus:bg-gray-300 focus:border-gray-300 focus:outline-none focus:ring-0"
-                                type="button">
+                    <div class=" grid grid-cols-2 auto-cols-auto">
+                        <div class=" cont col-auto p-4">
+
+                            <button {{-- @click="open=!open" --}} id="btnStartRecord" 
+                                class="btnMicroStart b1 w-10 h-10 mt-auto mb-auto text-center bg-white border border-none rounded-full hover:text-gray-900 hover:bg-gray-300 hover:ring-0 hover:border-gray-300 focus:bg-gray-300 focus:border-gray-300 focus:outline-none focus:ring-0"
+                                type="button" tittle ="andrea">
                                 <i class="fa-solid fa-microphone"></i>
+                                <span class="msjMicroStart">Traducir por voz</span>
                             </button>
+                            
+                            <button  {{--@click="open=!open" --}} id="btnStopRecord"
+                            class= "btnMicroStop  mt-auto mb-auto text-center rounded-full h-10 w-10 bg-white border border-none hover:text-gray-900 hover:bg-gray-300 hover:ring-0 hover:border-gray-300 focus:bg-gray-300 focus:border-gray-300 focus:outline-none focus:ring-0"
+                            type="button" >
+                             <i class="fa fa-stop-circle"></i>
+                             <span class="msjMicroStop">Detener</span>
+                          </button>
                             <button {{-- @click="open=!open" --}} id="escuchar_voz" onclick="mostrarEscucharVoz()"
-                                class="w-10 h-10 mt-auto mb-auto text-center bg-white border border-none rounded-full hover:text-gray-900 hover:bg-gray-300 hover:ring-0 hover:border-gray-300 focus:bg-gray-300 focus:border-gray-300 focus:outline-none focus:ring-0"
+                                class=" btnMicroVoz w-10 h-10 mt-auto mb-auto text-center bg-white border border-none rounded-full hover:text-gray-900 hover:bg-gray-300 hover:ring-0 hover:border-gray-300 focus:bg-gray-300 focus:border-gray-300 focus:outline-none focus:ring-0"
                                 type="button">
                                 <i class="fa-solid fa-volume-high"></i>
+                                <span class="msjMicroVoz">Ajustar Voz</span>
                             </button>
                         </div>
                         <div class="col-auto p-4 border-l-2">
                             <button {{-- @click="open=!open" --}} onclick="mostrarEscucharVoz2()"
-                                class="w-10 h-10 mt-auto mb-auto text-center bg-white border border-none rounded-full hover:text-gray-900 hover:bg-gray-300 hover:ring-0 hover:border-gray-300 focus:bg-gray-300 focus:border-gray-300 focus:outline-none focus:ring-0"
+                                class="btnMicroVoz2 w-10 h-10 mt-auto mb-auto text-center bg-white border border-none rounded-full hover:text-gray-900 hover:bg-gray-300 hover:ring-0 hover:border-gray-300 focus:bg-gray-300 focus:border-gray-300 focus:outline-none focus:ring-0"
                                 type="button">
                                 <i class="fa-solid fa-volume-high"></i>
+                               <span class="msjMicroVoz2">Ajustar Voz</span>
                             </button>
                         </div>
                     </div>
 
+   
                 </div>
-
+                <span class="action" id="action"  style="display:none;"></span> 
                 <div class="grid grid-cols-2">
                     <div id="flotante" style="display:none;" class="mt-3 col-span-1">
                         <div class="flex flex-wrap text-gray-600 bg-white rounded-lg py-2 px-3"
