@@ -12,21 +12,24 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     {{-- Estilos personalizados --}}
-    
+
     <!-- Development css (used in all pages) -->
     {{--     <link rel="stylesheet" id="stylesheet" href="{{ asset('src/css/style.css') }}"> --}}
-    
+
     <link rel="stylesheet" href="{{ asset('css/colors.css') }}" type="text/css">
     <!-- Scripts -->
     @vite(['resources/js/app.js'])
-    
+
     <!-- Production css (used in all pages) -->
     <link rel="stylesheet" id="stylesheet" href="{{ asset('src/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('src/css/customizer.css') }}">
-    
+
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
-    
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{asset('/src/img/favicon.png')}}">
+
 </head>
 
 <body class="font-sans text-base font-normal text-gray-600">
