@@ -2,14 +2,14 @@
     <header>
         <nav x-data="{ open: false }"
             class="nav-top flex flex-nowrap lg:flex-start items-center z-20 fixed top-0 left-0 right-0 bg-gradient-to-r from-sky-300 via-sky-500 to-sky-300{{-- bg-indigo-600 bg-gradient-to-r from-indigo-800 via-indigo-700 to-green-500 dark:from-gray-800 dark:via-gray-700 dark:to-green-700 --}} overflow-y-auto max-h-screen lg:overflow-visible lg:max-h-full">
-            <div class="container mx-auto px-4 xl:max-w-6xl ">
+            <div class="container px-4 mx-auto xl:max-w-6xl ">
                 <!-- mobile navigation -->
                 <div class="flex flex-row justify-between py-3 lg:hidden">
                     <!-- logo -->
                     <a class="flex items-center py-2 mr-4 text-xl" href="index.html">
-                        <h2 class="text-2xl font-semibold text-gray-200 px-4 max-h-9 overflow-hidden">
-                            <!-- <img class="inline-block w-7 h-auto ltr:mr-2 rtl:ml-2 -mt-1" src="src/img/logo.png"> -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-7 h-7 ltr:mr-2 rtl:ml-2 -mt-1"
+                        <h2 class="px-4 overflow-hidden text-2xl font-semibold text-gray-200 max-h-9">
+                            <!-- <img class="inline-block h-auto -mt-1 w-7 ltr:mr-2 rtl:ml-2" src="src/img/logo.png"> -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="inline-block -mt-1 w-7 h-7 ltr:mr-2 rtl:ml-2"
                                 viewBox="0 0 300.000000 300.000000">
                                 <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)"
                                     fill="currentColor" stroke="none">
@@ -45,7 +45,7 @@
                             x-bind:aria-expanded="open.toString()">
                             <span class="sr-only">Mobile menu</span>
                             <svg x-description="Icon closed" x-state:on="Menu open" x-state:off="Menu closed"
-                                class="block h-8 w-8" :class="{ 'hidden': open, 'block': !(open) }"
+                                class="block w-8 h-8" :class="{ 'hidden': open, 'block': !(open) }"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -53,7 +53,7 @@
                             </svg>
 
                             <svg x-description="Icon open" x-state:on="Menu open" x-state:off="Menu closed"
-                                class="hidden h-8 w-8" :class="{ 'block': open, 'hidden': !(open) }"
+                                class="hidden w-8 h-8" :class="{ 'block': open, 'hidden': !(open) }"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -64,14 +64,14 @@
                 </div>
 
                 <!-- Mobile menu -->
-                <div class="lg:hidden fixed w-full h-full inset-0 z-40" id="mobile-menu" x-description="Mobile menu"
+                <div class="fixed inset-0 z-40 w-full h-full lg:hidden" id="mobile-menu" x-description="Mobile menu"
                     x-show="open" style="display: none;">
                     <!-- bg open -->
-                    <span class="fixed bg-gray-900 bg-opacity-70 w-full h-full inset-x-0 top-0"></span>
+                    <span class="fixed inset-x-0 top-0 w-full h-full bg-gray-900 bg-opacity-70"></span>
 
                     <!-- Mobile navbar -->
                     <nav id="mobile-nav"
-                        class="flex flex-col ltr:right-0 rtl:left-0 w-64 fixed top-0 py-4 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-400 h-full overflow-auto z-40"
+                        class="fixed top-0 z-40 flex flex-col w-64 h-full py-4 overflow-auto text-gray-700 bg-white ltr:right-0 rtl:left-0 dark:bg-gray-900 dark:text-gray-400"
                         x-show="open" @click.away="open=false" x-description="Mobile menu" role="menu"
                         aria-orientation="vertical" aria-labelledby="navbartoggle"
                         x-transition:enter="transform transition-transform duration-300"
@@ -82,12 +82,12 @@
                         x-transition:leave-end="ltr:translate-x-full rtl:-translate-x-full">
                         <div class="mb-auto">
                             <!--logo-->
-                            <div class="mh-18 text-center px-12 mb-8">
-                                <a href="landing.html#" class="flex relative">
+                            <div class="px-12 mb-8 text-center mh-18">
+                                <a href="landing.html#" class="relative flex">
                                     <h2 class="text-2xl font-semibold text-gray-200 max-h-9">
-                                        <!-- <img class="inline-block w-7 h-auto ltr:mr-2 rtl:ml-2 -mt-1" src="src/img/logo.png"> -->
+                                        <!-- <img class="inline-block h-auto -mt-1 w-7 ltr:mr-2 rtl:ml-2" src="src/img/logo.png"> -->
                                         <svg xmlns="http://www.w3.org/2000/svg"
-                                            class="inline-block w-7 h-7 ltr:mr-2 rtl:ml-2 -mt-1"
+                                            class="inline-block -mt-1 w-7 h-7 ltr:mr-2 rtl:ml-2"
                                             viewBox="0 0 300.000000 300.000000">
                                             <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)"
                                                 fill="currentColor" stroke="none">
@@ -118,38 +118,38 @@
                             <!--navigation-->
                             <div class="mb-4">
                                 <nav class="relative flex flex-wrap items-center justify-between">
-                                    <ul id="side-menu" class="w-full float-none flex flex-col">
+                                    <ul id="side-menu" class="flex flex-col float-none w-full">
                                         <li class="relative">
                                             <a href="#home"
-                                                class="block py-3 px-4 hover:text-indigo-500 focus:text-indigo-500">Home</a>
+                                                class="block px-4 py-3 hover:text-indigo-500 focus:text-indigo-500">Home</a>
                                         </li>
                                         <li class="relative">
                                             <a href="#caracteristicas"
-                                                class="block py-3 px-4 hover:text-indigo-500 focus:text-indigo-500">Caracteristicas</a>
+                                                class="block px-4 py-3 hover:text-indigo-500 focus:text-indigo-500">Caracteristicas</a>
                                         </li>
                                         <li class="relative">
                                             <a href="#precios"
-                                                class="block py-3 px-4 hover:text-indigo-500 focus:text-indigo-500">Precios</a>
+                                                class="block px-4 py-3 hover:text-indigo-500 focus:text-indigo-500">Precios</a>
                                         </li>
                                         <li class="relative">
                                             <a href="#nosotros"
-                                                class="block py-3 px-4 hover:text-indigo-500 focus:text-indigo-500">Nosotros</a>
+                                                class="block px-4 py-3 hover:text-indigo-500 focus:text-indigo-500">Nosotros</a>
                                         </li>
                                         <li class="relative">
                                             <a href="#contact"
-                                                class="block py-3 px-4 hover:text-indigo-500 focus:text-indigo-500">Contact</a>
+                                                class="block px-4 py-3 hover:text-indigo-500 focus:text-indigo-500">Contact</a>
                                         </li>
                                         <li>
-                                            <div class="grid text-center lg:block my-4 lg:my-auto">
-                                                <a class="py-2 px-4 text-sm inline-block text-center rounded leading-5 text-gray-100 bg-blue-400 border border-blue-400 hover:text-gray-100 hover:bg-indigo-400 hover:ring-0 hover:border-indigo-400 focus:bg-blue-600 focus:border-blue-600 focus:outline-none focus:ring-0"
+                                            <div class="grid my-4 text-center lg:block lg:my-auto">
+                                                <a class="inline-block px-4 py-2 text-sm leading-5 text-center text-gray-100 bg-blue-400 border border-blue-400 rounded hover:text-gray-100 hover:bg-indigo-400 hover:ring-0 hover:border-indigo-400 focus:bg-blue-600 focus:border-blue-600 focus:outline-none focus:ring-0"
                                                     target="_blank" rel="noopener" href="{{ route('login') }}">
                                                     Login
                                                 </a>
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="grid text-center lg:block my-4 lg:my-auto">
-                                                <a class="py-2 px-4 text-sm inline-block text-center rounded leading-5 text-gray-100 bg-green-400 border border-green-400 hover:text-gray-100 hover:bg-lime-400 hover:ring-0 hover:border-lime-400 focus:bg-lime-600 focus:border-lime-600 focus:outline-none focus:ring-0"
+                                            <div class="grid my-4 text-center lg:block lg:my-auto">
+                                                <a class="inline-block px-4 py-2 text-sm leading-5 text-center text-gray-100 bg-green-400 border border-green-400 rounded hover:text-gray-100 hover:bg-lime-400 hover:ring-0 hover:border-lime-400 focus:bg-lime-600 focus:border-lime-600 focus:outline-none focus:ring-0"
                                                     target="_blank" rel="noopener" href="{{ route('register') }}">
                                                     Registrar
                                                 </a>
@@ -167,11 +167,11 @@
                 <div class="hidden lg:flex lg:flex-row lg:flex-nowrap lg:items-center lg:justify-between lg:mt-0"
                     id="desktp-menu">
                     <!-- logo -->
-                    <a class="hidden lg:flex items-center py-2 mr-4 text-xl" href="index.html">
-                        <h2 class="text-2xl font-semibold px-4 max-h-9 overflow-hidden">
-                            <!-- <img class="inline-block w-7 h-auto ltr:mr-2 rtl:ml-2 -mt-1" src="src/img/logo.png"> -->
+                    <a class="items-center hidden py-2 mr-4 text-xl lg:flex" href="index.html">
+                        <h2 class="px-4 overflow-hidden text-2xl font-semibold max-h-9">
+                            <!-- <img class="inline-block h-auto -mt-1 w-7 ltr:mr-2 rtl:ml-2" src="src/img/logo.png"> -->
                             <svg xmlns="http://www.w3.org/2000/svg"
-                                class="inline-block w-7 h-7 ltr:mr-2 rtl:ml-2 -mt-1"
+                                class="inline-block -mt-1 w-7 h-7 ltr:mr-2 rtl:ml-2"
                                 viewBox="0 0 300.000000 300.000000">
                                 <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)"
                                     fill="currentColor" stroke="none">
@@ -199,64 +199,43 @@
                     </a>
 
                     <!-- menu -->
-                    <ul class="flex flex-col lg:mx-auto mt-2 lg:flex-row lg:mt-0 text-gray-200">
+                    <ul class="flex flex-col mt-2 text-gray-200 lg:mx-auto lg:flex-row lg:mt-0">
                         <li class="relative">
-                            <a class="block py-3 lg:py-7 px-6 hover:text-white focus:text-white" href="#home">
+                            <a class="block px-6 py-3 lg:py-7 hover:text-white focus:text-white" href="#home">
                                 Home
                             </a>
                         </li>
                         <li class="relative">
-                            <a class="block py-3 lg:py-7 px-6 hover:text-white focus:text-white"
+                            <a class="block px-6 py-3 lg:py-7 hover:text-white focus:text-white"
                                 href="#caracteristicas">
                                 Características
                             </a>
                         </li>
                         <li class="relative">
-                            <a class="block py-3 lg:py-7 px-6 hover:text-white focus:text-white" href="#precios">
+                            <a class="block px-6 py-3 lg:py-7 hover:text-white focus:text-white" href="#precios">
                                 Precios
                             </a>
                         </li>
                         <li class="relative">
-                            <a class="block py-3 lg:py-7 px-6 hover:text-white focus:text-white" href="#nosotros">
+                            <a class="block px-6 py-3 lg:py-7 hover:text-white focus:text-white" href="#nosotros">
                                 Nosotros
                             </a>
                         </li>
-                        <!-- dropdown -->
-                        {{-- <li class="relative" x-data="{ open: false }" @keydown.escape.stop="open = false" @mouseleave="open = false">
-            <a id="dropdown-01" class="block py-3 lg:py-7 px-6 hover:text-white focus:text-white" href="javascript:;" @mouseenter="open = !open" aria-haspopup="true" x-bind:aria-expanded="open" :class="{ 'text-white': open }">
-              Contacto
-              <!-- caret -->
-              <span class="inline-block ltr:ml-2 rtl:mr-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width=".8rem" height=".8rem" fill="currentColor" viewBox="0 0 512 512"><polyline points="112 184 256 328 400 184" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px"/></svg>
-              </span>
-            </a>
-            <!-- dropdown menu -->
-            <ul class="block absolute left-1/2 right-auto border-t-2 transform -translate-x-1/2 rounded top-full z-50 py-0.5 ltr:text-left rtl:text-right bg-white text-gray-700 dark:text-gray-200 dark:bg-gray-800 border dark:border-gray-700 shadow-md" style="min-width: 12rem"  x-show="open" @click.away="open = false" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition-all duration-200 ease-in" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95">
-              <li class="relative">
-                <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500" href="docs/introduction.html">Documentation</a>
-              </li>
-              <li class="relative">
-                <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500" href="components/alerts.html">Components</a>
-              </li>
-              <li class="relative">
-                <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500" href="docs/changelog.html">Changelog</a>
-              </li>
-            </ul>
-          </li> --}}
+                        
                         <li class="relative">
-                            <a class="block py-3 lg:py-7 px-6 hover:text-white focus:text-white" href="#contact">
+                            <a class="block px-6 py-3 lg:py-7 hover:text-white focus:text-white" href="#contact">
                                 Contact
                             </a>
                         </li>
                     </ul>
 
                     <!-- button -->
-                    <div class="grid text-center lg:block my-4 lg:my-auto">
-                        <a class="py-2 px-4 text-sm inline-block text-center rounded leading-5 text-gray-100 bg-blue-400 border border-blue-400 hover:text-gray-100 hover:bg-indigo-400 hover:ring-0 hover:border-indigo-400 focus:bg-blue-600 focus:border-blue-600 focus:outline-none focus:ring-0"
+                    <div class="grid my-4 text-center lg:block lg:my-auto">
+                        <a class="inline-block px-4 py-2 text-sm leading-5 text-center text-gray-100 bg-blue-400 border border-blue-400 rounded hover:text-gray-100 hover:bg-indigo-400 hover:ring-0 hover:border-indigo-400 focus:bg-blue-600 focus:border-blue-600 focus:outline-none focus:ring-0"
                             href="{{ route('login') }}">
                             Iniciar Sesión
                         </a>
-                        <a class="py-2 px-4 ml-1 text-sm inline-block text-center rounded leading-5 text-gray-100 bg-green-400 border border-green-400 hover:text-gray-100 hover:bg-lime-400 hover:ring-0 hover:border-lime-400 focus:bg-lime-600 focus:border-lime-600 focus:outline-none focus:ring-0"
+                        <a class="inline-block px-4 py-2 ml-1 text-sm leading-5 text-center text-gray-100 bg-green-400 border border-green-400 rounded hover:text-gray-100 hover:bg-lime-400 hover:ring-0 hover:border-lime-400 focus:bg-lime-600 focus:border-lime-600 focus:outline-none focus:ring-0"
                             href="{{ route('register') }}">
                             Registrar
                         </a>
@@ -268,19 +247,19 @@
     <main id="content">
         <!-- =========={ Hero }==========  -->
         <div id="home"
-            class="relative z-0 pt-32 lg:pt-36 pb-20 text-gray-300 bg-gradient-to-r from-sky-300 via-sky-500 to-sky-300 overflow-hidden">
-            <div class="container xl:max-w-6xl mx-auto px-4">
+            class="relative z-0 pt-32 pb-20 overflow-hidden text-gray-300 lg:pt-36 bg-gradient-to-r from-sky-300 via-sky-500 to-sky-300">
+            <div class="container px-4 mx-auto xl:max-w-6xl">
                 <!-- row -->
-                <div class="flex flex-wrap flex-row -mx-4 justify-center">
+                <div class="flex flex-row flex-wrap justify-center -mx-4">
                     <!-- hero content -->
                     <div
-                        class="flex-shrink max-w-full px-4 w-full md:w-9/12 lg:w-1/2 self-center lg:ltr:pr-12 lg:rtl:pl-12">
-                        <div class="text-center lg:ltr:text-left lg:rtl:text-right mt-6 lg:mt-0">
+                        class="self-center flex-shrink w-full max-w-full px-4 md:w-9/12 lg:w-1/2 lg:ltr:pr-12 lg:rtl:pl-12">
+                        <div class="mt-6 text-center lg:ltr:text-left lg:rtl:text-right lg:mt-0">
                             <div class="mb-8">
-                                <h1 class="text-white text-4xl leading-normal mb-3 font-bold">TranslatorSpeech</h1>
-                                <p class="text-gray-100 leading-relaxed font-light text-xl mx-auto pb-2"> Esta página proporciona acceso a servicios en línea que permiten traducir automáticamente un texto en otro idioma.</p>
+                                <h1 class="mb-3 text-4xl font-bold leading-normal text-white">TranslatorSpeech</h1>
+                                <p class="pb-2 mx-auto text-xl font-light leading-relaxed text-gray-100"> Esta página proporciona acceso a servicios en línea que permiten traducir automáticamente un texto en otro idioma.</p>
                             </div>
-                            <a class="py-2 px-4 inline-block text-center rounded leading-5 text-gray-700 bg-gray-100 border border-gray-100  hover:bg-gray-200 hover:ring-0 hover:border-gray-200 focus:bg-gray-200 focus:border-gray-200 focus:outline-none focus:ring-0 mr-4"
+                            <a class="inline-block px-4 py-2 mr-4 leading-5 text-center text-gray-700 bg-gray-100 border border-gray-100 rounded hover:bg-gray-200 hover:ring-0 hover:border-gray-200 focus:bg-gray-200 focus:border-gray-200 focus:outline-none focus:ring-0"
                                 href="landing.html#features">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="inline-block ltr:mr-2 rtl:ml-2 bi bi-check2-circle"
@@ -295,8 +274,8 @@
                     </div>
 
                     <!-- hero image -->
-                    <div class="flex-shrink max-w-full px-4 w-full md:w-9/12 lg:w-1/2 self-center">
-                        <div class="px-12 md:ml-16 md:pr-0 mt-4">
+                    <div class="self-center flex-shrink w-full max-w-full px-4 md:w-9/12 lg:w-1/2">
+                        <div class="px-12 mt-4 md:ml-16 md:pr-0">
                             <img src="src/img/58.jpg" class="max-w-full mx-auto">
                         </div>
                     </div>
@@ -305,40 +284,40 @@
         </div><!-- end hero -->
 
         <!-- =========={ features }==========  -->
-        <div id="caracteristicas" class="relative pt-14 pb-2 md:pt-16 md:pb-4 bg-white">
-            <div class="container xl:max-w-6xl mx-auto px-4">
+        <div id="caracteristicas" class="relative pb-2 bg-white pt-14 md:pt-16 md:pb-4">
+            <div class="container px-4 mx-auto xl:max-w-6xl">
                 <!-- section header -->
-                <header class="text-center mx-auto mb-12">
-                    <h2 class="text-2xl leading-normal mb-2 font-bold text-gray-800 dark:text-gray-400"><span
+                <header class="mx-auto mb-12 text-center">
+                    <h2 class="mb-2 text-2xl font-bold leading-normal text-gray-800 dark:text-gray-400"><span
                             class="font-light">Nuestros</span> Características</h2>
                     <hr class="block w-12 h-0.5 mx-auto my-5 bg-indigo-500 border-indigo-500">
-                    <p class="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">Servicios de traductor para cualquier documento o simple párrafo que incluye a un formato de audio.</p>
+                    <p class="pb-2 mx-auto text-xl font-light leading-relaxed text-gray-500">Servicios de traductor para cualquier documento o simple párrafo que incluye a un formato de audio.</p>
                 </header><!-- end section header -->
 
                 <!-- row -->
-                <div class="flex flex-wrap flex-row -mx-4 text-center">
-                    <div class="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6">
+                <div class="flex flex-row flex-wrap -mx-4 text-center">
+                    <div class="flex-shrink w-full max-w-full px-4 sm:w-1/2 lg:w-1/3 lg:px-6">
                         <!-- service block -->
                         <div
-                            class="p-6 mb-12 shadow-lg rounded-lg bg-color1 dark:bg-color1 transform transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-                            <div class="inline-block text-indigo-500 mb-4">
+                            class="p-6 mb-12 transition duration-300 ease-in-out transform rounded-lg shadow-lg bg-color1 dark:bg-color1 hover:-translate-y-2 hover:shadow-xl">
+                            <div class="inline-block mb-4 text-indigo-500">
                                 <!-- icon -->
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" 
                                 class="w-8 h-8 bi bi-body-text" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M0 .5A.5.5 0 0 1 .5 0h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 0 .5Zm0 2A.5.5 0 0 1 .5 2h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5Zm9 0a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm-9 2A.5.5 0 0 1 .5 4h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Zm5 0a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm7 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Zm-12 2A.5.5 0 0 1 .5 6h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5Zm8 0a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm-8 2A.5.5 0 0 1 .5 8h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm7 0a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5Zm-7 2a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 0 1h-8a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Z"/>
                                 </svg>
                             </div>
-                            <h3 class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-300">
+                            <h3 class="mb-2 text-lg font-semibold leading-normal text-gray-800 dark:text-gray-300">
                                 Traducción de Textos</h3>
                             <p>Traducción online de cualquier texto en una amplia variedad de idiomas de manera automática</p>
                         </div> <!-- end service block -->
                     </div>
 
-                    <div class="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6">
+                    <div class="flex-shrink w-full max-w-full px-4 sm:w-1/2 lg:w-1/3 lg:px-6">
                         <!-- service block -->
                         <div
-                            class="p-6 mb-12 shadow-lg rounded-lg bg-color3 dark:bg-gray-800 transform transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-                            <div class="inline-block text-indigo-500 mb-4">
+                            class="p-6 mb-12 transition duration-300 ease-in-out transform rounded-lg shadow-lg bg-color3 dark:bg-gray-800 hover:-translate-y-2 hover:shadow-xl">
+                            <div class="inline-block mb-4 text-indigo-500">
                                 <!-- icon -->
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" 
                                     class="w-8 h-8 bi bi-journal-richtext" viewBox="0 0 16 16">
@@ -347,17 +326,17 @@
                                     <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
                                 </svg>
                             </div>
-                            <h3 class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-300">
+                            <h3 class="mb-2 text-lg font-semibold leading-normal text-gray-800 dark:text-gray-300">
                                 Traducción de documentos</h3>
                             <p>Este servicio implica que al traducir, el formato que tengan los textos del documento será el mismo</p>
                         </div><!-- end service block -->
                     </div>
 
-                    {{-- <div class="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6">
+                    {{-- <div class="flex-shrink w-full max-w-full px-4 sm:w-1/2 lg:w-1/3 lg:px-6">
                         <!-- service block -->
                         <div
-                            class="p-6 mb-12 shadow-lg rounded-lg bg-color2 dark:bg-gray-800 transform transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-                            <div class="inline-block text-indigo-500 mb-4">
+                            class="p-6 mb-12 transition duration-300 ease-in-out transform rounded-lg shadow-lg bg-color2 dark:bg-gray-800 hover:-translate-y-2 hover:shadow-xl">
+                            <div class="inline-block mb-4 text-indigo-500">
                                 <!-- icon -->
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" 
                                     class="w-8 h-8 bi bi-file-earmark-music" viewBox="0 0 16 16">
@@ -365,17 +344,17 @@
                                     <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
                                 </svg>
                             </div>
-                            <h3 class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-300">
+                            <h3 class="mb-2 text-lg font-semibold leading-normal text-gray-800 dark:text-gray-300">
                                 Modern Tools</h3>
                             <p>Coming with modern tools like npm, gulp and browsersync</p>
                         </div><!-- end service block -->
                     </div> --}}
 
-                    <div class="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6">
+                    <div class="flex-shrink w-full max-w-full px-4 sm:w-1/2 lg:w-1/3 lg:px-6">
                         <!-- service block -->
                         <div
-                            class="p-6 mb-12 shadow-lg rounded-lg bg-color4 dark:bg-gray-800 transform transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-                            <div class="inline-block text-indigo-500 mb-4">
+                            class="p-6 mb-12 transition duration-300 ease-in-out transform rounded-lg shadow-lg bg-color4 dark:bg-gray-800 hover:-translate-y-2 hover:shadow-xl">
+                            <div class="inline-block mb-4 text-indigo-500">
                                 <!-- icon -->
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" 
                                     class="w-8 h-8 bi bi-card-list" viewBox="0 0 16 16">
@@ -383,17 +362,17 @@
                                     <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
                                 </svg>
                             </div>
-                            <h3 class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-300">
+                            <h3 class="mb-2 text-lg font-semibold leading-normal text-gray-800 dark:text-gray-300">
                                 Traducción a audios</h3>
                             <p>Cualquier traducción que se ejeucte tendrá la opción de exportar a un formato de audio</p>
                         </div><!-- end service block -->
                     </div>
 
-                    {{-- <div class="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6">
+                    {{-- <div class="flex-shrink w-full max-w-full px-4 sm:w-1/2 lg:w-1/3 lg:px-6">
                         <!-- service block -->
                         <div
-                            class="p-6 mb-12 shadow-lg rounded-lg bg-color5 transform transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-                            <div class="inline-block text-indigo-500 mb-4">
+                            class="p-6 mb-12 transition duration-300 ease-in-out transform rounded-lg shadow-lg bg-color5 hover:-translate-y-2 hover:shadow-xl">
+                            <div class="inline-block mb-4 text-indigo-500">
                                 <!-- icon -->
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                     class="w-8 h-8 bi bi-circle-square" viewBox="0 0 16 16">
@@ -403,17 +382,17 @@
                                     </path>
                                 </svg>
                             </div>
-                            <h3 class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-300">Svg
+                            <h3 class="mb-2 text-lg font-semibold leading-normal text-gray-800 dark:text-gray-300">Svg
                                 and Font Icons</h3>
                             <p>Using the default svg icon and the icon font as an alternative</p>
                         </div><!-- end service block -->
                     </div> --}}
 
-                    {{-- <div class="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6">
+                    {{-- <div class="flex-shrink w-full max-w-full px-4 sm:w-1/2 lg:w-1/3 lg:px-6">
                         <!-- service block -->
                         <div
-                            class="p-6 mb-12 shadow-lg rounded-lg bg-yellow-100 transform transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-                            <div class="inline-block text-indigo-500 mb-4">
+                            class="p-6 mb-12 transition duration-300 ease-in-out transform bg-yellow-100 rounded-lg shadow-lg hover:-translate-y-2 hover:shadow-xl">
+                            <div class="inline-block mb-4 text-indigo-500">
                                 <!-- icon -->
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="currentColor"
                                     viewBox="0 0 512 512">
@@ -437,7 +416,7 @@
                                     </path>
                                 </svg>
                             </div>
-                            <h3 class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-300">RTL
+                            <h3 class="mb-2 text-lg font-semibold leading-normal text-gray-800 dark:text-gray-300">RTL
                                 Supported</h3>
                             <p>Supports RTL Direction for Arabic or Persian site developers</p>
                         </div><!-- end service block -->
@@ -448,25 +427,25 @@
 
         <!-- =========={ about }==========  -->
         <div id="nosotros" class="relative pt-14 md:pt-16 bg-gradient-to-r from-sky-300 via-sky-500 to-sky-300">
-            <div class="container xl:max-w-6xl mx-auto px-4">
+            <div class="container px-4 mx-auto xl:max-w-6xl">
                 <!-- section header -->
-                <header class="text-center mx-auto mb-12">
-                    <h2 class="text-2xl leading-normal mb-2 font-bold text-gray-800 dark:text-gray-300"><span
+                <header class="mx-auto mb-12 text-center">
+                    <h2 class="mb-2 text-2xl font-bold leading-normal text-gray-800 dark:text-gray-300"><span
                             class="font-light">Sobre</span> TranslatorSpeech</h2>
                     <hr class="block w-12 h-0.5 mx-auto my-5 bg-indigo-500 border-indigo-500">
                 </header><!-- end section header -->
 
-                <div class="flex flex-wrap flex-row -mx-4">
-                    <div class="flex-shrink max-w-full px-4 w-full md:w-1/2 relative">
-                        <div class="pb-8 px-3 text-center">
-                            <img class="mx-auto max-w-full h-auto" src="src/img/svg/website.svg"
+                <div class="flex flex-row flex-wrap -mx-4">
+                    <div class="relative flex-shrink w-full max-w-full px-4 md:w-1/2">
+                        <div class="px-3 pb-8 text-center">
+                            <img class="h-auto max-w-full mx-auto" src="src/img/svg/website.svg"
                                 alt="company profile">
                         </div>
                     </div>
-                    <div class="flex-shrink max-w-full px-4 w-full md:w-1/2">
-                        <div class="pb-8 px-3">
-                            <p class="leading-relaxed font-light text-xl mx-auto pb-2 mb-3">TranslatorSpeech es una herramienta que incluye muchos servicios de traducción que ayudan a cualquier usuario y que cuenta con un historial por usuario</p>
-                            <p class="leading-relaxed font-light text-xl mx-auto pb-2 mb-12">Además presenta un sistema de suscripciones para una mejor servicio</p>
+                    <div class="flex-shrink w-full max-w-full px-4 md:w-1/2">
+                        <div class="px-3 pb-8">
+                            <p class="pb-2 mx-auto mb-3 text-xl font-light leading-relaxed">TranslatorSpeech es una herramienta que incluye muchos servicios de traducción que ayudan a cualquier usuario y que cuenta con un historial por usuario</p>
+                            <p class="pb-2 mx-auto mb-12 text-xl font-light leading-relaxed">Además presenta un sistema de suscripciones para una mejor servicio</p>
                         </div>
                     </div>
                 </div>
@@ -474,19 +453,19 @@
         </div><!-- End about-->
 
         <!-- =========={ demo }==========  -->
-        {{-- <div id="demo" class="relative pt-14 pb-4 md:pt-16 md:pb-6 bg-white dark:bg-white dark:bg-opacity-40">
-            <div class="container xl:max-w-6xl mx-auto px-4">
+        {{-- <div id="demo" class="relative pb-4 bg-white pt-14 md:pt-16 md:pb-6 dark:bg-white dark:bg-opacity-40">
+            <div class="container px-4 mx-auto xl:max-w-6xl">
                 <!-- section header -->
-                <header class="text-center mx-auto mb-12">
-                    <h2 class="text-2xl leading-normal mb-2 font-bold text-gray-800 dark:text-gray-300"><span
+                <header class="mx-auto mb-12 text-center">
+                    <h2 class="mb-2 text-2xl font-bold leading-normal text-gray-800 dark:text-gray-300"><span
                             class="font-light">Layout</span> Preview</h2>
                     <hr class="block w-12 h-0.5 mx-auto my-5 bg-indigo-500 border-indigo-500">
-                    <p class="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">There are three layout
+                    <p class="pb-2 mx-auto text-xl font-light leading-relaxed text-gray-500">There are three layout
                         options that you can use.</p>
                 </header><!-- end section header -->
 
-                <div class="flex flex-wrap flex-row -mx-4">
-                    <div class="flex-shrink w-full max-w-full px-4 md:w-1/2 mb-12">
+                <div class="flex flex-row flex-wrap -mx-4">
+                    <div class="flex-shrink w-full max-w-full px-4 mb-12 md:w-1/2">
                         <div x-data="{ tabs: 3 }" class="px-2 text-center">
                             <p class="mb-2">Theme Skin</p>
                             <!-- button group -->
@@ -522,27 +501,27 @@
                             <div x-show="tabs === 1" class="relative">
                                 <a target="_blank" href="index.html">
                                     <img src="src/img/demo/light.jpg"
-                                        class="max-w-full mx-auto shadow-lg transform transition duration-300 ease-in-out hover:-translate-y-1 border border-gray-200 dark:border-gray-700"
+                                        class="max-w-full mx-auto transition duration-300 ease-in-out transform border border-gray-200 shadow-lg hover:-translate-y-1 dark:border-gray-700"
                                         alt="Demo dashboard">
                                 </a>
                             </div>
                             <div x-show="tabs === 2" class="relative">
                                 <a target="_blank" href="layout-dark.html">
                                     <img src="src/img/demo/dark.jpg"
-                                        class="max-w-full mx-auto shadow-lg transform transition duration-300 ease-in-out hover:-translate-y-1 border border-gray-200 dark:border-gray-700"
+                                        class="max-w-full mx-auto transition duration-300 ease-in-out transform border border-gray-200 shadow-lg hover:-translate-y-1 dark:border-gray-700"
                                         alt="Demo dashboard">
                                 </a>
                             </div>
                             <div x-show="tabs === 3" class="relative">
                                 <a target="_blank" href="layout-sidedark.html">
                                     <img src="src/img/demo/sidedark.jpg"
-                                        class="max-w-full mx-auto shadow-lg transform transition duration-300 ease-in-out hover:-translate-y-1 border border-gray-200 dark:border-gray-700"
+                                        class="max-w-full mx-auto transition duration-300 ease-in-out transform border border-gray-200 shadow-lg hover:-translate-y-1 dark:border-gray-700"
                                         alt="Demo dashboard">
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="flex-shrink w-full max-w-full px-4 md:w-1/2 mb-12">
+                    <div class="flex-shrink w-full max-w-full px-4 mb-12 md:w-1/2">
                         <div x-data="{ tabs: 1 }" class="px-2 text-center">
                             <p class="mb-2">Layout</p>
                             <!-- button group -->
@@ -563,21 +542,21 @@
                             <div x-show="tabs === 1" class="relative">
                                 <a target="_blank" href="layout-compact.html">
                                     <img src="src/img/demo/compact.jpg"
-                                        class="max-w-full mx-auto shadow-lg transform transition duration-300 ease-in-out hover:-translate-y-1 border border-gray-200 dark:border-gray-700"
+                                        class="max-w-full mx-auto transition duration-300 ease-in-out transform border border-gray-200 shadow-lg hover:-translate-y-1 dark:border-gray-700"
                                         alt="Demo dashboard">
                                 </a>
                             </div>
                             <div x-show="tabs === 2" class="relative">
                                 <a target="_blank" href="layout-topnav.html">
                                     <img src="src/img/demo/top-navbar.jpg"
-                                        class="max-w-full mx-auto shadow-lg transform transition duration-300 ease-in-out hover:-translate-y-1 border border-gray-200 dark:border-gray-700"
+                                        class="max-w-full mx-auto transition duration-300 ease-in-out transform border border-gray-200 shadow-lg hover:-translate-y-1 dark:border-gray-700"
                                         alt="Demo dashboard">
                                 </a>
                             </div>
                             <div x-show="tabs === 3" class="relative">
                                 <a target="_blank" href="layout-rtl.html">
                                     <img src="src/img/demo/rtl.jpg"
-                                        class="max-w-full mx-auto shadow-lg transform transition duration-300 ease-in-out hover:-translate-y-1 border border-gray-200 dark:border-gray-700"
+                                        class="max-w-full mx-auto transition duration-300 ease-in-out transform border border-gray-200 shadow-lg hover:-translate-y-1 dark:border-gray-700"
                                         alt="Demo dashboard">
                                 </a>
                             </div>
@@ -588,36 +567,36 @@
         </div><!-- End demo--> --}}
 
         <!-- =========={ PRICING }==========  -->
-        <div id="precios" class="relative pt-14 pb-2 md:pt-16 md:pb-4 bg-white">
-            <div x-data="{ open: false }" class="container xl:max-w-6xl mx-auto px-4">
+        <div id="precios" class="relative pb-2 bg-white pt-14 md:pt-16 md:pb-4">
+            <div x-data="{ open: false }" class="container px-4 mx-auto xl:max-w-6xl">
                 <!-- section header -->
-                <header class="text-center mx-auto mb-12">
-                    <h2 class="text-2xl leading-normal mb-2 font-bold text-gray-800 dark:text-gray-300"><span
+                <header class="mx-auto mb-12 text-center">
+                    <h2 class="mb-2 text-2xl font-bold leading-normal text-gray-800 dark:text-gray-300"><span
                             class="font-light">Nuestros</span> Precios</h2>
                     <hr class="block w-12 h-0.5 mx-auto my-5 bg-indigo-500 border-indigo-500">
-                    <p class="text-gray-400 leading-relaxed font-light text-xl mx-auto pb-2">Paga una vez y sin costos adicionales</p>
+                    <p class="pb-2 mx-auto text-xl font-light leading-relaxed text-gray-400">Paga una vez y sin costos adicionales</p>
                 </header><!-- end section header -->
 
                 <div class="pt-6 text-gray-100">
-                    <div class="flex flex-wrap flex-row -mx-4 justify-center">
-                        <div class="flex-shrink max-w-full w-full sm:w-11/12 md:w-1/2 lg:w-1/3 px-4">
+                    <div class="flex flex-row flex-wrap justify-center -mx-4">
+                        <div class="flex-shrink w-full max-w-full px-4 sm:w-11/12 md:w-1/2 lg:w-1/3">
                             <div class="px-6 md:px-2 lg:px-4">
                                 <!-- pricing table -->
                                 <div
-                                    class="relative py-16 px-12 mb-12 lg:-mt-6 bg-white dark:bg-gray-900 dark:bg-opacity-40 transform transition duration-300 ease-in-out hover:-translate-y-1 shadow-lg text-center rounded-lg">
+                                    class="relative px-12 py-16 mb-12 text-center transition duration-300 ease-in-out transform bg-white rounded-lg shadow-lg lg:-mt-6 dark:bg-gray-900 dark:bg-opacity-40 hover:-translate-y-1">
                                     <!-- ribbon -->
                                     <div
-                                        class="absolute top-0 ltr:right-0 ltr:text-right rtl:left-0 rtl:text-left w-36 h-36 text-sm">
+                                        class="absolute top-0 text-sm ltr:right-0 ltr:text-right rtl:left-0 rtl:text-left w-36 h-36">
                                         <span
-                                            class="absolute top-4 ltr:right-0 rtl:left-0 px-4 py-2 block align-center shadow bg-indigo-500 text-gray-100">Popular</span>
+                                            class="absolute block px-4 py-2 text-gray-100 bg-indigo-500 shadow top-4 ltr:right-0 rtl:left-0 align-center">Popular</span>
                                     </div>
                                     <!-- pricing title -->
-                                    <h3 class="text-lg mb-4 font-semibold uppercase">Single</h3>
+                                    <h3 class="mb-4 text-lg font-semibold uppercase">Single</h3>
                                     <div class="pb-2">
-                                        <h4 class="text-4xl mb-2 font-semibold"><small>$</small>25</h4>
+                                        <h4 class="mb-2 text-4xl font-semibold"><small>$</small>25</h4>
                                     </div>
                                     <!-- pricing content -->
-                                    <ul class="space-y-6 mt-4 mb-12">
+                                    <ul class="mt-4 mb-12 space-y-6">
                                         <li>1 End products</li>
                                         <li>Personal or client</li>
                                         <li>Lifetime Update</li>
@@ -629,24 +608,24 @@
                                     <!-- Pricing Button -->
                                     <div class="py-2">
                                         <a href="landing.html#" rel="noopener"
-                                            class="py-2 px-4 -ml-1 rounded leading-5 text-gray-100 bg-indigo-500 border border-indigo-500 hover:text-white hover:bg-indigo-600 hover:ring-0 hover:border-indigo-600 focus:bg-indigo-600 focus:border-indigo-600 focus:outline-none focus:ring-0">Compra ahora</a>
+                                            class="px-4 py-2 -ml-1 leading-5 text-gray-100 bg-indigo-500 border border-indigo-500 rounded hover:text-white hover:bg-indigo-600 hover:ring-0 hover:border-indigo-600 focus:bg-indigo-600 focus:border-indigo-600 focus:outline-none focus:ring-0">Compra ahora</a>
                                     </div>
                                 </div><!-- end pricing table -->
                             </div>
                         </div>
 
-                        <div class="flex-shrink max-w-full w-full sm:w-11/12 md:w-1/2 lg:w-1/3 px-4">
+                        <div class="flex-shrink w-full max-w-full px-4 sm:w-11/12 md:w-1/2 lg:w-1/3">
                             <div class="px-6 md:px-2 lg:px-4">
                                 <!-- pricing table -->
                                 <div
-                                    class="relative py-16 px-12 mb-12 bg-gray-100 dark:bg-gray-900 dark:bg-opacity-30 transform transition duration-300 ease-in-out hover:-translate-y-1 shadow-lg text-center rounded-lg">
+                                    class="relative px-12 py-16 mb-12 text-center transition duration-300 ease-in-out transform bg-gray-100 rounded-lg shadow-lg dark:bg-gray-900 dark:bg-opacity-30 hover:-translate-y-1">
                                     <!-- pricing Title -->
-                                    <h3 class="text-lg mb-4 font-semibold uppercase">Extended</h3>
+                                    <h3 class="mb-4 text-lg font-semibold uppercase">Extended</h3>
                                     <div class="pb-2">
-                                        <h4 class="text-4xl mb-2 font-semibold"><small>$</small>699</h4>
+                                        <h4 class="mb-2 text-4xl font-semibold"><small>$</small>699</h4>
                                     </div>
                                     <!-- pricing content -->
-                                    <ul class="space-y-6 mt-4 mb-12">
+                                    <ul class="mt-4 mb-12 space-y-6">
                                         <li>1 End products</li>
                                         <li>Personal or client</li>
                                         <li>Lifetime Update</li>
@@ -657,14 +636,14 @@
                                     <!-- Pricing Button -->
                                     <div class="py-2">
                                         <a href="landing.html#" rel="noopener"
-                                            class="py-2 px-4 -ml-1 rounded leading-5 text-gray-100 bg-indigo-500 border border-indigo-500 hover:text-white hover:bg-indigo-600 hover:ring-0 hover:border-indigo-600 focus:bg-indigo-600 focus:border-indigo-600 focus:outline-none focus:ring-0">Compra ahora</a>
+                                            class="px-4 py-2 -ml-1 leading-5 text-gray-100 bg-indigo-500 border border-indigo-500 rounded hover:text-white hover:bg-indigo-600 hover:ring-0 hover:border-indigo-600 focus:bg-indigo-600 focus:border-indigo-600 focus:outline-none focus:ring-0">Compra ahora</a>
                                     </div>
                                 </div><!-- end pricing table -->
                             </div>
                         </div>
 
-                        <div class="flex-shrink max-w-full w-full px-4">
-                            <p class="text-center font-small mb-0">
+                        <div class="flex-shrink w-full max-w-full px-4">
+                            <p class="mb-0 text-center font-small">
                                 <a class="text-gray-500" rel="noopener" href="landing.html#" target="_blank">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="inline ltr:mr-2 rtl:ml-2"
                                         fill="currentColor" width="1rem" height="1rem" viewBox="0 0 640 512">
@@ -683,51 +662,51 @@
 
         <!-- =========={ BRAND }==========  -->
         <div id="partner-brand" class="relative py-14 md:py-16 bg-gradient-to-r from-sky-300 via-sky-500 to-sky-300">
-            <div class="container xl:max-w-6xl mx-auto px-4">
-                <div class="flex flex-wrap flex-row -mx-4 justify-center">
+            <div class="container px-4 mx-auto xl:max-w-6xl">
+                <div class="flex flex-row flex-wrap justify-center -mx-4">
                     <div class="w-full px-4">
                         <!-- slider brand -->
                         <div class="nav-dark-button"
                             data-flickity='{ "cellAlign": "left", "wrapAround": true, "adaptiveHeight": true, "pageDots": false, "imagesLoaded": true }'>
                             <div
-                                class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 py-4 lg:py-1 px-6 lg:px-12 text-center">
+                                class="w-full px-6 py-4 text-center sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 lg:py-1 lg:px-12">
                                 <a href="landing.html#" target="_blank">
-                                    <img class="brands-image mx-auto opacity-80 hover:opacity-100 max-w-full h-auto"
+                                    <img class="h-auto max-w-full mx-auto brands-image opacity-80 hover:opacity-100"
                                         src="src/img/brand/img1.png" alt="Image Description">
                                 </a>
                             </div>
                             <div
-                                class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 py-4 lg:py-1 px-6 lg:px-12 text-center">
+                                class="w-full px-6 py-4 text-center sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 lg:py-1 lg:px-12">
                                 <a href="landing.html#" target="_blank">
-                                    <img class="brands-image mx-auto opacity-80 hover:opacity-100 max-w-full h-auto"
+                                    <img class="h-auto max-w-full mx-auto brands-image opacity-80 hover:opacity-100"
                                         src="src/img/brand/img2.png" alt="Image Description">
                                 </a>
                             </div>
                             <div
-                                class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 py-4 lg:py-1 px-6 lg:px-12 text-center">
+                                class="w-full px-6 py-4 text-center sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 lg:py-1 lg:px-12">
                                 <a href="landing.html#" target="_blank">
-                                    <img class="brands-image mx-auto opacity-80 hover:opacity-100 max-w-full h-auto"
+                                    <img class="h-auto max-w-full mx-auto brands-image opacity-80 hover:opacity-100"
                                         src="src/img/brand/img3.png" alt="Image Description">
                                 </a>
                             </div>
                             <div
-                                class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 py-4 lg:py-1 px-6 lg:px-12 text-center">
+                                class="w-full px-6 py-4 text-center sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 lg:py-1 lg:px-12">
                                 <a href="landing.html#" target="_blank">
-                                    <img class="brands-image mx-auto opacity-80 hover:opacity-100 max-w-full h-auto"
+                                    <img class="h-auto max-w-full mx-auto brands-image opacity-80 hover:opacity-100"
                                         src="src/img/brand/img4.png" alt="Image Description">
                                 </a>
                             </div>
                             <div
-                                class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 py-4 lg:py-1 px-6 lg:px-12 text-center">
+                                class="w-full px-6 py-4 text-center sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 lg:py-1 lg:px-12">
                                 <a href="landing.html#" target="_blank">
-                                    <img class="brands-image mx-auto opacity-80 hover:opacity-100 max-w-full h-auto"
+                                    <img class="h-auto max-w-full mx-auto brands-image opacity-80 hover:opacity-100"
                                         src="src/img/brand/img5.png" alt="Image Description">
                                 </a>
                             </div>
                             <div
-                                class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 py-4 lg:py-1 px-6 lg:px-12 text-center">
+                                class="w-full px-6 py-4 text-center sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 lg:py-1 lg:px-12">
                                 <a href="landing.html#" target="_blank">
-                                    <img class="brands-image mx-auto opacity-80 hover:opacity-100 max-w-full h-auto"
+                                    <img class="h-auto max-w-full mx-auto brands-image opacity-80 hover:opacity-100"
                                         src="src/img/brand/img6.png" alt="Image Description">
                                 </a>
                             </div>
