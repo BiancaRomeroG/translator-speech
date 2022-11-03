@@ -227,8 +227,7 @@
     <ul class="flex flex-col mt-3 lg:ltr:mr-auto lg:rtl:ml-auto lg:flex-row lg:mt-0">
         <!-- dropdown -->
         <li class="relative">
-            <a id="dropdown-01" class="block px-0 py-3 lg:py-7 lg:px-4 hover:text-gray-300 color_nav_fuente"
-                href="{{ route('dashboard') }}">
+            <x-jet-nav-link href="{{route('dashboard')}}" :active="request()->routeIs('dashboard')">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                     class="inline-block w-4 h-4 ltr:mr-1 rtl:ml-1 bi bi-house-door" viewBox="0 0 16 16">
                     <path
@@ -236,90 +235,8 @@
                 </svg>
                 Home
             </a>
-
-
+            </x-jet-nav-link>
         </li>
-
-        <!-- dropdown -->
-        <!-- Menú2-->
-        {{-- <li class="relative" x-data="{ open: false }" @keydown.escape.stop="open = false"
-            @click.away="open = false">
-            <a id="dropdown-02" class="block px-0 py-3 lg:py-7 lg:px-4 hover:text-gray-300 color_nav_fuente"
-                href="javascript:;" @click="open = !open" aria-haspopup="true" x-bind:aria-expanded="open"
-                :class="{ 'text-gray-300': open }">
-                Menú1
-                <!-- caret -->
-                <span
-                    class="inline-block ltr:ml-2 ltr:float-right rtl:mr-2 rtl:float-left mt-1.5 lg:float-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width=".8rem" height=".8rem"
-                        fill="currentColor" viewBox="0 0 512 512">
-                        <polyline points="112 184 256 328 400 184"
-                            style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px" />
-                    </svg>
-                </span>
-            </a> --}}
-            <!-- dropdown menu -->
-            {{-- <ul class="block lg:absolute ltr:border-l-2 rtl:border-r-2 border-gray-400 lg:ltr:border-l-0 lg:rtl:border-r-0 lg:border-t-2 lg:border-indigo-500 rounded rounded-t-none top-full z-50 py-0.5 ltr:text-left rtl:text-right lg:bg-white lg:shadow-md lg:text-gray-600 "
-                style="min-width: 12rem;display:none;" x-description="Dropdown menu" x-show="open"
-                role="menu" aria-orientation="vertical" aria-labelledby="dropdown-02"
-                x-transition:enter="transition duration-200"
-                x-transition:enter-start="transform opacity-0 translate-y-4"
-                x-transition:enter-end="transform opacity-100 translate-y-0"
-                x-transition:leave="transition translate-y-4"
-                x-transition:leave-start="transform opacity-100 translate-y-0"
-                x-transition:leave-end="transform opacity-0 translate-y-4">
-                <!--submenu-->
-                <li class="relative" x-data="{ open: false }" @keydown.escape.stop="open = false"
-                    @click.away="open = false">
-                    <a id="submenu-01"
-                        class="block clear-both w-full px-6 py-2 whitespace-nowrap hover:text-gray-300 lg:hover:text-indigo-500 color_nav_fuente1"
-                        href="javascript:;"@click="open = !open" aria-haspopup="true"
-                        x-bind:aria-expanded="open" :class="{ 'text-gray-300 lg:text-indigo-500': open }">
-                        Submenú1
-                        <!-- caret -->
-                        <span class="inline-block pt-1 mt-1 ltr:float-right rtl:float-left">
-                            <svg :class="{
-                                'rotate-0 lg:ltr:-rotate-90 lg:rtl:rotate-90': open,
-                                'ltr:-rotate-90 rtl:rotate-90':
-                                    !(open)
-                            }"
-                                xmlns="http://www.w3.org/2000/svg" class="transform" width=".8rem"
-                                height=".8rem" fill="currentColor" viewBox="0 0 512 512">
-                                <polyline points="112 184 256 328 400 184"
-                                    style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px" />
-                            </svg>
-                        </span>
-                    </a>
-
-
-                    <ul class="block lg:absolute lg:ltr:left-full lg:rtl:right-full lg:ltr:right-auto lg:rtl:left-auto lg:transform ltr:pl-6 rtl:pr-6 lg:ltr:pl-0 lg:rtl:pr-0 lg:border-t-2 border-indigo-500 rounded rounded-t-none top-full z-50 py-0.5 ltr:text-left rtl:text-right lg:-mt-11 ml-0 mr-0 lg:bg-white lg:shadow-md "
-                        style="min-width: 12rem;display:none;" x-description="Dropdown menu" x-show="open"
-                        role="menu" aria-orientation="vertical" aria-labelledby="submenu-01"
-                        x-transition:enter="transition duration-200"
-                        x-transition:enter-start="transform opacity-0 translate-y-4"
-                        x-transition:enter-end="transform opacity-100 translate-y-0"
-                        x-transition:leave="transition translate-y-4"
-                        x-transition:leave-start="transform opacity-100 translate-y-0"
-                        x-transition:leave-end="transform opacity-0 translate-y-4">
-                        <li><a class="block clear-both w-full px-6 py-2 whitespace-nowrap hover:text-gray-300 lg:hover:text-indigo-500 color_nav_fuente1"
-                                href="#">Opción2</a></li>
-                        <li><a class="block clear-both w-full px-6 py-2 whitespace-nowrap hover:text-gray-300 lg:hover:text-indigo-500 color_nav_fuente1"
-                                href="#">Opción1</a></li>
-                    </ul>
-                </li>
-
-                <!--submenu-->
-                <li class="relative">
-                    <a class="block clear-both w-full px-6 py-2 whitespace-nowrap hover:text-gray-300 lg:hover:text-indigo-500 color_nav_fuente1"
-                        href="#">Opción1</a>
-                </li>
-                <li class="relative">
-                    <a class="block clear-both w-full px-6 py-2 whitespace-nowrap hover:text-gray-300 lg:hover:text-indigo-500 color_nav_fuente1"
-                        href="#">Opción2</a>
-                </li>
-            </ul>
-        </li> --}}
-
         <li class="relative">
             <x-jet-nav-link href="{{ route('traducir.texto') }}" :active="request()->routeIs('traducir.texto')">
                 <i class="fa-solid fa-language"></i>
