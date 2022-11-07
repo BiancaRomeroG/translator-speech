@@ -2,8 +2,10 @@
   --primary:#6366F1;
   --secondary:#EC4899;
   --green:#22C55E;
+  --greentitle:#41A62A;
   --yellow:#F59E0B;
   --gray:#84848f;
+  --bluetitle:#002F5C;
 }
 
 /*
@@ -2041,6 +2043,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .leading-none {
   line-height:1;
 }
+
+.text-green {
+  --tw-text-opacity:1;
+  color:rgb(65 166 42 / var(--tw-text-opacity));
+}
+
+.text-blue{
+  --tw-text-opacity:1;
+  color:rgb(0 47 92 / var(--tw-text-opacity));
+}
+
 .text-gray-600 {
   --tw-text-opacity:1;
   color:rgb(89 89 131 / var(--tw-text-opacity));
