@@ -48,7 +48,7 @@
 <body>
     @livewireScripts()
 
-    <div x-data="{ open: false }" class="overflow-x-hidden bg-gray-100 wrapper ">
+    <div x-data="{ open: false }" class="overflow-x-hidden bg-gray-100">
         <div class="flex flex-col min-h-screen transition-all duration-500 ease-in-out">
             <x-navbar_dashboard.navbar></x-navbar_dashboard.navbar>
             {{ $slot }}

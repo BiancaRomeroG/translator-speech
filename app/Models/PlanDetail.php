@@ -10,7 +10,7 @@ class PlanDetail extends Model
     use HasFactory;
     protected $table = 'plan_details';
     protected $fillable = [
-        'discription',
+        'description',
         'id_plan',
     ];
 }
