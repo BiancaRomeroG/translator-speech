@@ -19,25 +19,26 @@ class SubscriptionController extends Controller
     }
 
     public function processPlan(Request $request) {
-        // $user = Auth::user();
-        // $user->createOrGetStripeCustomer();
-        // $paymentMethod = null;
-        // $paymentMethod = $request->payment_method;
+        $user = Auth::user();
+        $user->createOrGetStripeCustomer();
+        $paymentMethod = null;
+        $paymentMethod = $request->payment_method;
+        
 
-        // if ($paymentMethod != null) 
-        //     $paymentMethod = $user->addPaymentMethod($paymentMethod);
+        if ($paymentMethod != null) 
+            $paymentMethod = $user->addPaymentMethod($paymentMethod);
 
-        // $plan = $request->plan_id;
+        $plan = $request->plan_id;
 
-        // try {
-        //     $user->newSubscription(
-        //         $paymentMethod->id, $plan
-        //     )->create(($paymentMethod != null) ? $paymentMethod->id : '');
-        // } catch (\Throwable $th) {
-        //     return back()->withErrors([
-        //         'error' => 'error-subs'
-        //     ]);
-        // }
+        try {
+            $user->newSubscription(
+                $paymentMethod->id, $plan
+            )->create(($paymentMethod != null) ? $paymentMethod->id : '');
+        } catch (\Throwable $th) {
+            return back()->withErrors([
+                'error' => 'error-subs'
+            ]);
+        }
 
         return to_route('subscription.all');
     }
