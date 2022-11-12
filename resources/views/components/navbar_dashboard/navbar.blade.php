@@ -256,6 +256,13 @@
                 Traducir Imagenes
             </a>
         </li>
+
+        <li class="relative">
+            <x-jet-nav-link href="{{ route('subscription.all') }}" :active="request()->routeIs('subscription.all')">
+                <i class="fa-solid fa-file-invoice"></i>
+                Subscripciones
+            </x-jet-nav-link>
+        </li>
     </ul>
 
     <!-- button -->

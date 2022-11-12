@@ -1,0 +1,46 @@
+.StripeElement {
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    border-color: #bbbbbb;
+    box-shadow: 0 1px 3px 0 #c4c4c4;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+}
+
+
+
+.back-col {
+    background-color: #009688;
+}
+
+.head {
+    color: #30756C;
+    font-size: xx-large;
+    font-weight: 900;
+}
+
+.pay {
+    background-color: #FFDE92;
+}
+
+.parrafo {
+    color: #89CEC8;
+}
+
+.background-parrafo {
+    background-color: #89CEC8;
+}
