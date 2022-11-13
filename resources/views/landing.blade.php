@@ -1,7 +1,8 @@
 <x-guest-layout>
     <header>
+        
         <nav x-data="{ open: false }"
-            class="nav-top flex flex-nowrap lg:flex-start items-center z-20 fixed top-0 left-0 right-0 bg-gradient-to-r from-sky-300 via-sky-500 to-sky-300{{-- bg-indigo-600 bg-gradient-to-r from-indigo-800 via-indigo-700 to-green-500 dark:from-gray-800 dark:via-gray-700 dark:to-green-700 --}} overflow-y-auto max-h-screen lg:overflow-visible lg:max-h-full">
+            class="nav-top flex flex-nowrap lg:flex-start items-center z-20 fixed top-0 left-0 right-0 bg-gradient-to-r from-sky-300 via-sky-500 to-sky-300 overflow-y-auto max-h-screen lg:overflow-visible lg:max-h-full">
             <div class="container px-4 mx-auto xl:max-w-6xl ">
                 <!-- mobile navigation -->
                 <div class="flex flex-row justify-between py-3 lg:hidden">
@@ -247,7 +248,12 @@
     <main id="content">
         <!-- =========={ Hero }==========  -->
         <div id="home"
-            class="relative z-0 pt-32 pb-20 overflow-hidden text-gray-300 lg:pt-36 bg-gradient-to-r from-sky-300 via-sky-500 to-sky-300">
+            class="relative z-0 pt-32 pb-20 overflow-hidden text-gray-300 lg:pt-36 bg-inherit" {{-- style="background-image: url({{asset('src/img/header-bg.jpg')}})" --}}>
+            <div class="absolute inset-x-0 bottom-0">
+                <svg viewBox="0 0 224 12" fill="currentColor" class="w-full -mb-1 text-green bg-black" preserveAspectRatio="none">
+                  <path d="M0,0 C48.8902582,6.27314026 86.2235915,9.40971039 112,9.40971039 C137.776408,9.40971039 175.109742,6.27314026 224,0 L224,12.0441132 L0,12.0441132 L0,0 Z"></path>
+                </svg>
+              </div>
             <div class="container px-4 mx-auto xl:max-w-6xl">
                 <!-- row -->
                 <div class="flex flex-row flex-wrap justify-center -mx-4">
@@ -276,7 +282,7 @@
                     <!-- hero image -->
                     <div class="self-center flex-shrink w-full max-w-full px-4 md:w-9/12 lg:w-1/2">
                         <div class="px-12 mt-4 md:ml-16 md:pr-0">
-                            <img src="src/img/58.jpg" class="max-w-full mx-auto">
+                            <img src="{{ asset('src/img/home/machine-translation-2.png') }}" class="max-w-full mx-auto">
                         </div>
                     </div>
                 </div><!-- end row -->

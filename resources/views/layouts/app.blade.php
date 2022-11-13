@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/colors.css') }}" type="text/css">
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css'/* , 'resources/js/app.js' */])
     <!-- Production css (used in all pages) -->
     <link rel="stylesheet" id="stylesheet" href="{{ asset('src/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('src/css/customizer.css') }}">
@@ -28,11 +28,6 @@
     <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
 
-     <!-- custom css file link  -->
-     <link rel="stylesheet" href="{{asset('css/style-precing.css')}}">
-
-    <!-- Favicon -->
-    <link rel="icon" href="{{asset('/src/img/favicon.png')}}">
 
     {{-- Sweet Alert2 --}}
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -43,9 +38,14 @@
     @show
 
     @livewireStyles
+    {{-- <style type="text/css">
+        body {
+            overflow:hidden;
+        }
+        </style> --}}
 </head>
 
-<body>
+<body class="overflow-y-auto scrollbars show">
     @livewireScripts()
 
     <div x-data="{ open: false }" class="overflow-x-hidden bg-gray-100 wrapper ">
@@ -84,7 +84,7 @@
 
     <!--start::Customizer js ( Only for demo purpose )-->
     <script src="{{ asset('src/js/customizer.js') }}"></script>
-
+    
 </body>
 
 </html>

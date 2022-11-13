@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/colors.css') }}" type="text/css">
     <!-- Scripts -->
-    @vite(['resources/js/app.js'])
+    @vite(['resources/css/app.css'/* , 'resources/js/app.js' */])
 
     <!-- Production css (used in all pages) -->
     <link rel="stylesheet" id="stylesheet" href="{{ asset('src/css/style.css') }}">
