@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder
         $this->call(CreditCardsSeeder::class);
         $this->call(InvoicesSeeder::class);
         $this->call(PaymentsSeeder::class);
-        $this->call(PlanDetailsSeeder::class);
         $this->call(PlansSeeder::class);
+        $this->call(PlanDetailsSeeder::class);
         $this->call(RecordsSeeder::class);
         $this->call(SubscriptionsSeeder::class);
 

@@ -172,257 +172,162 @@
 
         <!-- =========={ PRICING }==========  -->
         <div class="container mx-auto antialiased text-gray-900 bg-transparent" x-data="setup()">
-        <main class="mx-4 my-16">
-            <div class="text-center">
-                <h1 class="mb-4 text-2xl font-normal md:text-3xl lg:text-4xl text-blue">
-                    <span class="font-semibold">NUESTROS MEJORES PLANES Y PRECIOS</span>
-                </h1>
-                <h1 class="mb-4 text-2xl font-normal md:text-3xl lg:text-4xl text-green">
-                    Nuestros <span class="font-semibold">planes</span> para tus <span
-                        class="font-semibold">necesidades</span>
-                </h1>
-                <p class="text-sm font-normal text-gray-400">
-                    Vea a continuación nuestros tres planes principales para tí.
-                </p>
-                <p class="text-sm font-normal text-gray-400">
-                    ¡Empieza desde aquí!, accede a nuestros planes.
-                </p>
-                <hr class="block w-12 h-0.5 mx-auto my-5 bg-amber-500 border-amber-500">
-            </div>
+            <main class="mx-4 my-16">
+                <div class="text-center">
+                    <h1 class="mb-4 text-2xl font-normal md:text-3xl lg:text-4xl text-blue">
+                        <span class="font-semibold">NUESTROS MEJORES PLANES Y PRECIOS</span>
+                    </h1>
+                    <h1 class="mb-4 text-2xl font-normal md:text-3xl lg:text-4xl text-green">
+                        Nuestros <span class="font-semibold">planes</span> para tus <span
+                            class="font-semibold">necesidades</span>
+                    </h1>
+                    <p class="text-sm font-normal text-gray-400">
+                        Vea a continuación nuestros tres planes principales para tí.
+                    </p>
+                    <p class="text-sm font-normal text-gray-400">
+                        ¡Empieza desde aquí!, accede a nuestros planes.
+                    </p>
+                    <hr class="block w-12 h-0.5 mx-auto my-5 bg-amber-500 border-amber-500">
+                </div>
 
-            <section>
-                <div class="max-w-full mx-auto md:max-w-6xl sm:px-8">
-                    <!-- Basic Pricing -->
-                    <div class="relative flex flex-col items-center block sm:flex-row">
-                        <div
-                            class="relative z-0 w-11/12 max-w-sm my-8 border border-gray-200 rounded-lg sm:w-3/5 lg:w-1/3 sm:my-5 md:-mr-4">
-                            <div class="overflow-hidden text-black bg-white border-t border-gray-100 rounded-lg shadow-sm">
-                                <div class="block max-w-sm px-8 mx-auto mt-5 text-sm text-left text-black sm:text-md lg:px-6">
-                                    <h3 class="p-3 text-lg font-light tracking-wide text-center uppercase">Plan<span
-                                            class="ml-2 font-bold">Basico</span></h3>
-                                    <h4 class="flex items-center justify-center pb-6 text-4xl font-bold text-center text-gray-900">
-                                        <span class="mr-1 -ml-2 text-lg text-gray-700">$</span>0</h4>
-                                    <p class="text-sm text-gray-600">En este plan basico puedes acceder a nuestras funcionalidades basicas de traduccion.
-                                    </p>
-                                </div>
-    
-                                <div class="flex flex-wrap px-6 mt-8">
-                                    <ul>
-                                        <li class="flex items-center">
-                                            <div class="p-2 text-green-500 rounded-full fill-current ">
-                                                <svg class="w-6 h-6 align-middle" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                                </svg>
-                                            </div>
-                                            <span class="ml-3 text-lg text-gray-700">Traducción de texto limitada hasta 5000 caracteres
-                                        <li class="flex items-center">
-                                            <div class="p-2 text-green-500 rounded-full fill-current ">
-                                                <svg class="w-6 h-6 align-middle" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                                </svg>
-                                            </div>
-                                            <span class="ml-3 text-lg text-gray-700">Lectura de tus traducciones</span>
-                                        </li>
-                                        <li class="flex items-center">
-                                            <div class="p-2 text-green-500 rounded-full fill-current ">
-                                                <svg class="w-6 h-6 align-middle" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                                </svg>
-                                            </div>
-                                            <span class="ml-3 text-lg text-gray-700">Acceso a tu historial de traducciones</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="flex items-center block p-8 uppercase">
-                                    <a href="#_"
-                                        class="block w-full px-6 py-4 mt-3 text-lg font-semibold text-center text-white bg-gray-900 rounded shadow-sm hover:bg-green-600">
-                                    Comprar</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Pro Pricing -->
-                        <div
-                            class="relative z-10 w-full max-w-md my-8 bg-white rounded-lg shadow-lg sm:w-2/3 lg:w-1/3 sm:my-5">
+                <section>
+                    <div class="max-w-full mx-auto md:max-w-6xl sm:px-8">
+                        <!-- Basic Pricing -->
+                        <div class="relative flex flex-col items-center block sm:flex-row">
                             <div
-                                class="py-4 text-sm font-semibold leading-none tracking-wide text-center text-white uppercase bg-amber-500">
-                                Most Popular</div>
-                            <div class="block max-w-sm px-8 mx-auto mt-5 text-sm text-left text-black sm:text-md lg:px-6">
-                                <h3 class="p-3 pb-1 text-lg font-light tracking-wide text-center uppercase">Plan<span
-                                        class="ml-2 font-bold">Premium</span></h3>
-                                <h4
-                                    class="flex items-center justify-center pb-6 text-5xl font-bold text-center text-gray-900">
-                                    <span class="mr-1 -ml-2 text-lg text-gray-700">$</span>35</h4>
-                                <p class="text-sm text-gray-600">Nuestro mas popular con todas nuestras mejores funcionalidades en traduccion: </p>
-                            </div>
-                            <div class="flex justify-start pl-12 mt-8 sm:justify-start">
-                                <ul>
-                                    <li class="flex items-center">
-                                        <div class="p-2 text-green-500 rounded-full fill-current">
-                                            <svg class="w-6 h-6 align-middle" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span class="ml-3 text-lg text-gray-700">Traducción de texto ilimitada</span>
-                                    </li>
-                                    <li class="flex items-center">
-                                        <div class="p-2 text-green-500 rounded-full fill-current ">
-                                            <svg class="w-6 h-6 align-middle" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span class="ml-3 text-lg text-gray-700">Lectura de tus traducciones</span>
-                                    </li>
-                                    <li class="flex items-center">
-                                        <div class="p-2 text-green-500 rounded-full fill-current ">
-                                            <svg class="w-6 h-6 align-middle" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span class="ml-3 text-lg text-gray-700">Traduccion de archivos</span>
-                                    </li>
-
-                                    <li class="flex items-center">
-                                        <div class="p-2 text-green-500 rounded-full fill-current ">
-                                            <svg class="w-6 h-6 align-middle" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span class="ml-3 text-lg text-gray-700">Traduccion por voz</span>
-                                    </li>
-
-                                    <li class="flex items-center">
-                                        <div class="p-2 text-green-500 rounded-full fill-current ">
-                                            <svg class="w-6 h-6 align-middle" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span class="ml-3 text-lg text-gray-700">Traduccion de imagenes</span>
-                                    </li>
-
-                                    <li class="flex items-center">
-                                        <div class="p-2 text-green-500 rounded-full fill-current ">
-                                            <svg class="w-6 h-6 align-middle" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span class="ml-3 text-lg text-gray-700">Acceso a tu historial de traducciones</span>
-                                    </li>
-                                </ul>
-                            </div>
-    
-                            <div class="flex items-center block p-8 uppercase">
-                                <a href="#_"
-                                    class="block w-full px-6 py-4 mt-3 text-lg font-semibold text-center text-white bg-gray-900 rounded shadow-sm hover:bg-amber-500">
-                                    Comprar</a>
-                            </div>
-                        </div>
-                        <!-- Premium Pricing -->
-                        <div
-                            class="relative z-0 w-11/12 max-w-sm my-8 rounded-lg shadow-lg sm:w-3/5 lg:w-1/3 sm:my-5 md:-ml-4">
-                            <div class="overflow-hidden text-black bg-white rounded-lg shadow-lg shadow-inner">
+                                class="relative z-0 w-11/12 max-w-sm my-8 border border-gray-200 rounded-lg sm:w-3/5 lg:w-1/3 sm:my-5 md:-mr-4">
                                 <div
-                                    class="block max-w-sm px-8 mx-auto mt-5 text-sm text-left text-black sm:text-md lg:px-8">
-                                    <h3 class="p-3 pb-1 text-lg font-light tracking-wide text-center uppercase">Plan<span
-                                            class="ml-2 font-bold">Estandar</span></h3>
-                                    <h4
-                                        class="flex items-center justify-center pb-6 text-4xl font-bold text-center text-gray-900">
-                                        <span class="mr-1 -ml-2 text-lg text-gray-700">$</span>15</h4>
-                                    <p class="pl-2 text-sm text-gray-600">Nuestro plan estandar contiene las funcionalidades mejoradas para tus traducciones: </p>
-                                </div>
-                                <div class="flex flex-wrap px-8 mt-8">
-                                    <ul>
-                                        <li class="flex items-center">
-                                            <div class="p-2 text-green-500 rounded-full fill-current ">
-                                                <svg class="w-6 h-6 align-middle" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                                </svg>
-                                            </div>
-                                            <span class="ml-3 text-lg text-gray-700">Traducción de texto ilimitada</span>
-                                        </li>
-                                        <li class="flex items-center">
-                                            <div class="p-2 text-green-500 rounded-full fill-current ">
-                                                <svg class="w-6 h-6 align-middle" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                                </svg>
-                                            </div>
-                                            <span class="ml-3 text-lg text-gray-700">Lectura de tus traducciones</span>
-                                        </li>
-                                        <li class="flex items-center">
-                                            <div class="p-2 text-green-500 rounded-full fill-current ">
-                                                <svg class="w-6 h-6 align-middle" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                                </svg>
-                                            </div>
-                                            <span class="ml-3 text-lg text-gray-700">Traduccion por voz</span>
-                                        </li>
+                                    class="overflow-hidden text-black bg-white border-t border-gray-100 rounded-lg shadow-sm">
+                                    <div
+                                        class="block max-w-sm px-8 mx-auto mt-5 text-sm text-left text-black sm:text-md lg:px-6">
+                                        <h3 class="p-3 text-lg font-light tracking-wide text-center uppercase">
+                                            Plan<span class="ml-2 font-bold">{{ $planBasic->name }}</span></h3>
+                                        <h4
+                                            class="flex items-center justify-center pb-6 text-4xl font-bold text-center text-gray-900">
+                                            <span
+                                                class="mr-1 -ml-2 text-lg text-gray-700">$</span>{{ $planBasic->price / 100 }}
+                                        </h4>
+                                        <p class="text-sm text-gray-600">{{ $planBasic->description }}</p>
+                                    </div>
 
-                                        <li class="flex items-center">
-                                            <div class="p-2 text-green-500 rounded-full fill-current ">
-                                                <svg class="w-6 h-6 align-middle" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                                </svg>
-                                            </div>
-                                            <span class="ml-3 text-lg text-gray-700">Acceso a tu historial de traducciones</span>
-                                        </li>
+                                    <div class="flex flex-wrap px-6 mt-8">
+                                        <ul>
+                                            @foreach ($planBasic->planDetails as $plan_detail)
+                                                <li class="flex items-center">
+                                                    <div class="p-2 text-green-500 rounded-full fill-current ">
+                                                        <svg class="w-6 h-6 align-middle" viewBox="0 0 24 24"
+                                                            fill="none" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round">
+                                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                        </svg>
+                                                    </div>
+                                                    <span
+                                                        class="ml-3 text-lg text-gray-700">{{ $plan_detail->description }}</span>
+                                                </li>
+                                            @endforeach
+
+                                        </ul>
+                                    </div>
+                                    <div class="flex items-center block p-8 uppercase">
+                                        <a href="{{ route('plans.checkout', $planBasic->plan_id) }}"
+                                            class="block w-full px-6 py-4 mt-3 text-lg font-semibold text-center text-white bg-gray-900 rounded shadow-sm hover:bg-green-600">
+                                            Comprar</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Pro Pricing -->
+                            <div
+                                class="relative z-10 w-full max-w-md my-8 bg-white rounded-lg shadow-lg sm:w-2/3 lg:w-1/3 sm:my-5">
+                                <div
+                                    class="py-4 text-sm font-semibold leading-none tracking-wide text-center text-white uppercase bg-amber-500">
+                                    Most Popular</div>
+                                <div
+                                    class="block max-w-sm px-8 mx-auto mt-5 text-sm text-left text-black sm:text-md lg:px-6">
+                                    <h3 class="p-3 pb-1 text-lg font-light tracking-wide text-center uppercase">
+                                        Plan<span class="ml-2 font-bold">{{ $planPremium->name }}</span></h3>
+                                    <h4
+                                        class="flex items-center justify-center pb-6 text-5xl font-bold text-center text-gray-900">
+                                        <span
+                                            class="mr-1 -ml-2 text-lg text-gray-700">$</span>{{ $planPremium->price / 100 }}
+                                    </h4>
+                                    <p class="text-sm text-gray-600">{{ $planPremium->description }}</p>
+                                </div>
+                                <div class="flex justify-start pl-12 mt-8 sm:justify-start">
+                                    <ul>
+                                        @foreach ($planPremium->planDetails as $plan_detail)
+                                            <li class="flex items-center">
+                                                <div class="p-2 text-green-500 rounded-full fill-current">
+                                                    <svg class="w-6 h-6 align-middle" viewBox="0 0 24 24"
+                                                        fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                    </svg>
+                                                </div>
+                                                <span
+                                                    class="ml-3 text-lg text-gray-700">{{ $plan_detail->description }}</span>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </div>
-    
+
                                 <div class="flex items-center block p-8 uppercase">
-                                    <a href="#_"
-                                        class="block w-full px-6 py-4 mt-3 text-lg font-semibold text-center text-white bg-gray-900 rounded shadow-sm hover:bg-green-600">
-                                    Comprar</a>
+                                    <a href="{{ route('plans.checkout', $planPremium->plan_id) }}"
+                                        class="block w-full px-6 py-4 mt-3 text-lg font-semibold text-center text-white bg-gray-900 rounded shadow-sm hover:bg-amber-500">
+                                        Comprar</a>
+                                </div>
+                            </div>
+                            <!-- Premium Pricing -->
+                            <div
+                                class="relative z-0 w-11/12 max-w-sm my-8 rounded-lg shadow-lg sm:w-3/5 lg:w-1/3 sm:my-5 md:-ml-4">
+                                <div class="overflow-hidden text-black bg-white rounded-lg shadow-lg shadow-inner">
+                                    <div
+                                        class="block max-w-sm px-8 mx-auto mt-5 text-sm text-left text-black sm:text-md lg:px-8">
+                                        <h3 class="p-3 pb-1 text-lg font-light tracking-wide text-center uppercase">
+                                            Plan<span class="ml-2 font-bold">{{ $planStandard->name }}</span></h3>
+                                        <h4
+                                            class="flex items-center justify-center pb-6 text-4xl font-bold text-center text-gray-900">
+                                            <span
+                                                class="mr-1 -ml-2 text-lg text-gray-700">$</span>{{ $planStandard->price / 100 }}
+                                        </h4>
+                                        <p class="pl-2 text-sm text-gray-600">{{ $planStandard->description }}</p>
+                                    </div>
+                                    <div class="flex flex-wrap px-8 mt-8">
+                                        <ul>
+                                            @foreach ($planStandard->planDetails as $plan_detail)
+                                                <li class="flex items-center">
+                                                    <div class="p-2 text-green-500 rounded-full fill-current ">
+                                                        <svg class="w-6 h-6 align-middle" viewBox="0 0 24 24"
+                                                            fill="none" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round">
+                                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="ml-3 text-lg text-gray-700">{{ $plan_detail->description }}</span>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+
+                                    <div class="flex items-center block p-8 uppercase">
+                                        <a href="{{ route('plans.checkout', $planStandard->plan_id) }}"
+                                            class="block w-full px-6 py-4 mt-3 text-lg font-semibold text-center text-white bg-gray-900 rounded shadow-sm hover:bg-green-600">
+                                            Comprar</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        
+                </section>
 
 
-      
-                
-        
-    </main>
 
-    
+
+
+
+            </main>
+
+
 </x-app-layout>

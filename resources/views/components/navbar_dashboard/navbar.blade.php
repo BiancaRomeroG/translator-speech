@@ -425,13 +425,20 @@
                 </x-jet-nav-link>
             </li>
 
-            <li class="relative">
-                <a class="block px-0 py-3 lg:py-7 lg:px-4 hover:text-gray-300 color_nav_fuente" href="#">
-                    <i class="fa-solid fa-image"></i>
-                    Traducir Imagenes
-                </a>
-            </li>
-        </ul>
+        <li class="relative">
+            <a class="block px-0 py-3 lg:py-7 lg:px-4 hover:text-gray-300 color_nav_fuente" href="#">
+                <i class="fa-solid fa-image"></i>
+                Traducir Imagenes
+            </a>
+        </li>
+
+        <li class="relative">
+            <x-jet-nav-link href="{{ route('subscription.all') }}" :active="request()->routeIs('subscription.all')">
+                <i class="fa-solid fa-file-invoice"></i>
+                Subscripciones
+            </x-jet-nav-link>
+        </li>
+    </ul>
 
         <!-- button -->
         <form method="POST" action="{{ route('logout') }}" x-data>

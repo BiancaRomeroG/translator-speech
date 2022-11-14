@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('plan_details', function (Blueprint $table) {
             $table->id();
-            $table->string('discription')->nullable();
-            $table->unsignedBigInteger('id_plan')->nullable();
+            $table->string('description')->nullable();
+            $table->unsignedBigInteger('id_plan');
             $table->foreign('id_plan')->references('id')->on('plans');
             $table->timestamps();
         });

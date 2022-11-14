@@ -15,9 +15,13 @@ return new class extends Migration
     {
         Schema::create('plans', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->integer('months_per_interval')->nullable();
-            $table->integer('price')->nullable();
+            $table->string('plan_id');
+            $table->string('name');
+            $table->string('billing_method');
+            $table->integer('interval_count');
+            $table->string('price');
+            $table->string('currency');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
