@@ -8,6 +8,7 @@
         "php": "^8.0.2",
         "google/cloud-translate": "^1.12",
         "guzzlehttp/guzzle": "^7.2",
+        "laravel/cashier": "^14.3",
         "laravel/framework": "^9.19",
         "laravel/jetstream": "^2.12",
         "laravel/sanctum": "^3.0",
