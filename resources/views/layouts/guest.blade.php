@@ -18,21 +18,35 @@
 
     <link rel="stylesheet" href="{{ asset('css/colors.css') }}" type="text/css">
     <!-- Scripts -->
-    @vite(['resources/css/app.css'/* , 'resources/js/app.js' */])
+    @vite(['resources/css/app.css' /* , 'resources/js/app.js' */])
 
     <!-- Production css (used in all pages) -->
     <link rel="stylesheet" id="stylesheet" href="{{ asset('src/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('src/css/customizer.css') }}">
 
     <!-- google font -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+    {{-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&amp;display=swap" rel="stylesheet"> --}}
 
     <!-- Favicon -->
-    <link rel="icon" href="{{asset('/src/img/favicon.png')}}">
+    <link rel="icon" href="{{ asset('/src/img/favicon.png') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
+    @stack('css')
+    <style>
+        main,
+        header {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* header{
+            font-family: 'Poppins', sans-serif;
+        } */
+    </style>
 </head>
 
-<body class="font-sans text-base font-normal text-gray-600">
+<body class="overflow-y-auto scrollbars show">
     <div class="font-sans text-gray-900 antialiased">
         {{ $slot }}
     </div>
@@ -55,14 +69,14 @@
     <!-- Minify Global javascript (for production purpose) -->
     {{-- <script src="{{ asset('dist/js/scripts.js') }}"></script> --}}
 
-
+    @stack('scripts')
     <!--start::Demo javascript ( initialize global javascript )-->
-    <script src="{{  asset('src/js/demo.js') }}"></script>
+    <script src="{{ asset('src/js/demo.js') }}"></script>
 
     <!--start::Call vendor ( initialize vendor javascript )-->
-  <script src="{{asset('src/js/vendor.js')}}"></script>
+    <script src="{{ asset('src/js/vendor.js') }}"></script>
     <!--start::Customizer js ( Only for demo purpose )-->
-    <script src="{{  asset('src/js/customizer.js') }}"></script>
+    <script src="{{ asset('src/js/customizer.js') }}"></script>
 </body>
 
 </html>
