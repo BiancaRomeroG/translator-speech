@@ -42,12 +42,8 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="grid grid-cols-2 auto-cols-auto">
-
                             <div class="col-auto p-4 border-t-2">
-
-
                                 <textarea id="textArea1"
                                     class="relative w-full px-4 py-2 overflow-x-auto text-2xl leading-5 bg-white border border-white rounded focus:outline-none focus:border-white focus:ring-0"></textarea>
                             </div>
@@ -59,8 +55,8 @@
                         </div>
 
 
-                        <div class="grid grid-cols-2  auto-cols-auto">
-                            <div class="col-auto p-4  cont">
+                        <div class="grid grid-cols-2 auto-cols-auto">
+                            <div class="col-auto p-4 cont">
                                 <div class="flex justify-between">
                                     <div class="">
                                         <button {{-- @click="open=!open" --}} id="btnStartRecord"
@@ -77,7 +73,7 @@
                                             <span class="msjMicroStop">Detener</span>
                                         </button>
                                         <button {{-- @click="open=!open" --}} id="escuchar_voz" onclick="mostrarEscucharVoz()"
-                                            class="w-10 h-10 mt-auto mb-auto text-center bg-white border border-none rounded-full  btnMicroVoz hover:text-gray-900 hover:bg-gray-300 hover:ring-0 hover:border-gray-300 focus:bg-gray-300 focus:border-gray-300 focus:outline-none focus:ring-0"
+                                            class="w-10 h-10 mt-auto mb-auto text-center bg-white border border-none rounded-full btnMicroVoz hover:text-gray-900 hover:bg-gray-300 hover:ring-0 hover:border-gray-300 focus:bg-gray-300 focus:border-gray-300 focus:outline-none focus:ring-0"
                                             type="button">
                                             <i class="fa-solid fa-volume-high"></i>
                                             <span class="msjMicroVoz">Ajustar Voz</span>
@@ -85,7 +81,7 @@
                                     </div>
                                     <div class="">
                                         <button
-                                            class="bg-indigo-500 text-white px-3 py-2 rounded-tl-lg rounded-br-lg hover:bg-indigo-600 "
+                                            class="px-3 py-2 text-white bg-indigo-500 rounded-tl-lg rounded-br-lg hover:bg-indigo-600 "
                                             id="btnTraducir">
                                             <i class="fa-solid fa-language"></i>
                                             Traducir</button>
@@ -258,13 +254,57 @@
 
                 </div>
             </div>
-            <div id="record-text" class="" style="width: 0%; display:none;">
-                historial
+
+            {{-- Historial --}}
+            <div class="container bg-white modal right fade " style="width: 45%; display:none;" id="record-text">
+                <div class="min-h-screen mt-6 mb-8 ml-4">
+                    <div class="px-2 mx-auto modal-header">
+                        <header class="mx-auto mb-4">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                            <h1 class="mb-2 text-3xl font-medium leading-normal bg-white text-dark">Historial</h1>
+                        </header>
+                    </div>
+                    <hr>
+                    <div class="px-2 mx-auto mt-2 mb-2 ml-56 ">
+                        <head class="mx-auto mb-4 text-right">
+                            <button class="text-right text-blue-700 hover:bg-blue-50 hover:ring-0 hover:border-blue-50 focus:bg-blue-50 focus:border-blue-50 focus:outline-none focus:ring-0">Borrar todo el historial</button>
+                        </head>
+                    </div>
+                    <hr>
+                    <div class="modal-body">
+                        <p>hola como estas</p>
+                    </div>
+                </div>
             </div>
         </div>
-
     </main>
+
+
+
     @livewire('traducir.traducir-texto')
     <script src="{{ asset('js/speach-text/speach.js') }}"></script>
+
+    <script>
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
 </x-app-layout>

@@ -10,7 +10,7 @@
                 </span>
                 <span class="hidden text-2xl font-semibold text-gray-200 lg:block">
                     <img class="inline-block h-auto -mt-1 w-7" src="{{ asset('src/img/favicon.png') }}">
-                    <span class="text-gray-700 font-bold ml-1">SYSTRAN</span>
+                    <span class="ml-1 font-bold text-gray-700">SYSTRAN</span>
                 </span>
             </a>
 
@@ -69,7 +69,7 @@
         <ul class="flex justify-end mt-0 ltr:ml-auto rtl:mr-auto">
             <!-- messages -->
             {{-- <li x-data="{ open: false }" class="relative">
-                <a href="javascript:;" class="block pt-1 px-4 text-sm rounded-full focus:outline-none"
+                <a href="javascript:;" class="block px-4 pt-1 text-sm rounded-full focus:outline-none"
                     id="messages" @click="open = ! open">
                     <div class="relative inline-block">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6 bi bi-bell"
@@ -79,7 +79,7 @@
                         </svg>
                         <!-- <i class="text-2xl fas fa-envelope"></i> -->
                         <span
-                            class="flex justify-center absolute -top-2 ltr:-right-1 rtl:-left-1 text-center bg-pink-500 px-1 text-white rounded-full text-xs"><span
+                            class="absolute flex justify-center px-1 text-xs text-center text-white bg-pink-500 rounded-full -top-2 ltr:-right-1 rtl:-left-1"><span
                                 class="align-self-center">3</span></span>
                     </div>
                 </a>
@@ -107,16 +107,16 @@
                                     <!-- <i class="fas fa-search"></i> -->
                                 </a>
                                 <div x-show="open" @click.away="open = false"
-                                    class="origin-top-right absolute ltr:right-0 rtl:left-0 bg-white dark:bg-gray-700 z-10 rounded"
+                                    class="absolute z-10 origin-top-right bg-white rounded ltr:right-0 rtl:left-0 dark:bg-gray-700"
                                     style="min-width:16rem">
                                     <form class="inline-block w-full">
-                                        <div class="flex flex-wrap items-stretch w-full relative">
+                                        <div class="relative flex flex-wrap items-stretch w-full">
                                             <input type="text"
-                                                class="flex-shrink flex-grow flex-shrink max-w-full leading-5 relative text-sm py-2 px-4 ltr:rounded-l rtl:rounded-r text-gray-800 bg-gray-100 overflow-x-auto focus:outline-none border border-gray-100 focus:border-gray-200 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
+                                                class="relative flex-grow flex-shrink max-w-full px-4 py-2 overflow-x-auto text-sm leading-5 text-gray-800 bg-gray-100 border border-gray-100 ltr:rounded-l rtl:rounded-r focus:outline-none focus:border-gray-200 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
                                                 placeholder="Search messages…" aria-label="Search">
                                             <div class="flex -mr-px">
                                                 <button
-                                                    class="flex items-center py-2 px-4 ltr:-ml-1 rtl:-mr-1 ltr:rounded-r rtl:rounded-l leading-5 text-gray-100 bg-indigo-500 border border-indigo-500 hover:text-white hover:bg-indigo-600 hover:ring-0 hover:border-indigo-600 focus:bg-indigo-600 focus:border-indigo-600 focus:outline-none focus:ring-0"
+                                                    class="flex items-center px-4 py-2 leading-5 text-gray-100 bg-indigo-500 border border-indigo-500 ltr:-ml-1 rtl:-mr-1 ltr:rounded-r rtl:rounded-l hover:text-white hover:bg-indigo-600 hover:ring-0 hover:border-indigo-600 focus:bg-indigo-600 focus:border-indigo-600 focus:outline-none focus:ring-0"
                                                     type="button">
                                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                                         fill="none" stroke="currentColor" stroke-width="2"
@@ -156,27 +156,27 @@
                             </div>
                         </div>
                     </div>
-                    <div class="max-h-60 overflow-y-auto scrollbars show">
+                    <div class="overflow-y-auto max-h-60 scrollbars show">
                         <a href="layout-topnav.html#">
                             <div
-                                class="flex flex-wrap flex-row items-center border-b border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:bg-opacity-40 dark:hover:bg-opacity-20 py-2 hover:bg-gray-100 bg-gray-50">
-                                <div class="flex-shrink max-w-full px-2 w-1/4 text-center">
+                                class="flex flex-row flex-wrap items-center py-2 border-b border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:bg-opacity-40 dark:hover:bg-opacity-20 hover:bg-gray-100 bg-gray-50">
+                                <div class="flex-shrink w-1/4 max-w-full px-2 text-center">
                                     <div class="relative">
-                                        <img src="src/img/avatar/avatar2.png" class="h-10 w-10 rounded-full mx-auto"
+                                        <img src="src/img/avatar/avatar2.png" class="w-10 h-10 mx-auto rounded-full"
                                             alt="Daniel Esteban">
                                         <span title="online"
                                             class="flex justify-center absolute -bottom-0.5 ltr:right-2 rtl:left-2 text-center bg-green-500 border border-white w-3 h-3 rounded-full"></span>
                                     </div>
                                 </div>
-                                <div class="flex-shrink max-w-full px-2 w-3/4">
+                                <div class="flex-shrink w-3/4 max-w-full px-2">
                                     <div class="text-sm font-bold">Daniel Esteban</div>
-                                    <div class="text-gray-500 text-sm mt-1">What do you think about this project?</div>
-                                    <div class="text-gray-500 text-sm mt-1">12m ago</div>
+                                    <div class="mt-1 text-sm text-gray-500">What do you think about this project?</div>
+                                    <div class="mt-1 text-sm text-gray-500">12m ago</div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="p-3 text-center font-normal">
+                    <div class="p-3 font-normal text-center">
                         <a href="layout-topnav.html#" class="hover:underline">Show all Messages</a>
                     </div>
                 </div>
@@ -184,7 +184,7 @@
 
             <!-- notification -->
             <li x-data="{ open: false }" class="relative">
-                <a href="#" class="pt-2 px-4 flex text-sm rounded-full focus:outline-none" id="notify"
+                <a href="#" class="flex px-4 pt-2 text-sm rounded-full focus:outline-none" id="notify"
                     @click="open = ! open">
                     <div class="relative inline-block">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6 bi bi-bell"
@@ -194,7 +194,7 @@
                         </svg>
                         <!-- <i class="text-2xl fas fa-bell"></i> -->
                         <span
-                            class="flex justify-center absolute -top-2 ltr:-right-1 rtl:-left-1 text-center bg-pink-500 px-1 text-white rounded-full text-xs"><span
+                            class="absolute flex justify-center px-1 text-xs text-center text-white bg-pink-500 rounded-full -top-2 ltr:-right-1 rtl:-left-1"><span
                                 class="align-self-center">1</span></span>
                     </div>
                 </a>
@@ -225,13 +225,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="max-h-60 overflow-y-auto scrollbars show">
+                    <div class="overflow-y-auto max-h-60 scrollbars show">
                         <a class="relative" href="layout-topnav.html#">
                             <div
-                                class="flex flex-wrap flex-row items-center border-b border-gray-200 py-2 hover:bg-gray-100 bg-gray-50">
-                                <div class="flex-shrink max-w-full px-2 w-1/4 text-center">
+                                class="flex flex-row flex-wrap items-center py-2 border-b border-gray-200 hover:bg-gray-100 bg-gray-50">
+                                <div class="flex-shrink w-1/4 max-w-full px-2 text-center">
                                     <div
-                                        class="flex justify-center mx-auto w-8 h-8 rounded-full bg-indigo-500 text-white">
+                                        class="flex justify-center w-8 h-8 mx-auto text-white bg-indigo-500 rounded-full">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                             class="self-center w-4 h-4 bi bi-calendar4-event" viewBox="0 0 16 16">
                                             <path
@@ -242,19 +242,19 @@
                                         <!-- <i class="self-center fas fa-calendar"></i> -->
                                     </div>
                                 </div>
-                                <div class="flex-shrink max-w-full px-2 w-3/4">
+                                <div class="flex-shrink w-3/4 max-w-full px-2">
                                     <div class="text-sm font-bold">Event will coming</div>
-                                    <div class="text-gray-500 text-sm mt-1">Meeting with Mr.John Navas at:10.00Am</div>
-                                    <div class="text-gray-500 text-sm mt-1">1h ago</div>
+                                    <div class="mt-1 text-sm text-gray-500">Meeting with Mr.John Navas at:10.00Am</div>
+                                    <div class="mt-1 text-sm text-gray-500">1h ago</div>
                                 </div>
                             </div>
                         </a>
                         <a class="relative" href="layout-topnav.html#">
                             <div
-                                class="flex flex-wrap flex-row items-center border-b border-gray-200  py-2 hover:bg-gray-100">
-                                <div class="flex-shrink max-w-full px-2 w-1/4 text-center">
+                                class="flex flex-row flex-wrap items-center py-2 border-b border-gray-200 hover:bg-gray-100">
+                                <div class="flex-shrink w-1/4 max-w-full px-2 text-center">
                                     <div
-                                        class="flex justify-center mx-auto w-8 h-8 rounded-full bg-indigo-500 text-white">
+                                        class="flex justify-center w-8 h-8 mx-auto text-white bg-indigo-500 rounded-full">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="self-center w-4 h-4 bi bi-hand-thumbs-up"
                                             viewBox="0 0 16 16">
@@ -264,19 +264,19 @@
                                         <!-- <i class="self-center fas fa-thumbs-up"></i> -->
                                     </div>
                                 </div>
-                                <div class="flex-shrink max-w-full px-2 w-3/4">
-                                    <div class="text-gray-500 text-sm mt-1"><b class="text-gray-600">Daniel</b> like
+                                <div class="flex-shrink w-3/4 max-w-full px-2">
+                                    <div class="mt-1 text-sm text-gray-500"><b class="text-gray-600">Daniel</b> like
                                         your post: <b class="text-gray-600">Hello World!</b></div>
-                                    <div class="text-gray-500 text-sm mt-1">3h ago</div>
+                                    <div class="mt-1 text-sm text-gray-500">3h ago</div>
                                 </div>
                             </div>
                         </a>
                         <a class="relative" href="layout-topnav.html#">
                             <div
-                                class="flex flex-wrap flex-row items-center border-b border-gray-200 py-2 hover:bg-gray-100">
-                                <div class="flex-shrink max-w-full px-2 w-1/4 text-center">
+                                class="flex flex-row flex-wrap items-center py-2 border-b border-gray-200 hover:bg-gray-100">
+                                <div class="flex-shrink w-1/4 max-w-full px-2 text-center">
                                     <div
-                                        class="flex justify-center mx-auto w-8 h-8 rounded-full bg-indigo-500 text-white">
+                                        class="flex justify-center w-8 h-8 mx-auto text-white bg-indigo-500 rounded-full">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                             class="self-center w-4 h-4 bi bi-hdd-stack" viewBox="0 0 16 16">
                                             <path
@@ -289,19 +289,19 @@
                                         <!-- <i class="self-center fas fa-server"></i> -->
                                     </div>
                                 </div>
-                                <div class="flex-shrink max-w-full px-2 w-3/4">
+                                <div class="flex-shrink w-3/4 max-w-full px-2">
                                     <div class="text-sm font-bold">Server maintenance</div>
-                                    <div class="text-gray-500 text-sm mt-1">Server maintenance at:07.00Am</div>
-                                    <div class="text-gray-500 text-sm mt-1">8h ago</div>
+                                    <div class="mt-1 text-sm text-gray-500">Server maintenance at:07.00Am</div>
+                                    <div class="mt-1 text-sm text-gray-500">8h ago</div>
                                 </div>
                             </div>
                         </a>
                         <a class="relative" href="layout-topnav.html#">
                             <div
-                                class="flex flex-wrap flex-row items-center border-b border-gray-200 py-2 hover:bg-gray-100">
-                                <div class="flex-shrink max-w-full px-2 w-1/4 text-center">
+                                class="flex flex-row flex-wrap items-center py-2 border-b border-gray-200 hover:bg-gray-100">
+                                <div class="flex-shrink w-1/4 max-w-full px-2 text-center">
                                     <div
-                                        class="flex justify-center mx-auto w-8 h-8 rounded-full bg-indigo-500 text-white">
+                                        class="flex justify-center w-8 h-8 mx-auto text-white bg-indigo-500 rounded-full">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="self-center w-4 h-4 bi bi-chat-left"
                                             viewBox="0 0 16 16">
@@ -311,15 +311,15 @@
                                         <!-- <i class="self-center fas fa-comment"></i> -->
                                     </div>
                                 </div>
-                                <div class="flex-shrink max-w-full px-2 w-3/4">
-                                    <div class="text-gray-500 text-sm mt-1"><b class="text-gray-600">Carlos</b>
+                                <div class="flex-shrink w-3/4 max-w-full px-2">
+                                    <div class="mt-1 text-sm text-gray-500"><b class="text-gray-600">Carlos</b>
                                         comment in your post: <b class="text-gray-600">Hello World!</b></div>
-                                    <div class="text-gray-500 text-sm mt-1">1d ago</div>
+                                    <div class="mt-1 text-sm text-gray-500">1d ago</div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="p-3 text-center font-normal">
+                    <div class="p-3 font-normal text-center">
                         <a href="layout-topnav.html#" class="hover:underline">Show all Notifications</a>
                     </div>
                 </div>
@@ -329,7 +329,7 @@
                 <button @click="open = ! open"
                     class="flex items-center text-sm font-medium text-gray-900 rounded-full hover:text-blue-600 md:mr-0 focus:ring-4 focus:ring-gray-100">
                     <span class="sr-only">Open user menu</span>
-                    <img class="mr-2 w-8 h-8 rounded-full" src="{{ Auth::user()->profile_photo_url }}"
+                    <img class="w-8 h-8 mr-2 rounded-full" src="{{ Auth::user()->profile_photo_url }}"
                         alt="user photo">
                     {{ Auth::user()->name }}
                     <svg class="w-4 h-4 mx-1.5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
@@ -350,7 +350,7 @@
                     x-transition:leave-end="transform opacity-0 scale-95"
                     class="w-72 origin-top-right absolute ltr:-right-36 md:ltr:right-0 rtl:-left-36 md:rtl:left-0 rounded top-full z-50 py-0.5 bg-white shadow-md"
                     style="display: none;">
-                    <div class="py-3 px-4 text-sm text-gray-900">
+                    <div class="px-4 py-3 text-sm text-gray-900">
                         <div class="font-medium ">
                             @forelse (Auth::user()->roles as $role)
                                 {{ $role->name }}
@@ -363,14 +363,14 @@
                     <ul class="py-1 text-sm text-gray-700"
                         aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
                         <li>
-                            <a href="{{ route('profile.show') }}" class="block py-2 px-4 hover:bg-gray-100">Mi
+                            <a href="{{ route('profile.show') }}" class="block px-4 py-2 hover:bg-gray-100">Mi
                                 Perfil</a>
                         </li>
                         {{-- <li>
-                        <a href="#" class="block py-2 px-4 hover:bg-gray-100">Settings</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Settings</a>
                       </li>
                       <li>
-                        <a href="#" class="block py-2 px-4 hover:bg-gray-100">Earnings</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Earnings</a>
                       </li> --}}
                     </ul>
                     <hr>
@@ -383,7 +383,7 @@
                                     <a href="route('logout')"
                                         onclick="event.preventDefault();
                     this.closest('form').submit();"
-                                        class="block py-2 px-4 hover:bg-gray-100">Cerrar
+                                        class="block px-4 py-2 hover:bg-gray-100">Cerrar
                                         Sesión</a>
                                 </li>
                             </ul>
@@ -440,22 +440,5 @@
         </li>
     </ul>
 
-        <!-- button -->
-        <form method="POST" action="{{ route('logout') }}" x-data>
-            @csrf
-            <div class="my-6 text-center lg:block lg:my-auto">
-                <button
-                    class="inline-block px-4 py-2 text-sm leading-5 text-center text-gray-300 bg-indigo-500 border border-indigo-500 rounded hover:text-gray-200 hover:bg-indigo-600 hover:ring-0 hover:border-indigo-600 focus:bg-indigo-600 focus:border-indigo-600 focus:outline-none focus:ring-0"
-                    target="_blank" rel="noopener" href="layout-topnav.html#">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="inline ltr:mr-1 rtl:ml-1 feather feather-log-out">
-                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                        <polyline points="16 17 21 12 16 7"></polyline>
-                        <line x1="21" y1="12" x2="9" y2="12"></line>
-                    </svg>
-                    Cerrar Sesión
-                </button>
-            </div>
-        </form>
+        
     </div>

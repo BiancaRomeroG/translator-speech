@@ -318,5 +318,6 @@ function mostrarHistorial() {
         divTraductor.style.cssText = `width: 100%;`;
 
     }
+    
 }
 
