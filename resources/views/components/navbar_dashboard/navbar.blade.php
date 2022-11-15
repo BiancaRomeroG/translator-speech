@@ -40,7 +40,7 @@
                 <!-- <i class="text-2xl fas fa-bars"></i> -->
             </button>
             <!-- Search -->
-            <div class="inline-flex">
+            {{-- <div class="inline-flex">
                 <form class="hidden mx-5 sm:inline-block md:hidden lg:inline-block">
                     <div class="relative flex flex-wrap items-stretch w-full">
                         <input type="text"
@@ -61,7 +61,7 @@
                         </div>
                     </div>
                 </form>
-            </div>
+            </div> --}}
         </div>
 
 
@@ -348,7 +348,7 @@
                     x-transition:leave="transition-all duration-200 ease-in"
                     x-transition:leave-start="transform opacity-100 scale-100"
                     x-transition:leave-end="transform opacity-0 scale-95"
-                    class="w-72 origin-top-right absolute ltr:-right-36 md:ltr:right-0 rtl:-left-36 md:rtl:left-0 rounded top-full z-50 py-0.5 bg-white shadow-md"
+                    class="w-60 origin-top-right absolute right-0 ltr:-right-36 md:ltr:right-0 rtl:-left-36 md:rtl:left-0 rounded top-full z-50 py-0.5 bg-white shadow-md"
                     style="display: none;">
                     <div class="py-3 px-4 text-sm text-gray-900">
                         <div class="font-medium ">
@@ -441,7 +441,7 @@
     </ul>
 
         <!-- button -->
-        <form method="POST" action="{{ route('logout') }}" x-data>
+        {{-- <form method="POST" action="{{ route('logout') }}" x-data>
             @csrf
             <div class="my-6 text-center lg:block lg:my-auto">
                 <button
@@ -457,5 +457,5 @@
                     Cerrar Sesión
                 </button>
             </div>
-        </form>
+        </form> --}}
     </div>
