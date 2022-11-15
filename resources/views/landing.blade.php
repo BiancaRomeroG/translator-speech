@@ -11,7 +11,7 @@
                     <a class="flex items-center py-2 mr-4 text-xl" href="index.html">
                         <h2 class="px-4 overflow-hidden text-2xl font-semibold max-h-9">
                             <!-- <img class="inline-block h-auto -mt-1 w-7 ltr:mr-2 rtl:ml-2" src="src/img/logo.png"> -->
-                            <img class="inline-block h-auto -mt-1 w-7" src="src/img/favicon.png">
+                            <img class="inline-block h-auto -mt-1 w-7" src="{{asset('src/img/favicon.png')}}">
                             <span>SYSTRAN</span>
                         </h2>
                     </a>
@@ -20,7 +20,7 @@
                     <div class="right-0 flex items-center">
                         <!-- Mobile menu button-->
                         <button id="navbartoggle" type="button"
-                            class="inline-flex items-center justify-center text-gray-200 focus:outline-none focus:ring-0"
+                            class="inline-flex items-center justify-center text-black focus:outline-none focus:ring-0 pr-3"
                             aria-controls="mobile-menu" @click="open = !open" aria-expanded="false"
                             x-bind:aria-expanded="open.toString()">
                             <span class="sr-only">Mobile menu</span>
@@ -50,7 +50,7 @@
                     <span class="fixed inset-x-0 top-0 w-full h-full bg-gray-900 bg-opacity-70"></span>
 
                     <!-- Mobile navbar -->
-                    <nav id="mobile-nav" class="fixed top-0 z-40 flex flex-col w-64 h-full py-4 overflow-auto"
+                    <nav id="mobile-nav" class="fixed top-0 z-40 flex flex-col w-64 h-full bg-white py-4 overflow-auto"
                         x-show="open" @click.away="open=false" x-description="Mobile menu" role="menu"
                         aria-orientation="vertical" aria-labelledby="navbartoggle"
                         x-transition:enter="transform transition-transform duration-300"
@@ -65,7 +65,7 @@
                                 <a href="landing.html#" class="relative flex">
                                     <h2 class="text-2xl font-semibold max-h-9">
                                         <!-- <img class="inline-block h-auto -mt-1 w-7 ltr:mr-2 rtl:ml-2" src="src/img/logo.png"> -->
-                                        <img class="inline-block h-auto -mt-1 w-7" src="src/img/favicon.png">
+                                        <img class="inline-block h-auto -mt-1 w-7" src="{{asset('src/img/favicon.png')}}">
                                         <span class="">SYSTRAN</span>
                                     </h2>
                                 </a>
@@ -97,7 +97,7 @@
                                         </li>
                                         <li>
                                             <div class="grid my-4 text-center lg:block lg:my-auto">
-                                                <a class="inline-block px-4 py-2 text-sm leading-5 text-center text-gray-100 rounded-full transition ease-in-out delay-150 bg-sky-500 hover:-translate-y-1 hover:scale-110 hover:bg-blue-700 duration-300"
+                                                <a class="inline-block px-4 py-2 mx-auto w-40 text-sm leading-5 text-center text-gray-100 rounded-full transition ease-in-out delay-150 bg-sky-500 hover:-translate-y-1 hover:scale-110 hover:bg-blue-700 duration-300"
                                                     href="{{ route('login') }}">
                                                     Iniciar Sesión
                                                 </a>
@@ -105,8 +105,7 @@
                                         </li>
                                         <li>
                                             <div class="grid my-4 text-center lg:block lg:my-auto">
-
-                                                <a class="inline-block px-4 py-2 ml-1 text-sm leading-5 text-center text-gray-100 rounded-full bg-green-500 border-green-500 hover:text-gray-100 hover:bg-green-600 hover:ring-0 hover:border-grenn-600 focus:bg-lime-600 focus:border-lime-600 focus:outline-none focus:ring-0"
+                                                <a class="inline-block px-4 py-2 mx-auto w-40 text-sm leading-5 text-center text-gray-100 rounded-full transition ease-in-out delay-150 bg-green-400 hover:-translate-y-1 hover:scale-110 hover:bg-green-600 duration-300"
                                                     href="{{ route('register') }}">
                                                     Registrar
                                                 </a>
@@ -127,7 +126,7 @@
                     <a class="items-center hidden py-2 mr-4 text-xl lg:flex" href="index.html">
                         <h2 class="px-4 overflow-hidden text-2xl font-semibold max-h-9">
                             <!-- <img class="inline-block h-auto -mt-1 w-7 ltr:mr-2 rtl:ml-2" src="src/img/logo.png"> -->
-                            <img class="inline-block h-auto -mt-1 w-7" src="src/img/favicon.png">
+                            <img class="inline-block h-auto -mt-1 w-7" src="{{asset('src/img/favicon.png')}}">
                             <span class="">SYSTRAN</span>
                         </h2>
                     </a>
@@ -180,7 +179,7 @@
     <main id="content">
         <!-- =========={ Hero }==========  -->
         <div class="relative">
-            <img src="src/img/header-bg.jpg" class="absolute inset-0 object-cover w-full h-full" alt="" />
+            <img src="{{asset('src/img/header-bg.jpg')}}" class="absolute inset-0 object-cover w-full h-full" alt="" />
             <div id="home"
                 class="relative z-20 pt-0 pb-0 overflow-hidden text-black lg:pt-36 bg-opacity-75 bg-sky-200">
 
@@ -233,7 +232,7 @@
                     </div><!-- end row -->
                 </div>
                 <div class="absolute bottom-0 z-20 w-full h-auto -mb-1 header-shape bg-transparent">
-                    <img src="src/img/header-shape.svg" alt="shape">
+                    <img src="{{asset('src/img/header-shape.svg')}}" alt="shape">
                 </div>
             </div><!-- end hero -->
         </div>

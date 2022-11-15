@@ -55,8 +55,9 @@
 
         </div>
     </div>
+    <div id="contact" class="relative bg-white">
     <x-guest.footer></x-guest.footer>
-
+    </div>
     <!--start::Global javascript (used in all pages)-->
     <script src="{{ asset('vendors/alpinejs/dist/cdn.min.js') }}"></script><!-- core js -->
     <script src="{{ asset('vendors/chart.js/dist/chart.min.js') }}"></script><!-- charts -->
