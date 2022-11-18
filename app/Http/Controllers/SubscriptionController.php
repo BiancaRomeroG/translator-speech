@@ -6,7 +6,7 @@ use App\Models\Plan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Cashier\Cashier;
-
+use Spatie\Permission\Models\Role;
 class SubscriptionController extends Controller
 {
     public function checkout($planId) {
@@ -39,7 +39,25 @@ class SubscriptionController extends Controller
                 'error' => 'error-subs'
             ]);
         }
-
+        $nombrePlan= Plan::where('name',$request->plan_name)->first();
+        switch($nombrePlan->name){
+            case "basic":
+                $rolA = $user->roles()->first()->name;
+                $user->removeRole($rolA);
+                $user->assignRole('basico');
+                break;
+             case "standard":
+                $rolA = $user->roles()->first()->name;
+                $user->removeRole($rolA);
+                $user->assignRole('estandar');
+                break;
+             case "premium":
+                $rolA = $user->roles()->first()->name;
+                $user->removeRole($rolA);
+                $user->assignRole('premium');
+                break;
+                
+        }
         return to_route('subscription.all');
     }
 
