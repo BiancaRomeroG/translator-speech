@@ -17,6 +17,7 @@
     {{--     <link rel="stylesheet" id="stylesheet" href="{{ asset('src/css/style.css') }}"> --}}
 
     <link rel="stylesheet" href="{{ asset('css/colors.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/toastr.min.css') }}">
     <!-- Scripts -->
     @vite(['resources/css/app.css'/* , 'resources/js/app.js' */])
     <!-- Production css (used in all pages) -->
@@ -86,6 +87,8 @@
     <!--start::Customizer js ( Only for demo purpose )-->
     <script src="{{ asset('src/js/customizer.js') }}"></script>
     
+    <script src="{{ asset('js/toastr/toastr.min.js') }}"></script>
+
 </body>
 
 </html>

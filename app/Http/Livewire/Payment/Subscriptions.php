@@ -6,7 +6,7 @@ use App\Models\Subscription;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Cashier\Subscription as CashierSubscription;
 use Livewire\Component;
-
+use Spatie\Permission\Models\Role;
 class Subscriptions extends Component
 {
     public $subscriptions;
@@ -49,6 +49,7 @@ class Subscriptions extends Component
             $user->subscription($subscription_name)->cancel();
             Subscriptions::mount();
         }
+       
     }
 
     public function cancelNowSubscription($subscription_name)
@@ -59,6 +60,11 @@ class Subscriptions extends Component
             $user->subscription($subscription_name)->cancelNow();
             Subscriptions::mount();
         }
+
+         //se elimina el rol actual y se asigna el rol "free"
+         $rolA = $user->roles()->first()->name;
+         $user->removeRole($rolA);
+         $user->assignRole('free');
     }
 
     public function resumeSubscription($subscription_name)
