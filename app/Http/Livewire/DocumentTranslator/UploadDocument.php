@@ -50,6 +50,7 @@ class UploadDocument extends Component
         $this->file = null;
         $this->emit('clearInput');
         
+        $this->emit('mount');
     }
 
     public function translateDocument($filename, $extension)

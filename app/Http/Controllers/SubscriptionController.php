@@ -39,6 +39,7 @@ class SubscriptionController extends Controller
                 'error' => 'error-subs'
             ]);
         }
+        
         $nombrePlan= Plan::where('name',$request->plan_name)->first();
         switch($nombrePlan->name){
             case "basic":

@@ -178,12 +178,12 @@
 
                         </div>
 
-                        <div id="flotante2" style="display:none;" class="col-span-1 mt-3">
+                        <div id="flotante2" style="display:none;" class="col-span-1 col-start-2 mt-3">
                             <div class="flex flex-wrap px-3 py-2 text-gray-600 bg-white rounded-lg"
                                 style="box-shadow: 0 1px 4px 0 rgb(0 0 0 / 37%);">
                                 <div class="px-2">
                                     <select name="volumen2" id="volumen2"
-                                        class="block w-full px-6 py-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                        class="block w-full px-6 py-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 ">
                                         <option value="1">Volumen </option>
                                         <option value="0.2">0.2</option>
                                         <option value="0.4">0.4</option>
@@ -195,7 +195,7 @@
 
                                 <div class="px-2">
                                     <select name="tono2" id="tono2"
-                                        class="block w-full px-6 py-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                        class="block w-full px-6 py-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 ">
                                         <option value="0">Tono</option>
                                         <option value="0">0 comun</option>
                                         <option value="0.5">0.5</option>
