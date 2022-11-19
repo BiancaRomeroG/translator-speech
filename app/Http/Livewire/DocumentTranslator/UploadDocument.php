@@ -15,8 +15,11 @@ class UploadDocument extends Component
 {
     use WithFileUploads;
 
-    public $file, $lang = 'en';
+    public $file, $lang_output = 'en';
     public $languages;
+    public $lang_input = 'es';
+    
+    
 
     protected $listeners = [
         'cleanInput',
@@ -26,8 +29,11 @@ class UploadDocument extends Component
 
     ];
 
+    
+
     public function render()
     {
+        // dd($this->languages[$this->lang_input]["name"]);
         return view('livewire.document-translator.upload-document');
     }
 
@@ -37,23 +43,29 @@ class UploadDocument extends Component
         $record = Record::findOrFail($record_id);
 
         $record->path_file_output = $url;
+        $record->lang_input = ucfirst($this->languages[$this->lang_input]["name"]);
+        $record->lang_output = ucfirst($this->languages[$this->lang_output]["name"]);
         $record->save();
-
+        
         $this->file = null;
         $this->emit('clearInput');
+        
     }
 
-    public function translateDocument($filename)
+    public function translateDocument($filename, $extension)
     {
-
         try {
             $file = $this->file->storeAs('public', $filename);
+            
+
             $url = Storage::url($file);
 
             $record = Record::create([
                 'path_file_input' => $url,
                 'id_user' => Auth::user()->id,
+                'extension' => $extension,
             ]);
+            
 
             # Remover el primer "/" para public path
             $sub_url = substr($url, 1, strlen($url));
@@ -61,13 +73,14 @@ class UploadDocument extends Component
 
             $response = Http::attach($filename, $file, $filename)
                 ->post(
-                    'https://aitranslator-api.azurewebsites.net/api/DocTranslator?userId=' . Auth::user()->id . '&lang=' . $this->lang,
+                    'https://aitranslator-api.azurewebsites.net/api/DocTranslator?userId=' . Auth::user()->id . '&lang=' . $this->lang_output,
                     [
                         'document' => $file,
                     ]
                 );
 
             $this->emit('return-json', $response->body(), $record->id);
+           
 
             DB::commit();
         } catch (\Throwable $th) {

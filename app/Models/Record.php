@@ -12,6 +12,9 @@ class Record extends Model
     protected $fillable = [
         'path_file_input',
         'path_file_output',
+        'lang_output',
+        'lang_input',
+        'extension',
         'id_user',
     ];
 }

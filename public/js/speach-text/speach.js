@@ -311,8 +311,8 @@ function mostrarHistorial() {
     divTraductor = document.getElementById('divTraductor');
     if (div.style.display == 'none') {
         div.style.display = '';
-        div.style.cssText = `width: 25%;`;
-        divTraductor.style.cssText = `width: 75%;`
+        div.style.cssText = `width: 30%;`;
+        divTraductor.style.cssText = `width: 70%;`
     } else {
         div.style.display = 'none';
         divTraductor.style.cssText = `width: 100%;`;

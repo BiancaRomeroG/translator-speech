@@ -256,24 +256,16 @@
             </div>
 
             {{-- Historial --}}
-            <div class="container bg-white modal right fade " style="width: 45%; display:none;" id="record-text">
-                <div class="min-h-screen mt-6 mb-8 ml-4">
-                    <div class="px-2 mx-auto modal-header">
+            <div class="bg-white right fade " style="width: 45%; display:none;" id="record-text">
+                <div class="mt-6 mb-8 ml-4">
+                    <div class="px-2 mx-auto">
                         <header class="mx-auto mb-4">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        <button onclick="mostrarHistorial()" type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                 aria-hidden="true">&times;</span></button>
                             <h1 class="mb-2 text-3xl font-medium leading-normal bg-white text-dark">Historial</h1>
                         </header>
-                    </div>
-                    <hr>
-                    <div class="px-2 mx-auto mt-2 mb-2 ml-56 ">
-                        <head class="mx-auto mb-4 text-right">
-                            <button class="text-right text-blue-700 hover:bg-blue-50 hover:ring-0 hover:border-blue-50 focus:bg-blue-50 focus:border-blue-50 focus:outline-none focus:ring-0">Borrar todo el historial</button>
-                        </head>
-                    </div>
-                    <hr>
-                    <div class="modal-body">
-                        <p>hola como estas</p>
+                        <hr>
+                        @livewire('traducir.traducir-texto')
                     </div>
                 </div>
             </div>
@@ -282,29 +274,8 @@
 
 
 
-    @livewire('traducir.traducir-texto')
+   
     <script src="{{ asset('js/speach-text/speach.js') }}"></script>
 
-    <script>
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks the button, open the modal 
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
 
 </x-app-layout>
