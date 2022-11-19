@@ -2,6 +2,7 @@ const file = document.getElementById('archivo')
 const btn_translate = document.getElementById('translate-document')
 var page = document.getElementById("loader-page")
 var global_name = '';
+var global_extension = ''; 
 
 page.style.visibility = 'hidden'
 
@@ -9,6 +10,8 @@ file.addEventListener('change', (evt) => {
     let evtTarget = evt.target.value
     let name = evtTarget.substring(12)
     global_name = name
+    global_extension = name.split('.').pop();
+    // console.log(name.split('.').pop())
 
     setTimeout(() => {
         console.log("settimeout");
@@ -36,7 +39,7 @@ btn_translate.addEventListener('click', () => {
 
     alertToast('info', 'Espera un momento por favor...', 10000);
 
-    Livewire.emit('translateDocument', global_name)
+    Livewire.emit('translateDocument', global_name, global_extension)
 });
 
 // Return JSON de la api

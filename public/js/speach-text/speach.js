@@ -333,6 +333,20 @@ myText2.addEventListener("input", function(){
 
 
 function mostrarHistorial() {
+
+    div = document.getElementById('record-text');
+    divTraductor = document.getElementById('divTraductor');
+    if (div.style.display == 'none') {
+        div.style.display = '';
+        div.style.cssText = `width: 30%;`;
+        divTraductor.style.cssText = `width: 70%;`
+    } else {
+        div.style.display = 'none';
+        divTraductor.style.cssText = `width: 100%;`;
+
+    }
+    
+
     //condicion para habilitar el permiso
     if (permisoNoInicial.value=="true") {
         div = document.getElementById('record-text');
@@ -399,6 +413,7 @@ function button1(mensaje){
     toastr.options.closeButton = true;
     toastr.options.preventDuplicates = true;
 // return div;
+
 }
 
 function direccionDasboard(){
