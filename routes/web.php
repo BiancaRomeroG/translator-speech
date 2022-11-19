@@ -38,13 +38,13 @@ Route::middleware([
     // Route::view('/traductor', 'traducir.texto')->name('traducir.texto');
     Route::get('/traductor', [HomeController::class, 'traducir_texto'])->name('traducir.texto');
 
- //Grupo de rutas protegidas para PREMIUM
-Route::group(['middleware' => ['role:premium']], function () {
-     # Start Route Document Translator
-     Route::get('/document-translator', [DocumentTranslatorController::class, 'index'])->name('document-translator');
-     # End Route Document Trasnlator
-});
- //End grupo
+    //Grupo de rutas protegidas para PREMIUM
+    Route::group(['middleware' => ['role:premium']], function () {
+        # Start Route Document Translator
+        Route::get('/document-translator', [DocumentTranslatorController::class, 'index'])->name('document-translator');
+        # End Route Document Trasnlator
+    });
+    //End grupo
 
     # Start Route Payment with Stripe
     Route::get('plans/checkout/{planId}', [SubscriptionController::class, 'checkout'])->name('plans.checkout');
