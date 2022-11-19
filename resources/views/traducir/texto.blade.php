@@ -1,10 +1,27 @@
 <x-app-layout>
 
     @section('title', 'Traducir texto')
-
+    @section('script-css')
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+   
+@endsection
 
     {{-- NavBar --}}
     <main>
+ 
+    {{-- Vericacion de roles --}}
+    @if (Auth::user()->hasAnyRole(['administrador','basico', 'estandar', 'premium']))
+        <input type="hidden" id="permisoNoInicial" value="true">
+    @else
+        <input type="hidden" id="permisoNoInicial" value="false">
+    @endif
+
+    @if (Auth::user()->hasAnyRole(['premium','administrador', 'estandar']))
+        <input type="hidden" id="permisoVoz" value="true">
+    @else
+        <input type="hidden" id="permisoVoz" value="false">
+    @endif
+
         <div class="flex flex-wrap">
             <div id="divTraductor" class="py-8 border md:py-12 bg-gray-50" style="width: 100%">
                 <div class="container px-4 mx-auto xl:max-w-6xl">
@@ -61,7 +78,7 @@
                                     <div class="">
                                         <button {{-- @click="open=!open" --}} id="btnStartRecord"
                                             class="w-10 h-10 mt-auto mb-auto text-center bg-white border border-none rounded-full btnMicroStart b1 hover:text-gray-900 hover:bg-gray-300 hover:ring-0 hover:border-gray-300 focus:bg-gray-300 focus:border-gray-300 focus:outline-none focus:ring-0"
-                                            type="button" tittle="andrea">
+                                            type="button">
                                             <i class="fa-solid fa-microphone"></i>
                                             <span class="msjMicroStart">Traducir por voz</span>
                                         </button>
@@ -276,6 +293,5 @@
 
    
     <script src="{{ asset('js/speach-text/speach.js') }}"></script>
-
 
 </x-app-layout>

@@ -86,6 +86,7 @@
                 <form action="{{ route('plan.process') }}" method="POST" id="subscribe-form">
                     @csrf
                     <input type="hidden" name="plan_id" value="{{ $plan->plan_id }}">
+                    <input type="hidden" name="plan_name" value="{{ $plan->name }}">
                     <div class="my-4">
                         <label class="block text-gray-500 text-sm font-semibold mb-2" for="email">
                             Email

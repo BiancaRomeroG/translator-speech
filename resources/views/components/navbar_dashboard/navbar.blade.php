@@ -40,7 +40,7 @@
                 <!-- <i class="text-2xl fas fa-bars"></i> -->
             </button>
             <!-- Search -->
-            <div class="inline-flex">
+            {{-- <div class="inline-flex">
                 <form class="hidden mx-5 sm:inline-block md:hidden lg:inline-block">
                     <div class="relative flex flex-wrap items-stretch w-full">
                         <input type="text"
@@ -61,7 +61,7 @@
                         </div>
                     </div>
                 </form>
-            </div>
+            </div> --}}
         </div>
 
 
@@ -348,7 +348,7 @@
                     x-transition:leave="transition-all duration-200 ease-in"
                     x-transition:leave-start="transform opacity-100 scale-100"
                     x-transition:leave-end="transform opacity-0 scale-95"
-                    class="w-72 origin-top-right absolute ltr:-right-36 md:ltr:right-0 rtl:-left-36 md:rtl:left-0 rounded top-full z-50 py-0.5 bg-white shadow-md"
+                    class="w-60 origin-top-right absolute right-0 ltr:-right-36 md:ltr:right-0 rtl:-left-36 md:rtl:left-0 rounded top-full z-50 py-0.5 bg-white shadow-md"
                     style="display: none;">
                     <div class="px-4 py-3 text-sm text-gray-900">
                         <div class="font-medium ">
@@ -418,19 +418,41 @@
                     Traducir Texto
                 </x-jet-nav-link>
             </li>
-            <li class="relative">
-                <x-jet-nav-link href="{{ route('document-translator') }}" :active="request()->routeIs('document-translator')">
-                    <i class="fa-solid fa-file"></i>
-                    Traducir Documentos
-                </x-jet-nav-link>
-            </li>
-
-        <li class="relative">
-            <a class="block px-0 py-3 lg:py-7 lg:px-4 hover:text-gray-300 color_nav_fuente" href="#">
-                <i class="fa-solid fa-image"></i>
-                Traducir Imagenes
-            </a>
-        </li>
+         {{-- condicion para habilitar las sgtes opciones --}}
+                @if (Auth::user()->hasAnyRole([ 'administrador', 'premium']))
+                    <li class="relative">
+                        <x-jet-nav-link  
+                        href="{{ route('document-translator') }}" :active="request()->routeIs('document-translator')"> 
+                        <i class="fa-solid fa-file"></i>
+                            Traducir Documentos
+                        </x-jet-nav-link>
+                     
+                    </li>
+                    {{-- opcion habilitada si tiene algun rol --}}
+                    <li class="relative">
+                        <a class="block px-0 py-3 lg:py-7 lg:px-4 hover:text-gray-300 color_nav_fuente" href="#">
+                            <i class="fa-solid fa-image"></i>
+                            Traducir Imagenes
+                        </a>
+                    </li>
+                @else
+                    <li class="relative">
+                        <x-jet-nav-link  
+                       onclick="notificacionParaNoPremium();"> 
+                        <i class="fa-solid fa-file"></i>
+                            Traducir Documentos 
+                            <input type="hidden" name="permisoVistaDoc" id="permisoVistaDoc" value="false" >
+                        </x-jet-nav-link>
+                    </li>
+                    
+                    <li class="relative">
+                        <a class="block px-0 py-3 lg:py-7 lg:px-4 hover:text-gray-300 color_nav_fuente"  onclick="notificacionParaNoPremium()">
+                            <i class="fa-solid fa-image"></i>
+                            Traducir Imagenes 
+                            <input type="hidden" name="permisoVistaImg" id="permisoVistaImg"  value="false">
+                        </a>
+                    </li>
+                @endif
 
         <li class="relative">
             <x-jet-nav-link href="{{ route('subscription.all') }}" :active="request()->routeIs('subscription.all')">
@@ -440,5 +462,34 @@
         </li>
     </ul>
 
-        
+    {{-- <script>
+        // const tradDoc = document.querySelector("#permisoVistaDoc");
+     
+        // tradDoc.addEventListener("click",prueba)
+        function prueba(){
+             toastr.info("Adquiere el plan PREMIUM para usar esta función")
+             toastr.options.closeButton = true;
+             toastr.options.preventDuplicates = true;
+        }
+      </script>
+  --}}
+        <!-- button -->
+        {{-- <form method="POST" action="{{ route('logout') }}" x-data>
+            @csrf
+            <div class="my-6 text-center lg:block lg:my-auto">
+                <button
+                    class="inline-block px-4 py-2 text-sm leading-5 text-center text-gray-300 bg-indigo-500 border border-indigo-500 rounded hover:text-gray-200 hover:bg-indigo-600 hover:ring-0 hover:border-indigo-600 focus:bg-indigo-600 focus:border-indigo-600 focus:outline-none focus:ring-0"
+                    target="_blank" rel="noopener" href="layout-topnav.html#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="inline ltr:mr-1 rtl:ml-1 feather feather-log-out">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    Cerrar Sesión
+                </button>
+            </div>
+        </form> --}}
     </div>
+   

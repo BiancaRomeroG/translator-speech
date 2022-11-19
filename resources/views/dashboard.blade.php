@@ -172,7 +172,7 @@
 
         <!-- =========={ PRICING }==========  -->
         <div class="container mx-auto antialiased text-gray-900 bg-transparent" x-data="setup()">
-            <main class="mx-4 my-16">
+            <main class="mx-4 my-16" id="planes">
                 <div class="text-center">
                     <h1 class="mb-4 text-2xl font-normal md:text-3xl lg:text-4xl text-blue">
                         <span class="font-semibold">NUESTROS MEJORES PLANES Y PRECIOS</span>
@@ -321,13 +321,6 @@
                         </div>
                     </div>
                 </section>
-
-
-
-
-
-
             </main>
-
-
+           
 </x-app-layout>

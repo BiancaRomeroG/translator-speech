@@ -109,6 +109,11 @@ const btnStopRecord = document.getElementById("btnStopRecord");
 const textArea1 = document.getElementById('textArea1')
 const textArea2 = document.getElementById('textArea2');
 
+//variables para habilitar los permisos 
+const permisoNoInicial =document.getElementById('permisoNoInicial')
+const permisoPremium =document.getElementById('permisoPremium')
+const permisoVoz =document.getElementById('permisoVoz')
+
 //obtengo los selects
 const selectFirst = document.getElementById('idioma1');
 const selectSecond = document.getElementById('idioma2');
@@ -132,22 +137,37 @@ for (const i in languages) {
 selectFirst.value = lenguaje1;
 selectSecond.value = lenguaje2;
 
+
+
 function mostrarEscucharVoz() {
-    div = document.getElementById('flotante');
-    if (div.style.display == 'none') {
-        div.style.display = '';
-    } else {
-        div.style.display = 'none';
-    }
+    if (permisoNoInicial.value=="true") {
+        div = document.getElementById('flotante');
+        if (div.style.display == 'none') {
+            div.style.display = '';
+        } else {
+            div.style.display = 'none';
+        }    
+    }else{   
+       //notificacion si solo posee el rol de inicial   
+       notificacion("Adquiere alguno de nuestros planes para usar esta función.");       
+       //button1("Adquiere alguno de nuestros planes para usar esta función.");
+
+    } 
 }
 
 function mostrarEscucharVoz2() {
-    div = document.getElementById('flotante2');
-    if (div.style.display == 'none') {
-        div.style.display = '';
-    } else {
-        div.style.display = 'none';
-    }
+    if (permisoNoInicial.value=="true") {
+        div = document.getElementById('flotante2');
+        if (div.style.display == 'none') {
+            div.style.display = '';
+        } else {
+            div.style.display = 'none';
+        }  
+    }else{
+      //  notificacion si solo posee el rol de inicial
+         notificacion("Adquiere alguno de nuestros planes para usar esta función.")
+        //button1("Adquiere alguno de nuestros planes para usar esta función.")
+    } 
 }
 
 document.getElementById("btnPlay").addEventListener("click", () => {
@@ -251,9 +271,15 @@ recognition.onresult = (event) => {
 
 
 btnStartRecord.addEventListener("click", () => {
-    mostrarMsj();
-    recognition.start()
+    if ((permisoVoz.value=="true")) {
+        mostrarMsj();
+        recognition.start();  
+    }else{
+        notificacion("Adquiere el plan STANDARD o PREMIUM para usar esta función.")
+       // button1("Adquiere el plan STANDARD o PREMIUM para usar esta función.")
+    }  
 })
+
 btnStopRecord.addEventListener('click', async () => {
     action.innerHTML = " Se ha detenido la grabación. "
     recognition.abort();
@@ -307,6 +333,7 @@ myText2.addEventListener("input", function(){
 
 
 function mostrarHistorial() {
+
     div = document.getElementById('record-text');
     divTraductor = document.getElementById('divTraductor');
     if (div.style.display == 'none') {
@@ -319,5 +346,76 @@ function mostrarHistorial() {
 
     }
     
+
+    //condicion para habilitar el permiso
+    if (permisoNoInicial.value=="true") {
+        div = document.getElementById('record-text');
+        divTraductor = document.getElementById('divTraductor');
+        if (div.style.display == 'none') {
+            div.style.display = '';
+            div.style.cssText = `width: 25%;`;
+            divTraductor.style.cssText = `width: 75%;`
+        } else {
+            div.style.display = 'none';
+            divTraductor.style.cssText = `width: 100%;`;
+    
+        }
+      
+    }else{
+        notificacion("Adquiere alguno de nuestros planes para usar esta función.")
+       // button1("Adquiere alguno de nuestros planes para usar esta función.")
+    }
+   
 }
 
+
+
+//NOTIFICACIONES TOASTR
+function notificacionParaNoPremium(){
+   return button1("Adquiere el plan PREMIUM para usar esta opción")
+  // return notificacion("Adquiere el plan PREMIUM para usar esta opción")
+ } 
+
+ //notificacion sin redireccionamiento
+function notificacion(mensaje){
+    var div = document.createElement("div")
+    var label = document.createElement("small")
+    label.innerHTML=mensaje
+    div.appendChild(label);
+    toastr.info(div);
+    toastr.options.closeButton = true;
+    toastr.options.preventDuplicates = true;
+} 
+
+//notificacion con redireccionamiento
+function button1(mensaje){
+    var button = document.createElement("button")
+    var div = document.createElement("div")
+    var row =document.createElement("div")
+    row.className ="grid grid-cols-6 gap-4";
+    var col1 =document.createElement("div")
+    col1.className="col-span-5"       
+    var col2 =document.createElement("div")   
+    col2.className="col-span-1"     
+    row.appendChild(col1)
+    row.appendChild(col2)
+    var label = document.createElement("small")
+    label.innerHTML=mensaje;
+    button.className ="bg-indigo-500 text-white px-3 py-2 rounded-tl-lg rounded-br-lg hover:bg-indigo-600";
+    button.innerHTML="Ir";
+    button.style="margin-left:-16px; margin-top:5px"
+  button.addEventListener("click",direccionDasboard);
+    col1.appendChild(label);
+    col2.appendChild(button);
+    div.appendChild(row);
+
+    toastr.info(div);
+    toastr.options.closeButton = true;
+    toastr.options.preventDuplicates = true;
+// return div;
+
+}
+
+function direccionDasboard(){
+    window.location="dashboard/#planes";
+}

@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="{{ asset('css/loader-page.css') }}">
 @endsection
 <x-app-layout>
+
     {{-- NavBar --}}
     <div id="loader-page" class="loader-page">
         <h1 class="grid justify-center font-sans text-3xl font-bold text-center loader-page" style="z-index: 25001;">

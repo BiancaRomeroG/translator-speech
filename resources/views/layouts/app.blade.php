@@ -17,6 +17,7 @@
     {{--     <link rel="stylesheet" id="stylesheet" href="{{ asset('src/css/style.css') }}"> --}}
 
     <link rel="stylesheet" href="{{ asset('css/colors.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/toastr.min.css') }}">
     <!-- Scripts -->
     @vite(['resources/css/app.css'/* , 'resources/js/app.js' */])
     <!-- Production css (used in all pages) -->
@@ -56,8 +57,9 @@
 
         </div>
     </div>
+    <div id="contact" class="relative bg-white">
     <x-guest.footer></x-guest.footer>
-
+    </div>
     <!--start::Global javascript (used in all pages)-->
     <script src="{{ asset('vendors/alpinejs/dist/cdn.min.js') }}"></script><!-- core js -->
     <script src="{{ asset('vendors/chart.js/dist/chart.min.js') }}"></script><!-- charts -->
@@ -86,6 +88,8 @@
     <!--start::Customizer js ( Only for demo purpose )-->
     <script src="{{ asset('src/js/customizer.js') }}"></script>
     
+    <script src="{{ asset('js/toastr/toastr.min.js') }}"></script>
+
 </body>
 
 </html>
