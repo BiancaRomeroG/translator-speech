@@ -15,6 +15,8 @@ class recordText extends Model
         'path_file_output',
         'language_input',
         'language_output',
+        'idiom_input',
+        'idiom_output',
         'id_user',
     ];
 

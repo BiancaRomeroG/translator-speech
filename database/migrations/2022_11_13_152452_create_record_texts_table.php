@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('path_file_output')->nullable();
             $table->string('language_input')->nullable();
             $table->string('language_output')->nullable();
+            $table->string('idiom_input')->nullable();
+            $table->string('idiom_output')->nullable();
             $table->unsignedBigInteger('id_user')->nullable();
             $table->foreign('id_user')->references('id')->on('users');
             $table->timestamps();

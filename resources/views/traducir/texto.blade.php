@@ -50,11 +50,6 @@
                                     <select id="idioma2" name="idioma2"
                                         class="relative w-auto pl-3 pr-8 overflow-x-auto leading-5 bg-white border border-none appearance-none focus:outline-none focus:border-gray-400 focus:ring-0 select-caret"
                                         aria-label="Default select example">
-                                        {{-- <option selected value="0">INGLES</option>
-                            <option value="8">ESPAÑOL</option>
-                            <option value="3">FRANCES</option>
-                            <option value="22">PORTUGUES</option>
-                            <option value="8">CAMBA</option> --}}
                                     </select>
                                 </div>
                             </div>

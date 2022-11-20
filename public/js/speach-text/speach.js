@@ -234,7 +234,16 @@ document.querySelector('#btnTraducir').addEventListener('click', async () => {
     const path_file_output = document.querySelector('#textArea2').value;
     const language_input = document.querySelector('#idioma1').value;
     const language_output = document.querySelector('#idioma2').value;
-    Livewire.emit('saveHistorial', path_file_input, path_file_output, language_input, language_output );
+
+
+    const select1 = document.querySelector('#idioma1');
+    const select2 = document.querySelector('#idioma2');
+
+    const idiom_input = select1.options[select1.selectedIndex].innerHTML;
+    const idiom_output = select2.options[select2.selectedIndex].innerHTML;
+
+
+    Livewire.emit('saveHistorial', path_file_input, path_file_output, language_input, language_output, idiom_input, idiom_output );
 });
 
 
@@ -343,7 +352,6 @@ function mostrarHistorial() {
     } else {
         div.style.display = 'none';
         divTraductor.style.cssText = `width: 100%;`;
-
     }
     
 

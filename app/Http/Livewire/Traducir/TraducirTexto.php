@@ -14,6 +14,7 @@ class TraducirTexto extends Component
     public $path_file_output;
     public $language_input;
     public $language_output;
+
     public $idioma2;
     public $recordText;
     protected $listeners = ['saveHistorial','deleteAllRecord'];
@@ -26,13 +27,15 @@ class TraducirTexto extends Component
         $this->recordText = recordText::where('id_user', auth()->user()->id)->get();
     }
 
-    public function saveHistorial($input_text, $output_text, $input_language, $output_language){
+    public function saveHistorial($input_text, $output_text, $input_language, $output_language, $idiom_input, $idiom_output){
         //dd($input_text,$output_text,$input_language,$output_language);
         recordText::create([
             'path_file_input' => $input_text,
             'path_file_output' => $output_text,
             'language_input' => $input_language,
             'language_output' => $output_language,
+            'idiom_input' => $idiom_input,
+            'idiom_output' => $idiom_output,
             'id_user' => auth()->user()->id
 
         ]);
