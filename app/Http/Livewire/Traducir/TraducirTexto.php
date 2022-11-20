@@ -51,6 +51,7 @@ class TraducirTexto extends Component
     {
         DB::table('record_texts')->where('id_user', auth()->user()->id)->delete();
         TraducirTexto::mount(); 
+        $this->emit('clearInputsText');
     }
 
     public function deleteOneRecord($id)

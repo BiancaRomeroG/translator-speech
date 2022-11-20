@@ -110,9 +110,9 @@ const textArea1 = document.getElementById('textArea1')
 const textArea2 = document.getElementById('textArea2');
 
 //variables para habilitar los permisos 
-const permisoNoInicial =document.getElementById('permisoNoInicial')
-const permisoPremium =document.getElementById('permisoPremium')
-const permisoVoz =document.getElementById('permisoVoz')
+const permisoNoInicial = document.getElementById('permisoNoInicial')
+const permisoPremium = document.getElementById('permisoPremium')
+const permisoVoz = document.getElementById('permisoVoz')
 
 //obtengo los selects
 const selectFirst = document.getElementById('idioma1');
@@ -140,34 +140,34 @@ selectSecond.value = lenguaje2;
 
 
 function mostrarEscucharVoz() {
-    if (permisoNoInicial.value=="true") {
+    if (permisoNoInicial.value == "true") {
         div = document.getElementById('flotante');
         if (div.style.display == 'none') {
             div.style.display = '';
         } else {
             div.style.display = 'none';
-        }    
-    }else{   
-       //notificacion si solo posee el rol de inicial   
-       notificacion("Adquiere alguno de nuestros planes para usar esta función.");       
-       //button1("Adquiere alguno de nuestros planes para usar esta función.");
+        }
+    } else {
+        //notificacion si solo posee el rol de inicial   
+        notificacion("Adquiere alguno de nuestros planes para usar esta función.");
+        //button1("Adquiere alguno de nuestros planes para usar esta función.");
 
-    } 
+    }
 }
 
 function mostrarEscucharVoz2() {
-    if (permisoNoInicial.value=="true") {
+    if (permisoNoInicial.value == "true") {
         div = document.getElementById('flotante2');
         if (div.style.display == 'none') {
             div.style.display = '';
         } else {
             div.style.display = 'none';
-        }  
-    }else{
-      //  notificacion si solo posee el rol de inicial
-         notificacion("Adquiere alguno de nuestros planes para usar esta función.")
+        }
+    } else {
+        //  notificacion si solo posee el rol de inicial
+        notificacion("Adquiere alguno de nuestros planes para usar esta función.")
         //button1("Adquiere alguno de nuestros planes para usar esta función.")
-    } 
+    }
 }
 
 document.getElementById("btnPlay").addEventListener("click", () => {
@@ -243,9 +243,13 @@ document.querySelector('#btnTraducir').addEventListener('click', async () => {
     const idiom_output = select2.options[select2.selectedIndex].innerHTML;
 
 
-    Livewire.emit('saveHistorial', path_file_input, path_file_output, language_input, language_output, idiom_input, idiom_output );
+    Livewire.emit('saveHistorial', path_file_input, path_file_output, language_input, language_output, idiom_input, idiom_output);
 });
 
+Livewire.on('clearInputsText', () => {
+    document.querySelector('#textArea1').value = "";
+    document.querySelector('#textArea2').value = "";
+});
 
 //voz a texto
 
@@ -280,13 +284,13 @@ recognition.onresult = (event) => {
 
 
 btnStartRecord.addEventListener("click", () => {
-    if ((permisoVoz.value=="true")) {
+    if ((permisoVoz.value == "true")) {
         mostrarMsj();
-        recognition.start();  
-    }else{
+        recognition.start();
+    } else {
         notificacion("Adquiere el plan STANDARD o PREMIUM para usar esta función.")
-       // button1("Adquiere el plan STANDARD o PREMIUM para usar esta función.")
-    }  
+        // button1("Adquiere el plan STANDARD o PREMIUM para usar esta función.")
+    }
 })
 
 btnStopRecord.addEventListener('click', async () => {
@@ -325,7 +329,7 @@ function mostrarMsj() {
 const myText1 = document.getElementById("textArea1");
 myText1.style.cssText = `height: ${myText1.scrollHeight}px; overflow-y: hidden; resize: none`;
 
-myText1.addEventListener("input", function(){
+myText1.addEventListener("input", function () {
     this.style.height = "auto";
     this.style.height = `${this.scrollHeight}px`;
 });
@@ -333,7 +337,7 @@ myText1.addEventListener("input", function(){
 const myText2 = document.getElementById("textArea2");
 myText2.style.cssText = `height: ${myText2.scrollHeight}px; overflow-y: hidden; resize: none`;
 
-myText2.addEventListener("input", function(){
+myText2.addEventListener("input", function () {
     this.style.height = "auto";
     this.style.height = `${this.scrollHeight}px`;
 });
@@ -353,10 +357,10 @@ function mostrarHistorial() {
         div.style.display = 'none';
         divTraductor.style.cssText = `width: 100%;`;
     }
-    
+
 
     //condicion para habilitar el permiso
-    if (permisoNoInicial.value=="true") {
+    if (permisoNoInicial.value == "true") {
         div = document.getElementById('record-text');
         divTraductor = document.getElementById('divTraductor');
         if (div.style.display == 'none') {
@@ -366,53 +370,68 @@ function mostrarHistorial() {
         } else {
             div.style.display = 'none';
             divTraductor.style.cssText = `width: 100%;`;
-    
+
         }
-      
-    }else{
+
+    } else {
         notificacion("Adquiere alguno de nuestros planes para usar esta función.")
-       // button1("Adquiere alguno de nuestros planes para usar esta función.")
+        // button1("Adquiere alguno de nuestros planes para usar esta función.")
     }
-   
+
 }
 
+//VACIAR INPUTS
+const vaciarArea = document.getElementById('textArea1');
+vaciarArea.addEventListener("input", () => {
+    btnClearArea = document.getElementById('btnClearArea');
+    if (vaciarArea.value == "") {
+        btnClearArea.style.display = 'none';
+    } else {
+        btnClearArea.style.display = '';
+    }
+});
 
+function vaciarTextsArea() {
+    document.getElementById('textArea1').value = '';
+    document.getElementById('textArea2').value = '';
+    document.getElementById('btnClearArea').style.display = 'none';
+}
 
 //NOTIFICACIONES TOASTR
-function notificacionParaNoPremium(){
-   return button1("Adquiere el plan PREMIUM para usar esta opción")
-  // return notificacion("Adquiere el plan PREMIUM para usar esta opción")
- } 
+function notificacionParaNoPremium() {
+    return button1("Adquiere el plan PREMIUM para usar esta opción")
+    // return notificacion("Adquiere el plan PREMIUM para usar esta opción")
+}
 
- //notificacion sin redireccionamiento
-function notificacion(mensaje){
+//notificacion sin redireccionamiento
+function notificacion(mensaje) {
     var div = document.createElement("div")
     var label = document.createElement("small")
-    label.innerHTML=mensaje
+    label.innerHTML = mensaje
     div.appendChild(label);
     toastr.info(div);
     toastr.options.closeButton = true;
     toastr.options.preventDuplicates = true;
-} 
+}
 
 //notificacion con redireccionamiento
-function button1(mensaje){
+function button1(mensaje) {
     var button = document.createElement("button")
     var div = document.createElement("div")
-    var row =document.createElement("div")
-    row.className ="grid grid-cols-6 gap-4";
-    var col1 =document.createElement("div")
-    col1.className="col-span-5"       
-    var col2 =document.createElement("div")   
-    col2.className="col-span-1"     
+    var row = document.createElement("div")
+    row.className = "grid grid-cols-6 gap-4";
+    var col1 = document.createElement("div")
+    col1.className = "col-span-5"
+    var col2 = document.createElement("div")
+    col2.className = "col-span-1"
     row.appendChild(col1)
     row.appendChild(col2)
     var label = document.createElement("small")
-    label.innerHTML=mensaje;
-    button.className ="bg-indigo-500 text-white px-3 py-2 rounded-tl-lg rounded-br-lg hover:bg-indigo-600";
-    button.innerHTML="Ir";
-    button.style="margin-left:-16px; margin-top:5px"
-  button.addEventListener("click",direccionDasboard);
+    label.innerHTML = mensaje;
+    button.className = "bg-indigo-500 text-white px-3 py-2 rounded-tl-lg rounded-br-lg hover:bg-indigo-600";
+    button.innerHTML = "Ir";
+    button.style = "margin-left:-16px; margin-top:5px"
+    button.addEventListener("click", direccionDasboard);
     col1.appendChild(label);
     col2.appendChild(button);
     div.appendChild(row);
@@ -420,10 +439,10 @@ function button1(mensaje){
     toastr.info(div);
     toastr.options.closeButton = true;
     toastr.options.preventDuplicates = true;
-// return div;
+    // return div;
 
 }
 
-function direccionDasboard(){
-    window.location="dashboard/#planes";
+function direccionDasboard() {
+    window.location = "dashboard/#planes";
 }
