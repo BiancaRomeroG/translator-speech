@@ -41,8 +41,8 @@
         </div><!-- end hero -->
 
         <!-- =========={ features }==========  -->
-        <div id="caracteristicas" class="relative pb-2 bg-white pt-14 md:pt-16 md:pb-4 m-12">
-            <div class="container px-4 mx-auto xl:max-w-6xl m-12">
+        <div id="caracteristicas" class="relative py-14 md:py-10 bg-gray-100">
+            <div class="container px-auto mx-auto xl:max-auto">
                 <!-- section header -->
                 <header class="mx-auto mb-12 text-center">
                     <h1 class="mb-2 text-3xl font-bold leading-normal text-blue">Nuestras Características</h1>
@@ -50,7 +50,7 @@
                     {{-- <p class="pb-2 mx-auto text-xl font-semibold leading-relaxed text-green">Traducción rápida, segura y
                         eficaz</p> --}}
                 </header><!-- end section header -->
-                <div class="columns-4">
+                <div class="columns-2">
                     <div>
                         <center>
                             <img class="object-[center_bottom]"

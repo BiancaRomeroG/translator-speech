@@ -1026,7 +1026,7 @@
         <div id="contact" class="relative py-14 md:py-10 bg-gray-100">
             <div class="container mx-auto xl:max-w-7xl">
                 <section class="min-h-screen bg-gray-100 ">
-                    <div class="container flex flex-col min-h-screen pt-5 pb-14 mx-auto">
+                    <div class="container px-6 py-10 mx-auto">
                         <div class="flex-1 lg:flex lg:items-center lg:-mx-6">
                             <div class="text-gray-900 lg:w-1/2 lg:mx-6">
                                 <h1 class="text-3xl font-semibold capitalize lg:text-5xl">Obtén un plan personalizado</h1>

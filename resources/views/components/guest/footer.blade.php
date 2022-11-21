@@ -2,7 +2,7 @@
     <!-- ====== Footer Section Start -->
     <footer class="relative z-10 bg-white pt-10 xl:max-w-7xl mx-auto">
         <div class="container mx-auto xl:max-w-7xl">
-            <div class="-mx-4 flex flex-wrap">
+            <div class="-mx-auto flex flex-wrap">
                 <div class="w-full px-4 sm:w-2/3 lg:w-3/12">
                     <div class="mb-10 w-full">
                         <a class="items-center hidden py-2 mr-4 text-xl lg:flex" href="index.html">
