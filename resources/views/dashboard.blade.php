@@ -305,7 +305,8 @@
                                                             <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                         </svg>
                                                     </div>
-                                                    <span class="ml-3 text-lg text-gray-700">{{ $plan_detail->description }}</span>
+                                                    <span
+                                                        class="ml-3 text-lg text-gray-700">{{ $plan_detail->description }}</span>
                                                 </li>
                                             @endforeach
                                         </ul>
@@ -322,5 +323,10 @@
                     </div>
                 </section>
             </main>
-           
+            <script>
+                window.onload = function() {
+                    Livewire.emit('is_your_plan_expired');
+                }
+            </script>
+
 </x-app-layout>
