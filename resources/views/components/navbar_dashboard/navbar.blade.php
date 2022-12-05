@@ -279,7 +279,7 @@
                 </x-jet-nav-link>
             </li>
             {{-- condicion para habilitar las sgtes opciones --}}
-            @if (Auth::user()->hasAnyRole(['administrador', 'premium']))
+   
                 <li class="relative">
                     <x-jet-nav-link href="{{ route('document-translator') }}" :active="request()->routeIs('document-translator')">
                         <i class="fa-solid fa-file"></i>
@@ -294,24 +294,7 @@
                         Traducir Imagenes
                     </a>
                 </li>
-            @else
-                <li class="relative">
-                    <x-jet-nav-link onclick="notificacionParaNoPremium();">
-                        <i class="fa-solid fa-file"></i>
-                        Traducir Documentos
-                        <input type="hidden" name="permisoVistaDoc" id="permisoVistaDoc" value="false">
-                    </x-jet-nav-link>
-                </li>
 
-                <li class="relative">
-                    <a class="block px-0 py-3 lg:py-7 lg:px-4 hover:text-gray-300 color_nav_fuente"
-                        onclick="notificacionParaNoPremium()">
-                        <i class="fa-solid fa-image"></i>
-                        Traducir Imagenes
-                        <input type="hidden" name="permisoVistaImg" id="permisoVistaImg" value="false">
-                    </a>
-                </li>
-            @endif
 
             <li class="relative">
                 <x-jet-nav-link href="{{ route('subscription.all') }}" :active="request()->routeIs('subscription.all')">

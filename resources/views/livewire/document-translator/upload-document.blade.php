@@ -36,11 +36,23 @@
                 <h1 class="font-sans text-xl text-center">Selecciona un documento</h1>
                 <p class="font-serif text-center text-gray-400">Sube un archivo .docx, .pdf, .pptx o .xlsx</p>
                 <div class="py-5 text-center">
-                    <label
+                 @if (Auth::user()->HasRole(['premium']))
+                       <label
                         class="inline-block px-4 py-2 text-sm leading-5 text-center text-white bg-indigo-500 border border-indigo-500 rounded hover:text-gray-200 hover:bg-indigo-600 hover:ring-0 hover:border-indigo-600 focus:bg-indigo-600 focus:border-indigo-600 focus:outline-none focus:ring-0">
+                     
                         <input type="file" wire:model="file" name="archivo" id="archivo" style="display: none">
                         Subir documento
                     </label>
+                     @else
+                     <label
+                     class="inline-block px-4 py-2 text-sm leading-5 text-center text-white bg-indigo-500 border border-indigo-500 rounded hover:text-gray-200 hover:bg-indigo-600 hover:ring-0 hover:border-indigo-600 focus:bg-indigo-600 focus:border-indigo-600 focus:outline-none focus:ring-0">
+                  
+                     <button  onclick="mostrarPublicidad();">
+                     Subir documento</button>
+                 </label> 
+                     @endif
+                       
+                   
                 </div>
             </div>
             <div class="grid col-span-2 justify-center p-5 lg:p-10 {{ $file ? 'block' : 'hidden' }}">
