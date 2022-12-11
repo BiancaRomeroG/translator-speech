@@ -1,5 +1,10 @@
 @section('title', 'Dashboard')
 <x-app-layout>
+    @section('script-css')
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    
+@endsection
     {{-- NavBar --}}
 
     <main id="content">
@@ -14,7 +19,7 @@
                         <div class="mt-6 text-center lg:ltr:text-left lg:rtl:text-right lg:mt-0 ">
                             <div class="mb-8">
                                 <h1 class="mb-3 text-4xl font-bold leading-normal text-blue text-left">Usa SYSTRAN
-                                    Translate para tus traducciónes más precisa del mundo</h1>
+                                    Translate para tus traducciones más precisa del mundo</h1>
                                 <p class=" mb-3  text-2xl font-bold leading-normal text-left text-green">Herramienta de
                                     traduccion en línea</p>
                                 <p class="pb-2 mx-auto text-xl font-light leading-relaxed text-dark text-left"> Utiliza
@@ -230,9 +235,17 @@
                                         </ul>
                                     </div>
                                     <div class="flex items-center block p-8 uppercase">
+                                        @if (Auth::user()->hasRole('basico'))
+                                        {{-- <a onclick="UsuarioBasico();" --}}
+                                        <a onclick="notificacion('Ya has adquirido este plan');"
+                                            class="block w-full px-6 py-4 mt-3 text-lg font-semibold text-center text-white bg-gray-900 rounded shadow-sm hover:bg-green-600 font-bold">
+                                            Comprar</a>
+                                        @else
                                         <a href="{{ route('plans.checkout', $planBasic->plan_id) }}"
                                             class="block w-full px-6 py-4 mt-3 text-lg font-semibold text-center text-white bg-gray-900 rounded shadow-sm hover:bg-green-600">
                                             Comprar</a>
+                                            
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -273,9 +286,16 @@
                                 </div>
 
                                 <div class="flex items-center block p-8 uppercase">
+                                    @if( (Auth::user()->hasRole('premium')))
+                                    <a onclick="notificacion('Ya has adquirido este plan');"
+                                        class="block w-full px-6 py-4 mt-3 text-lg font-semibold text-center text-white bg-gray-900 rounded shadow-sm hover:bg-amber-500">
+                                        Comprar</a>
+                                    @else
                                     <a href="{{ route('plans.checkout', $planPremium->plan_id) }}"
                                         class="block w-full px-6 py-4 mt-3 text-lg font-semibold text-center text-white bg-gray-900 rounded shadow-sm hover:bg-amber-500">
                                         Comprar</a>
+                                        
+                                    @endif
                                 </div>
                             </div>
                             <!-- Premium Pricing -->
@@ -313,9 +333,17 @@
                                     </div>
 
                                     <div class="flex items-center block p-8 uppercase">
+                                        @if  (Auth::user()->hasRole('estandar'))
+                                        <a onclick="notificacion('Ya has adquirido este plan')"
+                                            class="block w-full px-6 py-4 mt-3 text-lg font-semibold text-center text-white bg-gray-900 rounded shadow-sm hover:bg-green-600">
+                                            Comprar</a>
+    
+                                        @else
                                         <a href="{{ route('plans.checkout', $planStandard->plan_id) }}"
                                             class="block w-full px-6 py-4 mt-3 text-lg font-semibold text-center text-white bg-gray-900 rounded shadow-sm hover:bg-green-600">
                                             Comprar</a>
+                                            
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -328,5 +356,5 @@
                     Livewire.emit('is_your_plan_expired');
                 }
             </script>
-
+<script src="{{ asset('js/speach-text/speach.js') }}"></script>
 </x-app-layout>

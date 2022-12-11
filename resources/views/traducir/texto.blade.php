@@ -4,25 +4,13 @@
     @section('script-css')
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"
             integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-
+        
     @endsection
 
     {{-- NavBar --}}
     <main>
 
-        {{-- Vericacion de roles --}}
-        @if (Auth::user()->hasAnyRole(['administrador', 'basico', 'estandar', 'premium']))
-            <input type="hidden" id="permisoNoInicial" value="true">
-        @else
-            <input type="hidden" id="permisoNoInicial" value="false">
-        @endif
-
-        @if (Auth::user()->hasAnyRole(['premium', 'administrador', 'estandar']))
-            <input type="hidden" id="permisoVoz" value="true">
-        @else
-            <input type="hidden" id="permisoVoz" value="false">
-        @endif
-
+        <input type="hidden" id="rolUsuario" value="{{Auth::user()->roles()->first()->name}}">
         <div class="flex flex-wrap">
             <div id="divTraductor" class="py-8 border md:py-12 bg-gray-50" style="width: 100%">
                 <div class="container px-4 mx-auto xl:max-w-6xl">

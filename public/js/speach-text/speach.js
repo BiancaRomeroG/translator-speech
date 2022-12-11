@@ -1,3 +1,4 @@
+
 const languages = [
     { "am-ET": "Amárico" },
     { "ar-SA": "Árabe" },
@@ -109,10 +110,11 @@ const btnStopRecord = document.getElementById("btnStopRecord");
 const textArea1 = document.getElementById('textArea1')
 const textArea2 = document.getElementById('textArea2');
 
-//variables para habilitar los permisos 
-const permisoNoInicial = document.getElementById('permisoNoInicial')
-const permisoPremium = document.getElementById('permisoPremium')
-const permisoVoz = document.getElementById('permisoVoz')
+//variable para habilitar los permisos 
+
+const rolUsuario =document.getElementById('rolUsuario')
+//publicidad
+const publicidad = document.getElementById('publicidad')
 
 //obtengo los selects
 const selectFirst = document.getElementById('idioma1');
@@ -140,7 +142,7 @@ selectSecond.value = lenguaje2;
 
 
 function mostrarEscucharVoz() {
-    if (permisoNoInicial.value == "true") {
+    if ((rolUsuario.value == "premium")||(rolUsuario.value =="estandar")) {
         div = document.getElementById('flotante');
         if (div.style.display == 'none') {
             div.style.display = '';
@@ -156,7 +158,7 @@ function mostrarEscucharVoz() {
 }
 
 function mostrarEscucharVoz2() {
-    if (permisoNoInicial.value == "true") {
+    if ((rolUsuario.value == "premium")||(rolUsuario.value =="estandar")) {
         div = document.getElementById('flotante2');
         if (div.style.display == 'none') {
             div.style.display = '';
@@ -284,10 +286,14 @@ recognition.onresult = (event) => {
 
 
 btnStartRecord.addEventListener("click", () => {
-    if ((permisoVoz.value == "true")) {
+    //habilitado para estos roles 
+    if ((rolUsuario.value == "estandar" )||(rolUsuario.value == "premium")) {
+        // if(permisoEstandar.value=="true"){
+        // }
         mostrarMsj();
         recognition.start();
     } else {
+        
         notificacion("Adquiere el plan STANDARD o PREMIUM para usar esta función.")
         // button1("Adquiere el plan STANDARD o PREMIUM para usar esta función.")
     }
@@ -344,39 +350,37 @@ myText2.addEventListener("input", function () {
 
 //mostrar ocultar historial
 
-
+function mostrarHistorial2(){
+    div = document.getElementById('record-text');
+            divTraductor = document.getElementById('divTraductor');
+            if (div.style.display == 'none') {
+                div.style.display = '';
+                div.style.cssText = `width: 25%;`;
+                divTraductor.style.cssText = `width: 75%;`
+            } else {
+                div.style.display = 'none';
+                divTraductor.style.cssText = `width: 100%;`;
+            }
+}
 function mostrarHistorial() {
 
-    div = document.getElementById('record-text');
-    divTraductor = document.getElementById('divTraductor');
-    if (div.style.display == 'none') {
-        div.style.display = '';
-        div.style.cssText = `width: 30%;`;
-        divTraductor.style.cssText = `width: 70%;`
-    } else {
-        div.style.display = 'none';
-        divTraductor.style.cssText = `width: 100%;`;
-    }
 
-
-    //condicion para habilitar el permiso
-    if (permisoNoInicial.value == "true") {
-        div = document.getElementById('record-text');
-        divTraductor = document.getElementById('divTraductor');
-        if (div.style.display == 'none') {
-            div.style.display = '';
-            div.style.cssText = `width: 25%;`;
-            divTraductor.style.cssText = `width: 75%;`
+ if (publicidad!=undefined){
+    div = document.getElementById('publicidad');
+    if(rolUsuario.value =="premium"){
+        mostrarHistorial2();        
+    }else{
+        mostrarPublicidad();
+    }   
+}else{
+        if (rolUsuario.value != "free" ) {
+       mostrarHistorial2();
         } else {
-            div.style.display = 'none';
-            divTraductor.style.cssText = `width: 100%;`;
-
+            notificacion("Adquiere alguno de nuestros planes para usar esta función.")
+            // button1("Adquiere alguno de nuestros planes para usar esta función.")
         }
-
-    } else {
-        notificacion("Adquiere alguno de nuestros planes para usar esta función.")
-        // button1("Adquiere alguno de nuestros planes para usar esta función.")
-    }
+    
+}
 
 }
 
@@ -402,6 +406,7 @@ function notificacionParaNoPremium() {
     return button1("Adquiere el plan PREMIUM para usar esta opción")
     // return notificacion("Adquiere el plan PREMIUM para usar esta opción")
 }
+
 
 //notificacion sin redireccionamiento
 function notificacion(mensaje) {
@@ -446,3 +451,35 @@ function button1(mensaje) {
 function direccionDasboard() {
     window.location = "dashboard/#planes";
 }
+
+//PUBLICIDAD
+function mostrarPublicidad() 
+{
+    div = document.getElementById('publicidad');
+    if (div.style.display == 'none') {
+        div.style.display = '';
+    } else {
+        div.style.display = 'none';
+    }
+}
+
+//salida de la animacion 
+const cuadroPublicidad = document.getElementById("cuadroPublicidad");
+
+function cerrarPublicidad(){
+
+div = document.getElementById('publicidad');
+if (div.style.display == 'none') {
+    div.style.display = '';
+} else {
+    div.style.display = 'none';
+}
+   
+}
+
+function UsuarioBasico(){
+      return notificacion("Ya has adquirido este plan");
+    // console.log('eres  usuario basico')
+}
+
+
