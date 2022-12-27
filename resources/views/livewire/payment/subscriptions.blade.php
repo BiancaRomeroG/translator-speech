@@ -1,15 +1,15 @@
 <div>
 
     <header class="grid grid-cols-2 justify-between">
-        <h1 class="text-black text-2xl" style="font-weight: 800">Suscripciones</h1>
-        <a href="#" class="grid justify-end text-blue-600 font-semibold hover:text-black">Ver pr&oacute;xima
+        <h1 class="transition text-green-500 text-2xl hover:-translate-y-1" style="font-weight: 800">Suscripciones</h1>
+        <a href="{{ route('invoice.index') }}" class="grid justify-end text-blue-600 font-semibold hover:text-black">Ver pr&oacute;xima
             factura</a>
     </header>
     <hr class="my-2">
     <div class="p-2" id="subscriptions">
         <ul>
             @foreach ($subscriptions as $subscription)
-                <li class="hover:bg-blue-200 p-3" id="li-item-{{ $subscription->name_sub }}" onmouseover="inElement2('{{ $subscription->name_sub }}')" onmouseout="outElement2('{{ $subscription->name_sub }}')">
+                <li class="hover:bg-blue-50 p-3" id="li-item-{{ $subscription->name_sub }}" onmouseover="inElement2('{{ $subscription->name_sub }}')" onmouseout="outElement2('{{ $subscription->name_sub }}')">
                     <input type="hidden" value="{{ $subscription->name_sub }}" id="item_payment">
                     <div class="grid lg:grid-cols-2">
                         <div class="grid justify-start">
