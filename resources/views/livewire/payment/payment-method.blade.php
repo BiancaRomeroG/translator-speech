@@ -1,16 +1,14 @@
 <div>
 
     <header class="grid grid-cols-2 justify-between">
-        <h1 class="text-black text-2xl" style="font-weight: 800">Métodos de pago</h1>
-        <a href="#" class="grid justify-end text-blue-600 font-semibold hover:text-black">Ver pr&oacute;xima
-            factura</a>
+        <h1 class="transition text-blue-500 text-2xl hover:-translate-y-1" style="font-weight: 800">Métodos de pago</h1>
 
     </header>
     <hr class="my-2">
     <div class="p-2" id="subscriptions">
         <ul>
             @foreach (Auth::user()->paymentMethods() as $paymentMethod)
-                <li class="hover:bg-blue-200 py-3" id="li-item2-{{ $paymentMethod->id }}" onmouseover="inElement('{{ $paymentMethod->id }}')" onmouseout="outElement('{{ $paymentMethod->id }}')">
+                <li class="hover:bg-blue-50 py-3" id="li-item2-{{ $paymentMethod->id }}" onmouseover="inElement('{{ $paymentMethod->id }}')" onmouseout="outElement('{{ $paymentMethod->id }}')">
                     <input type="hidden" value="{{ $paymentMethod->id }}" id="item_payment2">
                     <div class="grid lg:grid-cols-2 ">
                         <div class="grid justify-start">

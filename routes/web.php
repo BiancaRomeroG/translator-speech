@@ -2,19 +2,9 @@
 
 use App\Http\Controllers\DocumentTranslatorController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\SubscriptionController;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('landing');
@@ -39,14 +29,15 @@ Route::middleware([
     Route::get('/traductor', [HomeController::class, 'traducir_texto'])->name('traducir.texto');
 
   
-        # Start Route Document Translator
-        Route::get('/document-translator', [DocumentTranslatorController::class, 'index'])->name('document-translator');
-        # End Route Document Trasnlator
+    # Start Route Document Translator
+    Route::get('/document-translator', [DocumentTranslatorController::class, 'index'])->name('document-translator');
+    # End Route Document Trasnlator
 
 
     # Start Route Payment with Stripe
     Route::get('plans/checkout/{planId}', [SubscriptionController::class, 'checkout'])->name('plans.checkout');
     Route::post('plans/process', [SubscriptionController::class, 'processPlan'])->name('plan.process');
     Route::get('subscriptions/all', [SubscriptionController::class, 'allSubscriptions'])->name('subscription.all');
+    Route::get('invoice', [InvoiceController::class, 'index'])->name('invoice.index');
     # End Route Payment with Stripe
 });

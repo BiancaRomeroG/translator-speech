@@ -1,4 +1,4 @@
-@section('title', 'Mis subscripciones')
+@section('title', 'Mis suscripciones')
 
 <x-app-layout>
     <div class="bg-white p-10 w-full">
