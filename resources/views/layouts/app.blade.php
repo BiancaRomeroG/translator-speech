@@ -78,7 +78,6 @@
     <!-- Minify Global javascript (for production purpose) -->
     {{-- <script src="{{ asset('dist/js/scripts.js') }}"></script> --}}
 
-
     <!--start::Demo javascript ( initialize global javascript )-->
     <script src="{{ asset('src/js/demo.js') }}"></script>
 
@@ -89,7 +88,7 @@
     <script src="{{ asset('src/js/customizer.js') }}"></script>
     
     <script src="{{ asset('js/toastr/toastr.min.js') }}"></script>
-
+    
 </body>
 
 </html>

@@ -35,8 +35,8 @@
                                     </button>
                                     <br><label class="text-center">Historial</label>
                                 </div>
-                                <div>
-                                    <button {{-- @click="open=!open" --}}
+                                {{-- <div>
+                                    <button
                                         class="w-16 h-16 ml-6 mr-6 text-center bg-white border border-gray-300 rounded-full hover:text-gray-900 hover:bg-gray-300 hover:ring-0 hover:border-gray-300 focus:bg-gray-300 focus:border-gray-300 focus:outline-none focus:ring-0"
                                         type="button">
                                         <i class="fa-solid fa-star"></i>
@@ -44,13 +44,13 @@
                                     <br><label class="ml-6 mr-6 text-center"onclick="mostrarHistorial()">Guardado</label>
                                 </div>
                                 <div>
-                                    <button {{-- @click="open=!open" --}}
+                                    <button
                                         class="w-16 h-16 text-center bg-white border border-gray-300 rounded-full hover:text-gray-900 hover:bg-gray-300 hover:ring-0 hover:border-gray-300 focus:bg-gray-300 focus:border-gray-300 focus:outline-none focus:ring-0"
                                         type="button">
                                         <i class="fa-solid fa-language"></i>
                                     </button>
                                     <br><label class="text-center">Lenguaje</label>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div> 

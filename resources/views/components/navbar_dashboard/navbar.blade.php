@@ -10,13 +10,13 @@
                 </span>
                 <span class="hidden text-2xl font-semibold text-gray-200 lg:block">
                     <img class="inline-block h-auto -mt-1 w-7" src="{{ asset('src/img/favicon.png') }}">
-                    <span class="ml-1 font-bold text-gray-700">SYSTRAN</span>
+                    <span class="ml-1 font-bold bg-gradient-to-r from-green-300 via-blue-500 to-indigo-600 bg-clip-text text-transparent">SYSTRAN</span>
                 </span>
             </a>
 
             <!-- sidenav button-->
             <button id="navbartoggle" type="button"
-                class="inline-flex items-center justify-center text-gray-800 hover:text-gray-600 focus:outline-none focus:ring-0 "
+                class="inline-flex items-center justify-center text-orange-400 hover:text-orange-600 focus:outline-none focus:ring-0 "
                 aria-controls="desktp-menu" @click="open = !open" aria-expanded="false"
                 x-bind:aria-expanded="open.toString()">
                 <span class="sr-only">Mobile menu</span>
@@ -264,11 +264,7 @@
             <!-- dropdown -->
             <li class="relative">
                 <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                        class="inline-block w-4 h-4 ltr:mr-1 rtl:ml-1 bi bi-house-door" viewBox="0 0 16 16">
-                        <path
-                            d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
-                    </svg>
+                    <i class="fa-solid fa-house"></i>
                     Home
                 </x-jet-nav-link>
             </li>
@@ -289,15 +285,15 @@
                 </li>
                 {{-- opcion habilitada si tiene algun rol --}}
                 <li class="relative">
-                    <a class="block px-0 py-3 lg:py-7 lg:px-4 hover:text-gray-300 color_nav_fuente" href="#">
+                    <x-jet-nav-link href="{{ route('traducir.imagen') }}" :active="request()->routeIs('traducir.imagen')">
                         <i class="fa-solid fa-image"></i>
                         Traducir Imagenes
-                    </a>
+                    </x-jet-nav-link>
                 </li>
 
 
             <li class="relative">
-                <x-jet-nav-link href="{{ route('subscription.all') }}" :active="request()->routeIs('subscription.all')">
+                <x-jet-nav-link href="{{ route('subscription.all') }}" :active="request()->routeIs('subscription.all','plans.checkout')">
                     <i class="fa-solid fa-file-invoice"></i>
                     Subscripciones
                 </x-jet-nav-link>
