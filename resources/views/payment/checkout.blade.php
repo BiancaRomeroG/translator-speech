@@ -18,14 +18,14 @@
                 @endif
             @endforeach
         @endif
-        <div class="back-col p-5 lg:p-24">
+        <div class="back-col p-5 lg:p-24 bg-blue-500">
             <div class="flex">
-                <h1 class="head">Subscripción</h1>
-                <h2 class="pay text-red-600 uppercase ml-10 text-xs rounded-md text-center p-1 h-6 mt-4">Pago en línea
+                <h1 class="head text-blue-900">Subscripción</h1>
+                <h2 class="pay text-orange-600 bg-yellow-200 uppercase ml-10 text-xs rounded-md text-center p-1 h-6 mt-4">Pago en línea
                 </h2>
             </div>
             <div class="block py-5">
-                <p class="parrafo text-bold text-xl" style="font-weight: 600">Suscribete al plan <strong
+                <p class="parrafo text-bold text-xl text-blue-300" style="font-weight: 600">Suscribete al plan <strong
                         class="uppercase">{{ $plan->name }}</strong></p>
                 <div class="flex my-3">
                     <p class="text-gray-100 text-4xl"><strong>${{ $plan->price / 100 }}.00</strong></p>
@@ -34,22 +34,18 @@
                         <p class="ml-3 -mt-3">mes</p>
                     </div>
                 </div>
-                <p class="parrafo text-bold text-lg font-thin" style="font-weight: 500">{{ $plan->description }}</p>
+                <p class="parrafo text-bold text-lg font-thin text-blue-300" style="font-weight: 500">{{ $plan->description }}</p>
             </div>
             <div class="flex my-3">
                 <img src="https://stripe-camo.global.ssl.fastly.net/cb5e5595d1cfb7bb832134861cb477adc2dd0873513835f77d3cb86a485ac4a7/68747470733a2f2f66696c65732e7374726970652e636f6d2f6c696e6b732f4d44423859574e6a64463878534559784d6e5a455656564e546e42575233466b66475a735833526c63335266595777315546526b516a6846536c5a33616c49316146686b596b5a6e64334e52303035736e36565a6c74"
                     class="rounded-xl" alt="Logo Stripe" width="50" height="50">
                 <div class="block w-full">
                     <div class="grid grid-cols-2 justify-between">
-                        <p class="ml-5 text-gray-200">Plan <strong class="uppercase">{{ $plan->name }}</strong></p>
+                        <p class="ml-5 text-gray-200">Plan</p>
                         <p class="grid justify-end text-gray-200"><strong>${{ $plan->price / 100 }}.00</strong></p>
                     </div>
                     <div class="flex mt-1">
-                        <p class="ml-5 text-gray-200">Cantidad <i
-                                class="fa-solid fa-minus background-parrafo p-1 rounded-lg"></i>
-                        <p class="bg-white text-black mx-1 w-4 h-6 rounded-sm">1</p>
-                        <i class="fa-solid fa-plus background-parrafo p-1 rounded-lg"></i>
-                        </p>
+                        <p class="ml-5 text-gray-200"><strong class="uppercase">{{ $plan->name }}</strong></p>
                     </div>
                 </div>
             </div>
@@ -65,7 +61,7 @@
                                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                 </svg>
                             </div>
-                            <span class="ml-3 text-lg parrafo">{{ $plan_detail->description }}</span>
+                            <span class="ml-3 text-lg parrafo text-blue-300">{{ $plan_detail->description }}</span>
                         </li>
                     @endforeach
                 </ul>
@@ -73,7 +69,7 @@
         </div>
         <div class="bg-white items-center">
             <div class="p-20">
-                <button class="flex bg-black text-white w-full p-4 rounded-md justify-center">
+                {{-- <button class="flex bg-black text-white w-full p-4 rounded-md justify-center">
                     <img src="{{ asset('google-icon.png') }}" alt="Google Pay" width="30" height="30">
                     Pay
                 </button>
@@ -82,7 +78,7 @@
                     <hr class="my-3 w-16 lg:w-32">
                     <p class="text-gray-300 mx-2">O escoge otro método de pago</p>
                     <hr class="my-3 w-16 lg:w-32">
-                </div>
+                </div> --}}
                 <form action="{{ route('plan.process') }}" method="POST" id="subscribe-form">
                     @csrf
                     <input type="hidden" name="plan_id" value="{{ $plan->plan_id }}">
@@ -141,7 +137,7 @@
                             <option value="10">Venezuela</option>
                         </select>
                         <button id="card-button" data-secret="{{ $intent->client_secret }}"
-                            class="flex back-col text-white w-full p-4 rounded-md justify-center mt-10">
+                            class="flex back-col text-white w-full p-4 rounded-md justify-center mt-10 bg-green-500">
                             Procesar pago
                         </button>
                         <p class="text-gray-300 text-center mt-10">Al confirmar su suscripción, permite que Translator

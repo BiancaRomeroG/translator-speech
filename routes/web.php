@@ -27,7 +27,7 @@ Route::middleware([
 
     // Route::view('/traductor', 'traducir.texto')->name('traducir.texto');
     Route::get('/traductor', [HomeController::class, 'traducir_texto'])->name('traducir.texto');
-
+    Route::get('/traducir-imagen',[HomeController::class, 'traducir_imagen'])->name('traducir.imagen');
   
     # Start Route Document Translator
     Route::get('/document-translator', [DocumentTranslatorController::class, 'index'])->name('document-translator');

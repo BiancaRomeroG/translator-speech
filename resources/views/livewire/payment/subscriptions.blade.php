@@ -1,7 +1,7 @@
 <div>
 
     <header class="grid grid-cols-2 justify-between">
-        <h1 class="transition text-green-500 text-2xl hover:-translate-y-1" style="font-weight: 800">Suscripciones</h1>
+        <h1 class="transition text-green-400 text-lg font-semibold hover:-translate-y-1">SUSCRIPCIONES</h1>
         <a href="{{ route('invoice.index') }}" class="grid justify-end text-blue-600 font-semibold hover:text-black">Ver pr&oacute;xima
             factura</a>
     </header>

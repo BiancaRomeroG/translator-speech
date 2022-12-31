@@ -2,15 +2,17 @@
 
     @section('title', 'Traducir texto')
     @section('script-css')
+
+        <link rel="stylesheet" href="{{ asset('/css/dragdrop.css') }}">
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"
             integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-        
+
     @endsection
 
     {{-- NavBar --}}
     <main>
 
-        <input type="hidden" id="rolUsuario" value="{{Auth::user()->roles()->first()->name}}">
+        <input type="hidden" id="rolUsuario" value="{{ Auth::user()->roles()->first()->name }}">
         <div class="flex flex-wrap">
             <div id="divTraductor" class="py-8 border md:py-12 bg-gray-50" style="width: 100%">
                 <div class="container px-4 mx-auto xl:max-w-6xl">
@@ -25,11 +27,6 @@
                                     <select id="idioma1" name="idioma1"
                                         class="relative w-auto pl-3 pr-8 overflow-x-auto leading-5 bg-white border border-none appearance-none focus:outline-none focus:border-gray-400 focus:ring-0 select-caret"
                                         aria-label="Default select example">
-                                        {{-- <option selected value="0">INGLES</option>
-                            <option value="8">ESPAÑOL</option>
-                            <option value="3">FRANCES</option>
-                            <option value="22">PORTUGUES</option>
-                            <option value="8">CAMBA</option> --}}
                                     </select>
                                 </div>
                             </div>
@@ -45,7 +42,28 @@
                         </div>
                         <div class="grid grid-cols-2 auto-cols-auto">
                             <div class="col-auto p-4 border-t-2">
-                                <textarea id="textArea1"
+
+                                <div class="containerdd" style="max-width: 600px">
+                                    <h3>SUBIR IMAGEN</h3>
+                                    <div class="drag-area" style="height: 250px">
+                                        <div class="icono" style="font-size: 15px">
+                                            <i class="fas fa-images"></i>
+                                        </div>
+                                        <span class="header" style="font-size: 15px">Arrastrar y soltar en el
+                                            area</span>
+                                        <span class="header" style="font-size: 15px">o <span class="buttonDrop"
+                                                style="font-size: 12px">navega</span></span>
+                                        <span class="support" style="font-size: 15px">Support: JPEG, JPG,
+                                            PNG</span>
+                                    </div>
+                                    <input type="file" id="img" name="NOMBRE-INPUT" class="form-control"
+                                        accept=".jpge,.jpg,.png" hidden>
+                                </div>
+
+
+                                <!-- Borrar este text area le quita el estilo al que muestra las traducciones -->
+
+                                <textarea hidden id="textArea1"
                                     class="relative w-full px-4 py-2 overflow-x-auto text-2xl leading-5 bg-white border border-white rounded focus:outline-none focus:border-white focus:ring-0"></textarea>
                                 <div class="flex justify-end">
                                     <button id="btnClearArea" onclick="vaciarTextsArea()"
@@ -55,6 +73,9 @@
                                         <span class="msjMicroVoz2">Vaciar</span>
                                     </button>
                                 </div>
+
+                                <!-- Borrar este text area le quita el estilo al que muestra las traducciones -->
+
                             </div>
                             <div class="col-auto p-4 border-t-2 border-l-2">
                                 {{-- <label class="text-2xl text-gray-400">Traducción</label> --}}
@@ -68,19 +89,26 @@
                             <div class="col-auto p-4 cont">
                                 <div class="flex justify-between">
                                     <div class="">
+
+
+                                        <!-- Eliminar estos botones le quita el estilo del text area del texto traducido -->
+
                                         <button {{-- @click="open=!open" --}} id="btnStartRecord"
                                             class="w-10 h-10 mt-auto mb-auto text-center bg-white border border-none rounded-full btnMicroStart b1 hover:text-gray-900 hover:bg-gray-300 hover:ring-0 hover:border-gray-300 focus:bg-gray-300 focus:border-gray-300 focus:outline-none focus:ring-0"
-                                            type="button">
+                                            type="button" hidden>
                                             <i class="fa-solid fa-microphone"></i>
                                             <span class="msjMicroStart">Traducir por voz</span>
                                         </button>
-
                                         <button {{-- @click="open=!open" --}} id="btnStopRecord"
                                             class="w-10 h-10 mt-auto mb-auto text-center bg-white border border-none rounded-full btnMicroStop hover:text-gray-900 hover:bg-gray-300 hover:ring-0 hover:border-gray-300 focus:bg-gray-300 focus:border-gray-300 focus:outline-none focus:ring-0"
-                                            type="button">
+                                            type="button" hidden>
                                             <i class="fa fa-stop-circle"></i>
                                             <span class="msjMicroStop">Detener</span>
                                         </button>
+
+                                        <!-- Eliminar estos botones le quita el estilo del text area del texto traducido -->
+
+
                                         <button {{-- @click="open=!open" --}} id="escuchar_voz" onclick="mostrarEscucharVoz()"
                                             class="w-10 h-10 mt-auto mb-auto text-center bg-white border border-none rounded-full btnMicroVoz hover:text-gray-900 hover:bg-gray-300 hover:ring-0 hover:border-gray-300 focus:bg-gray-300 focus:border-gray-300 focus:outline-none focus:ring-0"
                                             type="button">
@@ -241,22 +269,6 @@
                                     </button>
                                     <br><label class="text-center">Historial</label>
                                 </div>
-                                {{-- <div>
-                                    <button
-                                        class="w-16 h-16 ml-6 mr-6 text-center bg-white border border-gray-300 rounded-full hover:text-gray-900 hover:bg-gray-300 hover:ring-0 hover:border-gray-300 focus:bg-gray-300 focus:border-gray-300 focus:outline-none focus:ring-0"
-                                        type="button">
-                                        <i class="fa-solid fa-star"></i>
-                                    </button>
-                                    <br><label class="ml-6 mr-6 text-center">Guardado</label>
-                                </div>
-                                <div>
-                                    <button
-                                        class="w-16 h-16 text-center bg-white border border-gray-300 rounded-full hover:text-gray-900 hover:bg-gray-300 hover:ring-0 hover:border-gray-300 focus:bg-gray-300 focus:border-gray-300 focus:outline-none focus:ring-0"
-                                        type="button">
-                                        <i class="fa-solid fa-language"></i>
-                                    </button>
-                                    <br><label class="text-center">Lenguaje</label>
-                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -274,7 +286,7 @@
                             <h1 class="mb-2 text-3xl font-medium leading-normal bg-white text-dark">Historial</h1>
                         </header>
                         <hr>
-                        @livewire('traducir.traducir-texto')
+                        {{-- @livewire('traducir.traducir-texto') --}}
                     </div>
                 </div>
             </div>
@@ -285,5 +297,68 @@
 
 
     <script src="{{ asset('js/speach-text/speach.js') }}"></script>
+
+    <script>
+        const dragArea = document.querySelector('.drag-area');
+        const dragText = document.querySelector('.header');
+        let button = document.querySelector('.buttonDrop');
+        let input = document.getElementById('img');
+
+        let file;
+
+        button.onclick = () => {
+            input.click();
+        };
+
+        input.addEventListener('change', function() {
+            file = this.files[0];
+            dragArea.classList.add('active');
+            displayFile();
+        });
+
+        dragArea.addEventListener('dragover', (event) => {
+            event.preventDefault();
+            dragText.textContent = 'Soltar imagen';
+            dragArea.classList.add('active');
+            // console.log('documento dentro');
+        });
+
+        dragArea.addEventListener('dragleave', () => {
+            dragText.textContent = 'Arrastra la imagen al area';
+            dragArea.classList.remove('active');
+            // console.log('Archivo fuera del area');
+        });
+
+        dragArea.addEventListener('drop', (event) => {
+            event.preventDefault();
+            file = event.dataTransfer.files[0];
+            displayFile();
+        });
+
+        function displayFile() {
+            let fileType = file.type;
+            // console.log(fileType);
+            let validExtension = ['image/png', 'image/jpg', 'image/jpeg'];
+            if (validExtension.includes(fileType)) {
+                let fileReader = new FileReader();
+                fileReader.onload = () => {
+                    let fileURL = fileReader.result;
+                    // console.og(fileURL);
+                    let tag = `<img src="${fileURL}" alt="">`;
+                    dragArea.innerHTML = tag;
+                    input.hidden = false;
+                    console.log(file);
+                    // input.value = `${fileReader.filename}`;
+                    console.log(input.value);
+                }
+                fileReader.readAsDataURL(file);
+            } else {
+                alert('El archivo seleccionado no es una imagen');
+                dragArea.classList.remove('active');
+            }
+            // console.log('El archivo fue enviando en el area drag')
+        };
+
+    </script>
 
 </x-app-layout>

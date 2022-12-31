@@ -1,7 +1,7 @@
 <div>
 
     <header class="grid grid-cols-2 justify-between">
-        <h1 class="transition text-blue-500 text-2xl hover:-translate-y-1" style="font-weight: 800">Métodos de pago</h1>
+        <h1 class="transition text-blue-400 text-lg font-semibold hover:-translate-y-1">MÉTODOS DE PAGO</h1>
 
     </header>
     <hr class="my-2">

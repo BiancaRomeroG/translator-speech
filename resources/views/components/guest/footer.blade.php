@@ -8,7 +8,7 @@
                         <a class="items-center hidden py-2 mr-4 text-xl lg:flex" href="index.html">
                             <h2 class="overflow-hidden text-2xl font-semibold max-h-20">
                                 <!-- <img class="inline-block h-auto -mt-1 w-7 ltr:mr-2 rtl:ml-2" src="src/img/logo.png"> -->
-                                <img class="inline-block h-20 -mt-1" src="{{asset('src/img/favicon.png')}}">
+                                <img class="inline-block h-14 -mt-1" src="{{asset('src/img/favicon.png')}}">
                                 <span class="font-bold bg-gradient-to-r from-green-300 via-blue-500 to-indigo-600 bg-clip-text text-3xl text-transparent">SYSTRAN</span>
                             </h2>
                         </a>
