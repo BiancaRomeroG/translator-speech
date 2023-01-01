@@ -38,6 +38,7 @@ class Subscriptions extends Component
 
     public function render()
     {
+        $this->emit('has_subscription');
         return view('livewire.payment.subscriptions');
     }
 

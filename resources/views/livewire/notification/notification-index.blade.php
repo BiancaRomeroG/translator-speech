@@ -21,7 +21,8 @@
             <div class="relative">
                 <div class="font-bold">Notificaciones</div>
                 <div class="absolute top-0 right-0 inline-block">
-                    <a href="#" class="inline-block ltr:mr-2 rtl:ml-2 hover:text-blue-500" title="Clear all">
+                    <button wire:click="deleteAll()" class="inline-block ltr:mr-2 rtl:ml-2 hover:text-blue-500"
+                        title="Clear all">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             class="inline-block w-4 h-4 bi bi-trash" viewBox="0 0 16 16">
                             <path
@@ -30,13 +31,13 @@
                                 d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
                         </svg>
                         <!-- <i class="fas fa-trash-alt"></i> -->
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
         <div class="overflow-y-auto max-h-60 scrollbars show">
             @foreach ($notifications as $notification)
-                <a class="relative" href="layout-topnav.html#">
+                <a class="relative" wire:click="deleteSelected({{ $notification->id }})" style="cursor: pointer">
                     <div
                         class="flex flex-row flex-wrap items-center py-2 border-b border-gray-200 hover:bg-gray-100 bg-gray-50">
                         <div class="flex-shrink w-1/4 max-w-full px-2 text-center">
@@ -55,8 +56,15 @@
                         @if ($notification->type == 'sin_renovacion')
                             <div class="flex-shrink w-3/4 max-w-full px-2">
                                 <div class="text-sm font-bold">Notificación</div>
-                                <div class="mt-1 text-sm text-gray-500">Su plan ----- esta por expirar!</div>
+                                <div class="mt-1 text-sm text-gray-500">Su plan esta por expirar!</div>
                                 <div class="mt-1 text-sm text-gray-500">{{ $notification->dateExpired }}</div>
+                            </div>
+                        @endif
+                        @if ($notification->type == 'de_subscripcion')
+                            <div class="flex-shrink w-3/4 max-w-full px-2">
+                                <div class="text-sm font-bold">Notificación</div>
+                                <div class="mt-1 text-sm text-gray-500">Pago Exitoso !!!</div>
+                                <div class="mt-1 text-sm text-gray-500">PLAN: {{ $notification->dateExpired }}</div>
                             </div>
                         @endif
                     </div>
@@ -133,7 +141,7 @@
         </a> --}}
         </div>
         <div class="p-3 font-normal text-center">
-            <a href="layout-topnav.html#" class="hover:underline">Ver todas las Notificaciones</a>
+            {{-- <a href="layout-topnav.html#" class="hover:underline">Ver todas las Notificaciones</a> --}}
         </div>
     </div>
 

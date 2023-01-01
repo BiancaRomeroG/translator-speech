@@ -8,4 +8,5 @@
         @livewire('payment.payment-method')
     </div>
     <script defer src="{{ asset('js/payments/hover-subscription.js') }}"></script>
+    
 </x-app-layout>
