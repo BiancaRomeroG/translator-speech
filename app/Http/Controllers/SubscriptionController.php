@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Notification_suscription;
 use App\Models\Plan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Cashier\Cashier;
 use Spatie\Permission\Models\Role;
+
+
 class SubscriptionController extends Controller
 {
     public function checkout($planId) {
@@ -24,7 +27,7 @@ class SubscriptionController extends Controller
         $paymentMethod = null;
         $paymentMethod = $request->payment_method;
         
-
+        //me subscribo
         if ($paymentMethod != null) 
             $paymentMethod = $user->addPaymentMethod($paymentMethod);
 
@@ -58,6 +61,14 @@ class SubscriptionController extends Controller
                 $user->assignRole('premium');
                 break;            
         }
+        //aqui la notificacion
+        Notification_suscription::create([
+            'user_id' => auth()->user()->id,
+            'suscription_id' => null,
+            'type' => 'de_subscripcion',
+            'dateExpired' => $request->plan_name
+        ]);
+
         return to_route('subscription.all');
     }
 

@@ -11,7 +11,7 @@ use Carbon\Carbon;
 class NotificationIndex extends Component
 {
     public $notifications;
-    protected $listeners = ['is_your_plan_expired'];
+    protected $listeners = ['is_your_plan_expired', 'renderNotification' => 'render', 'yes_deleteAll', 'yes_deleteSelected', 'has_subscription'];
 
 
     public function mount()
@@ -25,8 +25,8 @@ class NotificationIndex extends Component
 
     public function is_your_plan_expired()
     {
-        // $hoy = Carbon::now()->toDateString();
-        $hoy = "2022-12-17";
+        $hoy = Carbon::now()->toDateString();
+        //$hoy = "2023-01-26"; -5 dias a la fecha actual
 
 
         $subscriptions = DB::table('subscriptions')->where('user_id', auth()->user()->id)->get();
@@ -66,6 +66,28 @@ class NotificationIndex extends Component
             }
         }
         NotificationIndex::mount();
+    }
+
+    public function deleteAll(){
+        $this->emit('Are_sure_deleteAll');
+    }
+
+    public function yes_deleteAll(){
+        DB::table('notification_suscriptions')->where('user_id', auth()->user()->id)->delete();
+        $this->emit('renderNotification');
+    }
+
+    public function deleteSelected($id){
+        $this->emit('Are_sure_deleteSelected', $id);
+    }
+
+    public function yes_deleteSelected($id){
+        DB::table('notification_suscriptions')->where('id', $id)->delete();
+        $this->emit('renderNotification');
+    }
+
+    public function has_subscription(){
+        $this->emit('renderNotification');
     }
 
     public function render()

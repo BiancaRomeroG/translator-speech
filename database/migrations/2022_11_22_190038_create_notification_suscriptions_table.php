@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('suscription_id')->nullable();
-            $table->foreign('suscription_id')->references('id')->on('subscriptions');
+            $table->foreign('suscription_id')->references('id')->on('subscriptions')->nullable();
             $table->string('type')->nullable();
             $table->string('dateExpired')->nullable();
             $table->timestamps();

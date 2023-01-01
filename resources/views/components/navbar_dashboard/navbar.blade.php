@@ -10,7 +10,8 @@
                 </span>
                 <span class="hidden text-2xl font-semibold text-gray-200 lg:block">
                     <img class="inline-block h-auto -mt-1 w-7" src="{{ asset('src/img/favicon.png') }}">
-                    <span class="ml-1 font-bold bg-gradient-to-r from-green-300 via-blue-500 to-indigo-600 bg-clip-text text-transparent">SYSTRAN</span>
+                    <span
+                        class="ml-1 font-bold bg-gradient-to-r from-green-300 via-blue-500 to-indigo-600 bg-clip-text text-transparent">SYSTRAN</span>
                 </span>
             </a>
 
@@ -275,32 +276,33 @@
                 </x-jet-nav-link>
             </li>
             {{-- condicion para habilitar las sgtes opciones --}}
-   
-                <li class="relative">
-                    <x-jet-nav-link href="{{ route('document-translator') }}" :active="request()->routeIs('document-translator')">
-                        <i class="fa-solid fa-file"></i>
-                        Traducir Documentos
-                    </x-jet-nav-link>
 
-                </li>
-                {{-- opcion habilitada si tiene algun rol --}}
-                <li class="relative">
-                    <x-jet-nav-link href="{{ route('traducir.imagen') }}" :active="request()->routeIs('traducir.imagen')">
-                        <i class="fa-solid fa-image"></i>
-                        Traducir Imagenes
-                    </x-jet-nav-link>
-                </li>
+            <li class="relative">
+                <x-jet-nav-link href="{{ route('document-translator') }}" :active="request()->routeIs('document-translator')">
+                    <i class="fa-solid fa-file"></i>
+                    Traducir Documentos
+                </x-jet-nav-link>
+
+            </li>
+            {{-- opcion habilitada si tiene algun rol --}}
+            <li class="relative">
+                <x-jet-nav-link href="{{ route('traducir.imagen') }}" :active="request()->routeIs('traducir.imagen')">
+                    <i class="fa-solid fa-image"></i>
+                    Traducir Imagenes
+                </x-jet-nav-link>
+            </li>
 
 
             <li class="relative">
-                <x-jet-nav-link href="{{ route('subscription.all') }}" :active="request()->routeIs('subscription.all','plans.checkout')">
+                <x-jet-nav-link href="{{ route('subscription.all') }}" :active="request()->routeIs('subscription.all', 'plans.checkout')">
                     <i class="fa-solid fa-file-invoice"></i>
                     Subscripciones
                 </x-jet-nav-link>
             </li>
         </ul>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.8/push.js" integrity="sha512-x0GVeKL5uwqADbWOobFCUK4zTI+MAXX/b7dwpCVfi/RT6jSLkSEzzy/ist27Iz3/CWzSvvbK2GBIiT7D4ZxtPg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.8/push.min.js"
+            integrity="sha512-eiqtDDb4GUVCSqOSOTz/s/eiU4B31GrdSb17aPAA4Lv/Cjc8o+hnDvuNkgXhSI5yHuDvYkuojMaQmrB5JB31XQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
             Livewire.on('pushNotification', function() {
                 const imagen = '{{ asset('src/img/favicon.png') }}';
@@ -308,11 +310,58 @@
                     body: "SYSTRAN hay informacion de tu plan",
                     //timeout: 5000,
                     icon: imagen,
-                    onClick: function(){
+                    onClick: function() {
                         window.focus();
                         this.close();
                     }
                 });
+            });
+            
+
+            Livewire.on('Are_sure_deleteAll', function() {
+                Swal.fire({
+                    title: 'Estas seguro de eliminar todo?',
+                    text: "No tendras vuelta atras!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#00D80B',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Si, Eliminar!',
+                    cancelButtonText: 'Cancelar'
+
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Livewire.emit('yes_deleteAll');
+                        Swal.fire(
+                            'Eliminado!',
+                            'Tus notificaciones han sido eliminadas.',
+                            'success'
+                        )
+                    }
+                })
+            });
+
+            Livewire.on('Are_sure_deleteSelected', function(id) {
+                Swal.fire({
+                    title: 'Estas seguro de eliminar?',
+                    text: "No tendras vuelta atras!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#00D80B',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Si, Eliminar!',
+                    cancelButtonText: 'Cancelar'
+
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Livewire.emit('yes_deleteSelected', id);
+                        Swal.fire(
+                            'Eliminado!',
+                            'Tu notificacion ha sido eliminada.',
+                            'success'
+                        )
+                    }
+                })
             });
         </script>
 
