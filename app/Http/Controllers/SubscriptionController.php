@@ -56,8 +56,7 @@ class SubscriptionController extends Controller
                 $rolA = $user->roles()->first()->name;
                 $user->removeRole($rolA);
                 $user->assignRole('premium');
-                break;
-                
+                break;            
         }
         return to_route('subscription.all');
     }

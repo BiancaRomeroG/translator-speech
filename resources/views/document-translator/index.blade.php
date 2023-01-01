@@ -18,7 +18,11 @@
     <main >   
         <div class="flex flex-wrap">
             <div>
-                @include('publicidad.index')
+                @if (Auth::user()->HasRole(['premium']))
+                    
+                @else
+                    @include('publicidad.index')
+                @endif
                </div>
             <div id="divTraductor" class="flex py-8 border md:py-12 bg-gray-50" style="width: 100%">
                 <div class="container px-4 mx-auto xl:max-w-6xl">
