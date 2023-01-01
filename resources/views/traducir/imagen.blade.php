@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="{{ asset('/css/dragdrop.css') }}">
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"
             integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
 
     @endsection
 
@@ -13,7 +15,14 @@
     <main>
 
         <input type="hidden" id="rolUsuario" value="{{ Auth::user()->roles()->first()->name }}">
+
         <div class="flex flex-wrap">
+            <div>
+                @if (Auth::user()->HasRole(['premium']))
+                @else
+                    @include('publicidad.index')
+                @endif
+            </div>
             <div id="divTraductor" class="py-8 border md:py-12 bg-gray-50" style="width: 100%">
                 <div class="container px-4 mx-auto xl:max-w-6xl">
                     <!-- card start -->
@@ -358,7 +367,6 @@
             }
             // console.log('El archivo fue enviando en el area drag')
         };
-
     </script>
 
 </x-app-layout>
