@@ -29,11 +29,8 @@ class UploadDocument extends Component
 
     ];
 
-    
-
     public function render()
     {
-        // dd($this->languages[$this->lang_input]["name"]);
         return view('livewire.document-translator.upload-document');
     }
 
@@ -58,7 +55,6 @@ class UploadDocument extends Component
         try {
             $file = $this->file->storeAs('public', $filename);
             
-
             $url = Storage::url($file);
 
             $record = Record::create([

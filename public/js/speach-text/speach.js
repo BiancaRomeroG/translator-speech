@@ -185,7 +185,7 @@ document.getElementById("btnPlay").addEventListener("click", () => {
 });
 
 document.getElementById("btnPlay2").addEventListener("click", () => {
-    //console.log('play');
+    // console.log('play');
     const volumen = document.getElementById("volumen2").value;
     const tono = document.getElementById("tono2").value;
     const velocidad = document.getElementById("velocidad2").value;
