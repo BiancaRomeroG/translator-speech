@@ -16,6 +16,13 @@
         <input type="hidden" id="rolUsuario" value="{{ Auth::user()->roles()->first()->name }}">
         <div class="flex flex-wrap">
             
+            <div>
+                @if (Auth::user()->HasRole(['premium']))
+                @else
+                    @include('publicidad.index')
+                @endif
+            </div>
+
             @livewire('image-translator.upload-image', ['languages' => $languages])
 
             {{-- Historial --}}
