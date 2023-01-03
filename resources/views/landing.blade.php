@@ -96,16 +96,16 @@
                                                 class="block px-4 py-3 hover:text-indigo-500 focus:text-indigo-500">Contact</a>
                                         </li>
                                         <li>
-                                            <div class="grid my-4 text-center lg:block lg:my-auto">
-                                                <a class="inline-block px-4 py-2 mx-auto w-40 text-sm leading-5 text-center text-gray-100 rounded-full transition ease-in-out delay-150 bg-sky-500"
+                                            <div class="grid my-4 text-center">
+                                                <a class="block px-4 py-2 mx-auto w-40 text-sm leading-5 text-center text-gray-100 rounded-full transition ease-in-out delay-150 bg-sky-500"
                                                     href="{{ route('login') }}">
                                                     Iniciar Sesión
                                                 </a>
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="grid my-4 text-center lg:block lg:my-auto">
-                                                <a class="inline-block px-4 py-2 mx-auto w-40 text-sm leading-5 text-center text-gray-100 rounded-full transition ease-in-out delay-150 bg-green-400 "
+                                            <div class="grid my-4 text-center">
+                                                <a class="block px-4 py-2 mx-auto w-40 text-sm leading-5 text-center text-gray-100 rounded-full transition ease-in-out delay-150 bg-green-400 "
                                                     href="{{ route('register') }}">
                                                     Registrar
                                                 </a>
