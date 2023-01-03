@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="{{ asset('/css/dragdrop.css') }}">
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"
             integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 
     @endsection
@@ -15,7 +16,7 @@
 
         <input type="hidden" id="rolUsuario" value="{{ Auth::user()->roles()->first()->name }}">
         <div class="flex flex-wrap">
-            
+
             <div>
                 @if (Auth::user()->HasRole(['premium']))
                 @else
@@ -35,7 +36,7 @@
                             <h1 class="mb-2 text-3xl font-medium leading-normal bg-white text-dark">Historial</h1>
                         </header>
                         <hr>
-                        {{-- @livewire('traducir.traducir-texto') --}}
+                        @livewire('records-image.image-records')
                     </div>
                 </div>
             </div>
@@ -45,8 +46,8 @@
     {{-- Image Translator Script --}}
     <script src="{{ asset('js/image-translator/upload.js') }}"></script>
 
-    
-   
+
+
     {{-- Drag & over Image Script --}}
     <script src="{{ asset('js/image-translator/drag.js') }}"></script>
 
