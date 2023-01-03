@@ -97,7 +97,7 @@
                                         </li>
                                         <li>
                                             <div class="grid my-4 text-center lg:block lg:my-auto">
-                                                <a class="inline-block px-4 py-2 mx-auto w-40 text-sm leading-5 text-center text-gray-100 rounded-full transition ease-in-out delay-150 bg-sky-500 hover:-translate-y-1 hover:scale-110 hover:bg-blue-700 duration-300"
+                                                <a class="inline-block px-4 py-2 mx-auto w-40 text-sm leading-5 text-center text-gray-100 rounded-full transition ease-in-out delay-150 bg-sky-500"
                                                     href="{{ route('login') }}">
                                                     Iniciar Sesión
                                                 </a>
@@ -105,7 +105,7 @@
                                         </li>
                                         <li>
                                             <div class="grid my-4 text-center lg:block lg:my-auto">
-                                                <a class="inline-block px-4 py-2 mx-auto w-40 text-sm leading-5 text-center text-gray-100 rounded-full transition ease-in-out delay-150 bg-green-400 hover:-translate-y-1 hover:scale-110 hover:bg-green-600 duration-300"
+                                                <a class="inline-block px-4 py-2 mx-auto w-40 text-sm leading-5 text-center text-gray-100 rounded-full transition ease-in-out delay-150 bg-green-400 "
                                                     href="{{ route('register') }}">
                                                     Registrar
                                                 </a>
