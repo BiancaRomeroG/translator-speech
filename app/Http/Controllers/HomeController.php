@@ -27,8 +27,4 @@ class HomeController extends Controller
          return view('traducir.texto',compact('user'));
      }
 
-     public function traducir_imagen(){
-        $user = Auth::user();
-         return view('traducir.imagen',compact('user'));
-     }
 }

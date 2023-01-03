@@ -33,12 +33,10 @@ Livewire.on('clearInput', () => {
 
 // Guardar archivo y consumir api
 btn_translate.addEventListener('click', () => {
-    console.log("Empezando");
+    //console.log("Empezando");
 
     page.style.visibility = 'visible'
-
     alertToast('info', 'Espera un momento por favor...', 10000);
-
     Livewire.emit('translateDocument', global_name, global_extension)
 });
 

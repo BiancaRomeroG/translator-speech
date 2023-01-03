@@ -286,7 +286,7 @@
             </li>
             {{-- opcion habilitada si tiene algun rol --}}
             <li class="relative">
-                <x-jet-nav-link href="{{ route('traducir.imagen') }}" :active="request()->routeIs('traducir.imagen')">
+                <x-jet-nav-link href="{{ route('image-translator') }}" :active="request()->routeIs('traducir.imagen')">
                     <i class="fa-solid fa-image"></i>
                     Traducir Imagenes
                 </x-jet-nav-link>

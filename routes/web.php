@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DocumentTranslatorController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ImageTranslatorController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\SubscriptionController;
 use Illuminate\Support\Facades\Route;
@@ -27,12 +28,12 @@ Route::middleware([
 
     // Route::view('/traductor', 'traducir.texto')->name('traducir.texto');
     Route::get('/traductor', [HomeController::class, 'traducir_texto'])->name('traducir.texto');
-    Route::get('/traducir-imagen',[HomeController::class, 'traducir_imagen'])->name('traducir.imagen');
   
     # Start Route Document Translator
     Route::get('/document-translator', [DocumentTranslatorController::class, 'index'])->name('document-translator');
-    # End Route Document Trasnlator
-
+    
+    # Start Route Image Translator
+    Route::get('/image-translator', [ImageTranslatorController::class, 'index'])->name('image-translator');
 
     # Start Route Payment with Stripe
     Route::get('plans/checkout/{planId}', [SubscriptionController::class, 'checkout'])->name('plans.checkout');
