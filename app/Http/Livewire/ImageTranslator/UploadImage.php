@@ -2,12 +2,15 @@
 
 namespace App\Http\Livewire\ImageTranslator;
 
+use App\Models\Records_image;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use App\Http\Languages;
+
 
 class UploadImage extends Component
 {
@@ -16,6 +19,7 @@ class UploadImage extends Component
     public $file, $lang_output = 'en';
     public $languages;
     public $lang_input = 'es';
+
 
     protected $listeners = [
         'translateImage',
@@ -26,11 +30,11 @@ class UploadImage extends Component
         return view('livewire.image-translator.upload-image');
     }
 
-    public function translateImage() {
+    public function translateImage()
+    {
         try {
             $file = $this->file->store('public');
             $url = Storage::url($file);
-
 
 
             # Remover el primer "/" para public path
@@ -45,6 +49,26 @@ class UploadImage extends Component
                     ]
                 );
 
+            $findlanguages = Languages::getLanguages();
+
+            foreach ($findlanguages as $key => $value) {
+                if ($key == $this->lang_input) {
+                    $in = $value["name"];
+                }
+                if ($key == $this->lang_output) {
+                    $out = $value["name"];
+                }
+            }
+            
+            Records_image::create([
+                'path_image_input' => $url,
+                'text_translated' => json_decode($response->body())->outputText,
+                'lang_input' => $in,
+                'lang_output' => $out,
+                'id_user' => auth()->user()->id,
+            ]);
+
+            $this->emit('renderImageRecord');
             $this->emit('return-json', $response->body());
 
             DB::commit();
@@ -53,6 +77,5 @@ class UploadImage extends Component
 
             DB::rollBack();
         }
-        
     }
 }
